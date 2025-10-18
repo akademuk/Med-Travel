@@ -1,34 +1,39 @@
 @use '../helpers' as *;
 
-.button {
-    display: inline-flex;
-    justify-content: center;
-    padding: rem(18) rem(24);
-    font-size: rem(18);
-    color:var(--color-gray-60);
-    background-color: var(--color-dark);
-    white-space: nowrap;
-    border: var(--border); 
-    border-radius: rem(12);
-
-    @include laptop {
-        padding: rem(14) rem(20);
-        font-size: rem(14);
-        border-radius: rem(8);
-    }
+.gold-button {
+    background-color: var(--color-btn);
+    color: var(--color-dark); 
+    min-height: 50px;
+    padding: rem(13) rem(25); 
+    text-align: center;
+    font-family: var(--font-family-base);
+    @include fluid-text(23, 16);
+    font-weight: 100;
+    text-transform: uppercase; 
+    border: rem(1) solid transparent;
 
     @include hover {
-        color: var(--color-accent);
-        background-color: var(--color-dark-10);
-        border-color: var(--color-accent);
+        background: transparent;
+        border: rem(1) solid var(--color-light);
+        color: var(--color-light);
     }
+}
 
-    &--accent {
-        background-color: var(--color-accent);
-        border-color: var(--color-accent);
-        color:var(--color-dark);
-        font-weight: 500;
-        padding: rem(14) rem(20);
-        border-radius: rem(8);
+.border-button {
+    color: var(--color-light);
+    background-color: transparent;
+    border: rem(1) solid var(--color-light);
+    min-height: 50px;
+    padding: rem(13) rem(25); 
+    text-align: center;
+    font-family: var(--font-family-base);
+    @include fluid-text(23, 16);
+    font-weight: 100;
+    text-transform: uppercase; 
+
+    @include hover {
+        background-color: var(--color-btn);
+        border: rem(1) solid var(--color-btn);
+        color: var(--color-dark); 
     }
 }

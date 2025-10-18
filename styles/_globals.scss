@@ -109,40 +109,7 @@ img {
     object-fit: cover;
 }
 
-.gold-button {
-    background-color: var(--color-btn);
-    color: var(--color-dark); 
-    min-height: 50px;
-    padding: rem(13) rem(25); 
-    text-align: center;
-    font-family: var(--font-family-base);
-    @include fluid-text(23, 16);
-    font-weight: 100;
-    text-transform: uppercase; 
-    border: rem(1) solid transparent;
 
-    @include hover {
-        background: transparent;
-        border: rem(1) solid var(--color-light);
-        color: var(--color-light);
-    }
-}
-
-.border-button {
-    color: var(--color-light);
-    background-color: transparent;
-    border: rem(1) solid var(--color-light);
-    min-height: 50px;
-    padding: rem(13) rem(25); 
-    text-align: center;
-    font-family: var(--font-family-base);
-    @include fluid-text(23, 16);
-    font-weight: 100;
-    text-transform: uppercase; 
-
-    @include hover {
-        background-color: var(--color-btn);
-        border: rem(1) solid var(--color-btn);
-        color: var(--color-dark); 
-    }
+.is-lock {
+    overflow: hidden;
 }
