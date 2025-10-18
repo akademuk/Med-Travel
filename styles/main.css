@@ -602,6 +602,7 @@ img {
   align-items: center;
   justify-content: center;
   column-gap: 3px;
+  padding: 0.9375rem 0rem;
 }
 .header__promo-nav-link::after {
   content: "";
@@ -620,7 +621,6 @@ img {
 }
 .header__promo-nav-item {
   position: relative;
-  padding: 0.9375rem 0rem;
 }
 @media (any-hover: hover) {
   .header__promo-nav-item:hover .header__promo-nav-sublist {

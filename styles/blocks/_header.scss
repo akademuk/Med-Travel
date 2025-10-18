@@ -69,6 +69,7 @@
             align-items: center;
             justify-content: center;
             column-gap: 3px;
+            padding: rem(15) rem(0);
 
             &::after {
                 content: '';
@@ -90,7 +91,6 @@
 
         &-nav-item {
             position: relative;
-            padding: rem(15) rem(0);
 
             @include hover {
                 & .header__promo-nav-sublist {
