@@ -54,7 +54,7 @@
 
         &::before {
             content: "";
-            background-image: url(../../images/title-before.svg);
+            background-image: url("/images/title-before.svg");
             background-repeat: no-repeat;
             background-size: contain;
             position: absolute;
@@ -71,7 +71,7 @@
 
         &::after {
             content: "";
-            background-image: url(../../images/title-after.svg);
+            background-image: url("/images/title-after.svg");
             background-repeat: no-repeat;
             background-size: contain;
             position: absolute;
