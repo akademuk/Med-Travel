@@ -24,7 +24,7 @@
 
             &::before {
                 content: '';
-                background-image: url("../images/popular-procedures__svg.svg");
+                background-image: url(../images/popular-procedures__svg.svg);
                 background-repeat: no-repeat;
                 background-size: contain;
                 position: absolute;
@@ -75,7 +75,7 @@
 
             &::after {
                 content: "";
-                background-image: url("../icons/arrow.svg");
+                background-image: url(../icons/arrow.svg);
                 background-repeat: no-repeat;
                 background-size: contain;
                 width: 18px;
