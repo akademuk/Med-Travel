@@ -735,7 +735,7 @@ img {
 }
 .hero h1::before {
   content: "";
-  background-image: url("/images/title-before.svg");
+  background-image: url(../images/title-before.svg);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -752,7 +752,7 @@ img {
 }
 .hero h1::after {
   content: "";
-  background-image: url("/images/title-after.svg");
+  background-image: url(../images/title-after.svg);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -869,7 +869,7 @@ img {
 }
 .welcome__content h2::before {
   content: "";
-  background-image: url("/images/welcome__svg.svg");
+  background-image: url("../images/welcome__svg.svg");
   background-repeat: no-repeat;
   background-size: contain;
   width: 180px;
@@ -946,7 +946,7 @@ img {
 }
 .popular-procedures__inner h2::before {
   content: "";
-  background-image: url("/images/popular-procedures__svg.svg");
+  background-image: url(../images/popular-procedures__svg.svg);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -996,7 +996,7 @@ img {
 }
 .popular-procedures__link h3::after {
   content: "";
-  background-image: url("/icons/arrow.svg");
+  background-image: url(../icons/arrow.svg);
   background-repeat: no-repeat;
   background-size: contain;
   width: 18px;
