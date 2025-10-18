@@ -1,0 +1,23 @@
+@use 'normalize';
+@use 'fonts';
+@use 'veriables';
+@use 'utils';
+@use 'globals';
+
+@use 'blocks/icon';
+@use 'blocks/logo';
+@use 'blocks/button';
+@use 'blocks/burger-button';
+@use 'blocks/header';
+@use 'blocks/badge';
+@use 'blocks/soc1als';
+@use 'blocks/footer';
+
+@use 'blocks/hero';
+@use 'blocks/ticker';
+@use 'blocks/welcome';
+@use 'blocks/popular-procedures';
+
+.header {
+    display: none !important;
+}

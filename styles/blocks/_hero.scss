@@ -1,0 +1,118 @@
+@use '../helpers' as *;
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        height: 155px;
+        background: rgba(0, 0, 0, 0.50);
+        filter: blur(75px);
+        z-index: 1;
+    }
+
+    &-background {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        &::before {
+            @include abs-center;
+            @include square(100%);
+            content: "";
+            background: linear-gradient(0deg, rgba(163, 140, 106, 0.20) 0%, rgba(163, 140, 106, 0.20) 100%);
+            z-index: 1;
+        }
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &__inner {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        flex-grow: 1;
+        padding-bottom: 60px;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        margin: 0 0 123px 0;
+        position: relative;
+
+        &::before {
+            content: "";
+            background-image: url(../../images/title-before.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            right: 0;
+            bottom: -85px;
+            width: 486px;
+            height: 124px;
+
+            @include mobile {
+                width: 100%;
+                height: 100px;
+            }
+        }
+
+        &::after {
+            content: "";
+            background-image: url(../../images/title-after.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: -100px;
+            top: -70px;
+            width: 180px;
+            height: 134px;
+
+            @include mobile {
+                left: -15px;
+                top: -76px;
+                width: 140px;
+                height: 120px;
+            }
+        }
+    }
+
+    &__content {
+        max-width: 586px;
+        margin-inline-start: auto;
+        position: relative;
+        z-index: 2;
+
+        &--action {
+            display: flex;
+            flex-wrap: wrap;
+            gap: rem(24);
+            margin-block-end: 50px;
+
+            a, button {
+                flex: 1;
+                white-space: nowrap;
+                @include flex-center;
+            }
+        }
+
+        &-text {
+            color: var(--color-light);
+            text-align: center;
+            @include fluid-text(18, 14);
+            font-weight: 100;
+        }
+    }
+}

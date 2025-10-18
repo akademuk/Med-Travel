@@ -1,0 +1,26 @@
+@use 'helpers' as *;
+
+:root {
+    --color-light: #FFFFFF;
+
+    --background: #F7FAFD;
+
+    --color-dark: #000000;
+    --color-gold: #A38C6A;
+    --color-btn: #D8C2A0;
+
+    --border: #{rem(1)} solid var(--color-dark);
+
+    --font-family-base: 'Geologica', sans-serif;
+    --font-family-title: 'Cormorant Garamond', sans-serif;
+    --font-family-accent: 'Albert Sans', sans-serif;
+
+    --container-width: #{rem(1200)};
+    --container-padding-x: #{rem(16)};
+
+    --transition-duration: 0.2s;
+
+    @include laptop {
+         --container-width: #{rem(1200)};
+    }
+}

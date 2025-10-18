@@ -1,0 +1,43 @@
+@use '../helpers' as *;
+
+.ticker {
+    height: 55px;
+    padding: rem(18) rem(0);
+    border-top: var(--border);
+    border-bottom: var(--border);
+    overflow: hidden;
+
+    &-wrapper {
+        display: flex;
+        gap: rem(27); 
+        animation: scroll 15s linear infinite;
+        
+        &:hover {
+            animation-play-state: paused;
+            cursor: default;
+        }
+    }
+
+    &-content {
+        display: flex;
+        gap: rem(27); 
+        flex-shrink: 0;
+        min-width: 100%;
+    }
+
+    &-item {
+        font-weight: 100;
+        text-transform: uppercase;
+        white-space: nowrap;
+        flex: 0 0 auto;
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - rem(27))); 
+    }
+}
