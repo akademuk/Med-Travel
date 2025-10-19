@@ -3,6 +3,10 @@
 .trust-us {
     padding: rem(100) rem(0);
 
+    @include mobile {
+        padding: rem(50) rem(0);
+    }
+
     &__inner {
         display: flex;
         flex-direction: column;
@@ -47,7 +51,7 @@
         flex-wrap: wrap;
         
         @include tablet {
-            height: 200px;
+            height: auto
         }
 
         @include mobile {

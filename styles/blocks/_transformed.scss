@@ -129,6 +129,11 @@
             background: var(--color-btn);
         }
 
+        &:active,
+        &:focus {
+            background: var(--color-btn);
+        }
+
         &:disabled {
             opacity: 0.5;
             cursor: not-allowed;
@@ -142,6 +147,7 @@
         text-transform: uppercase;
         background: transparent;
         border: none;
+        color: var(--color-dark);
         border-bottom: none;
         white-space: nowrap;
         display: flex;

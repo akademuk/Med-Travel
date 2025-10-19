@@ -751,6 +751,9 @@ img {
     padding: 0rem;
   }
 }
+.header__menu .header__promo-nav-link {
+  padding: 0;
+}
 .header__search {
   margin: 0 4.3125rem 0 2.3125rem;
 }
@@ -1206,7 +1209,7 @@ img {
 @media (width <= 30.06125rem) {
   .popular-procedures__item {
     position: sticky;
-    top: 0;
+    top: 140px;
   }
 }
 
@@ -1364,6 +1367,9 @@ img {
     background: var(--color-btn);
   }
 }
+.transformed__slider-btn:active, .transformed__slider-btn:focus {
+  background: var(--color-btn);
+}
 .transformed__slider-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -1374,6 +1380,7 @@ img {
   text-transform: uppercase;
   background: transparent;
   border: none;
+  color: var(--color-dark);
   border-bottom: none;
   white-space: nowrap;
   display: flex;
@@ -1421,6 +1428,11 @@ img {
 .trust-us {
   padding: 6.25rem 0rem;
 }
+@media (width <= 47.99875rem) {
+  .trust-us {
+    padding: 3.125rem 0rem;
+  }
+}
 .trust-us__inner {
   display: flex;
   flex-direction: column;
@@ -1466,7 +1478,7 @@ img {
 }
 @media (width <= 63.99875rem) {
   .trust-us__body {
-    height: 200px;
+    height: auto;
   }
 }
 @media (width <= 47.99875rem) {
