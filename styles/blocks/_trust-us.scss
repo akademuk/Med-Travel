@@ -117,6 +117,7 @@
 
             @include tablet {
                 max-width: 200px;
+                height: 300px;
             }
 
             @include mobile {

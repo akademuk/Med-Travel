@@ -1,0 +1,127 @@
+@use '../helpers' as *;
+
+.we-help {
+    padding: rem(100) rem(0);
+
+    @include mobile {
+        padding: rem(50) rem(0);
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: rem(60);
+
+        @include mobile {
+            gap: rem(32);
+        }
+    }
+
+    h2 {
+        position: relative;
+        padding-left: rem(140);
+
+        @include mobile {
+            padding-left: rem(0);
+            display: inline-flex;
+            align-items: baseline;
+        }
+
+        &::before {
+            content: '';
+            background-image: url(../images/we-help-svg.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: rem(237);
+            height: rem(112);
+
+            @include mobile {
+                width: rem(100);
+                height: rem(65);
+                position: static;
+                display: inline-flex;
+                flex-shrink: 0;
+                margin-right: -40px;
+                background-position: bottom;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(24);
+
+        &-row {
+            display: flex;
+            gap: rem(24);
+
+            @include tablet {
+                flex-direction: column;
+            }
+        }
+    }
+
+    &__item {
+        max-width: rem(588);
+        width: 100%;
+        display: flex;
+        gap: rem(24);
+        min-height: rem(300);
+
+        @include mobile-s {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        &-content,
+        &-image {
+            flex: 1 1 calc(50% - 12px);
+        }
+
+        &-image {
+            position: relative;
+
+            @include mobile-s {
+                height: 300px;
+                flex: none;
+                width: 100%;
+            }
+        
+            img {
+                @include abs-center;
+                height: 100%;
+            }
+        }
+
+        &-number {
+            margin-top: auto;
+            width: 78px;
+            height: 43px;
+            flex-shrink: 0;
+            margin-left: auto;
+            object-fit: contain;
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            gap: rem(9);
+
+            h3 {
+                @include fluid-text(22, 18);
+                font-weight: 200;
+                text-transform: uppercase
+            }
+
+            p {
+                @include fluid-text(15, 14);
+            }
+        }
+    }
+}

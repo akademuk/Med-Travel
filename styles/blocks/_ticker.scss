@@ -22,7 +22,7 @@
         display: flex;
         gap: rem(27);
         flex-shrink: 0;
-        padding-right: rem(27); // ВАЖНО: добавляем padding справа равный gap
+        padding-right: rem(27);
     }
 
     &-item {

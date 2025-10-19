@@ -1,0 +1,32 @@
+@use '../helpers' as *;
+
+.clinic-logo {
+    padding: rem(70) rem(0);
+    background: var(--color-light);
+
+    @include mobile {
+        padding: rem(32) rem(0);
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(24);
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    &__item {
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: none;
+        }
+    }
+}
