@@ -1309,23 +1309,12 @@ img {
   display: flex;
   gap: 1.5rem;
 }
-.transformed__slider-wrapper {
-  display: flex;
-  transition: transform 0.3s ease;
-  gap: 24px;
-}
-@media (width <= 47.99875rem) {
-  .transformed__slider-wrapper {
-    gap: 15px;
-  }
-}
 .transformed__slider-slide {
-  flex: 0 0 auto;
-  width: calc(33.333% - 14px);
+  width: calc(33.333% - 16px);
 }
 @media (width <= 63.99875rem) {
   .transformed__slider-slide {
-    width: calc(50% - 10px);
+    width: calc(50% - 12px);
   }
 }
 @media (width <= 47.99875rem) {
@@ -1423,6 +1412,61 @@ img {
 }
 .transformed__tab-content.active {
   display: block;
+}
+.transformed .swiper-button-prev,
+.transformed .swiper-button-next {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: calc(-1 * 1.25rem);
+  border: var(--border);
+  background: white;
+  border-radius: 0;
+  transition-duration: var(--transition-duration);
+}
+.transformed .swiper-button-prev:after,
+.transformed .swiper-button-next:after {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--color-dark);
+}
+@media (any-hover: hover) {
+  .transformed .swiper-button-prev:hover,
+  .transformed .swiper-button-next:hover {
+    background: var(--color-btn);
+  }
+}
+@media (any-hover: none) {
+  .transformed .swiper-button-prev:active,
+  .transformed .swiper-button-next:active {
+    background: var(--color-btn);
+  }
+}
+.transformed .swiper-button-prev:active, .transformed .swiper-button-prev:focus,
+.transformed .swiper-button-next:active,
+.transformed .swiper-button-next:focus {
+  background: var(--color-btn);
+}
+.transformed .swiper-button-prev.swiper-button-disabled,
+.transformed .swiper-button-next.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f8f8f8;
+}
+.transformed .swiper-button-prev {
+  left: -1.25rem;
+}
+@media (width <= 47.99875rem) {
+  .transformed .swiper-button-prev {
+    left: -0.625rem;
+  }
+}
+.transformed .swiper-button-next {
+  right: -1.25rem;
+}
+@media (width <= 47.99875rem) {
+  .transformed .swiper-button-next {
+    right: -0.625rem;
+  }
 }
 
 .trust-us {
