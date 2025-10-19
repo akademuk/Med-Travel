@@ -797,6 +797,13 @@ img {
   .header__menu .header__promo-nav-list .header__promo-nav-item {
     padding: 0rem;
   }
+  .header__menu .header__promo-nav-list .header__promo-nav-item .header__promo-nav-link::after {
+    transform: rotate(180deg);
+    transition-duration: var(--transition-duration);
+  }
+  .header__menu .header__promo-nav-list .header__promo-nav-item:not(:has(.is-active)) .header__promo-nav-link::after {
+    transform: rotate(0deg);
+  }
 }
 .header__menu .header__promo-nav-link {
   padding: 0;
@@ -2003,6 +2010,7 @@ img {
   .faq__inner h2::before {
     width: 6.25rem;
     height: 4.0625rem;
+    background-position: bottom;
     position: static;
     display: inline-flex;
     flex-shrink: 0;
@@ -2179,17 +2187,24 @@ img {
   transform: rotate(-90deg);
   filter: brightness(0) saturate(100%) invert(52%) sepia(44%) saturate(267%) hue-rotate(356deg) brightness(99%) contrast(88%);
 }
+@media (width <= 47.99875rem) {
+  .faq__accordion-icon.active {
+    transform: rotate(180deg);
+  }
+}
 .faq__tab-content-button {
   position: relative;
 }
 .faq__accordion-body--scrollable {
   height: 100%;
+  max-height: 100%;
   overflow-y: auto;
   padding-right: 16px;
 }
 @media (width <= 47.99875rem) {
   .faq__accordion-body--scrollable {
-    height: 300px;
+    height: 100%;
+    max-height: 300px;
   }
 }
 @media (width <= 47.99875rem) {

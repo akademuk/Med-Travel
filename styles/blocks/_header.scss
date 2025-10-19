@@ -208,6 +208,7 @@
 
         .header__promo-nav-list {
             display: none;
+            
 
             @include mobile {
                 display: flex;
@@ -217,6 +218,17 @@
 
                 .header__promo-nav-item {
                     padding: rem(0);
+
+                    .header__promo-nav-link {
+                        &::after {
+                            transform: rotate(180deg);
+                            transition-duration: var(--transition-duration);
+                        }
+                    }
+
+                    &:not(:has(.is-active)) .header__promo-nav-link::after {
+                        transform: rotate(0deg);
+                    }
                 }
             }
         }
