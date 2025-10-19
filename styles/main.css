@@ -926,8 +926,8 @@ img {
 }
 .ticker-wrapper {
   display: flex;
-  gap: 1.6875rem;
-  animation: scroll 15s linear infinite;
+  width: fit-content;
+  animation: scroll 20s linear infinite;
 }
 .ticker-wrapper:hover {
   animation-play-state: paused;
@@ -937,7 +937,7 @@ img {
   display: flex;
   gap: 1.6875rem;
   flex-shrink: 0;
-  min-width: 100%;
+  padding-right: 1.6875rem;
 }
 .ticker-item {
   font-weight: 100;
@@ -951,7 +951,7 @@ img {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-100% - 1.6875rem));
+    transform: translateX(-50%);
   }
 }
 .welcome {
@@ -1210,6 +1210,27 @@ img {
   }
 }
 
+.popular-procedures.popular-procedures--countries .popular-procedures__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+@media (width <= 63.99875rem) {
+  .popular-procedures.popular-procedures--countries .popular-procedures__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (width <= 47.99875rem) {
+  .popular-procedures.popular-procedures--countries .popular-procedures__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width <= 30.06125rem) {
+  .popular-procedures.popular-procedures--countries .popular-procedures__list {
+    grid-template-columns: 1fr;
+  }
+}
+
 .transformed {
   padding: 6.25rem 0rem;
 }
@@ -1395,6 +1416,152 @@ img {
 }
 .transformed__tab-content.active {
   display: block;
+}
+
+.trust-us {
+  padding: 6.25rem 0rem;
+}
+.trust-us__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+}
+@media (width <= 47.99875rem) {
+  .trust-us__inner {
+    gap: 2rem;
+  }
+}
+.trust-us__inner h2 {
+  position: relative;
+  padding-left: 10.3125rem;
+}
+@media (width <= 47.99875rem) {
+  .trust-us__inner h2 {
+    padding-left: 6.25rem;
+  }
+}
+.trust-us__inner h2::before {
+  content: "";
+  background-image: url(../images/transformed__svg.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 18.25rem;
+  height: 7rem;
+}
+@media (width <= 47.99875rem) {
+  .trust-us__inner h2::before {
+    bottom: 0;
+    width: 9.375rem;
+    height: 3.75rem;
+    top: -30px;
+  }
+}
+.trust-us__body {
+  display: flex;
+  height: 400px;
+  flex-wrap: wrap;
+}
+@media (width <= 63.99875rem) {
+  .trust-us__body {
+    height: 200px;
+  }
+}
+@media (width <= 47.99875rem) {
+  .trust-us__body {
+    gap: 1.5rem;
+  }
+}
+.trust-us__body--column {
+  flex: 1 1 50%;
+  border-right: none;
+  display: flex;
+}
+@media (width <= 47.99875rem) {
+  .trust-us__body--column {
+    flex: 1 1 100%;
+    min-width: 200px;
+  }
+}
+.trust-us__body--column:not(:has(.trust-us__body--image)) {
+  flex: 1 1 25%;
+  border-right: var(--border);
+}
+@media (width <= 47.99875rem) {
+  .trust-us__body--column:not(:has(.trust-us__body--image)) {
+    flex: 1 1 calc(50% - 12px);
+  }
+}
+.trust-us__body--column-text {
+  font-size: clamp(0.875rem, 0.7821428571rem + 0.380952381vw, 1.125rem);
+}
+.trust-us__body--column-number {
+  font-size: clamp(2rem, 1.1178571429rem + 3.619047619vw, 4.375rem);
+  text-transform: uppercase;
+}
+.trust-us__body--column--center {
+  padding-left: 1.5rem;
+}
+@media (width <= 47.99875rem) {
+  .trust-us__body--column--center {
+    padding-left: 0rem;
+  }
+}
+.trust-us__body--content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 1.25rem;
+}
+.trust-us__body--image {
+  max-width: 306px;
+  width: 100%;
+  position: relative;
+  height: 100%;
+  flex-shrink: 0;
+  margin-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (width <= 63.99875rem) {
+  .trust-us__body--image {
+    max-width: 200px;
+  }
+}
+@media (width <= 47.99875rem) {
+  .trust-us__body--image {
+    flex: 1 1 50%;
+    height: 200px;
+    max-width: 200px;
+    flex-shrink: 0;
+  }
+}
+.trust-us__body--image-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+.trust-us__body--image img {
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+.trust-us__body--image .trust-us__body--column-text,
+.trust-us__body--image .trust-us__body--column-number {
+  color: var(--color-light);
+  position: relative;
+  z-index: 2;
+}
+.trust-us__body--image .trust-us__body--column-number {
+  margin-top: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

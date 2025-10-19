@@ -151,3 +151,23 @@
          }
     }
 }
+
+.popular-procedures.popular-procedures--countries {
+    .popular-procedures__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(24);
+
+        @include tablet {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile-s {
+            grid-template-columns: 1fr;
+        }
+    }
+}
