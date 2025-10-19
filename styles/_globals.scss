@@ -40,6 +40,7 @@ h2,
     font-weight: 400;
     text-transform: uppercase;
     @include fluid-text(38, 28);
+    margin: 0;
 }
 
 h3,
@@ -112,4 +113,40 @@ img {
 
 .is-lock {
     overflow: hidden;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: rem(40);
+    height: rem(40);
+    border: var(--border);
+    @include flex-center;
+    transition-duration: var(--transition-duration);
+    background: transparent;
+    position: static;
+    margin: 0;
+
+    &::after {
+        content: none;
+    }
+
+    img {
+        width: rem(10);
+        height: rem(10);
+    }
+
+    @include hover {
+        background: var(--color-btn);
+    }
+
+    &:active,
+    &:focus {
+        background: var(--color-btn);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background: #f8f8f8;
+    }
 }

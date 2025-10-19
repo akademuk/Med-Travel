@@ -178,52 +178,5 @@
         }
     }
 
-    // Swiper navigation buttons
-    .swiper-button-prev,
-    .swiper-button-next {
-        width: rem(40);
-        height: rem(40);
-        margin-top: calc(-1 * rem(20));
-        border: var(--border);
-        background: white;
-        border-radius: 0;
-        transition-duration: var(--transition-duration);
-        
-        &:after {
-            font-size: rem(14);
-            font-weight: bold;
-            color: var(--color-dark);
-        }
-
-        @include hover {
-            background: var(--color-btn);
-        }
-
-        &:active,
-        &:focus {
-            background: var(--color-btn);
-        }
-
-        &.swiper-button-disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            background: #f8f8f8;
-        }
-    }
-
-    .swiper-button-prev {
-        left: rem(-20);
-        
-        @include mobile {
-            left: rem(-10);
-        }
-    }
-
-    .swiper-button-next {
-        right: rem(-20);
-        
-        @include mobile {
-            right: rem(-10);
-        }
-    }
+   
 }
