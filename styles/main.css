@@ -2614,14 +2614,12 @@ img {
 .blog__inner h2 {
   position: relative;
   padding-left: 6.875rem;
-  margin-bottom: 50px;
 }
 @media (width <= 47.99875rem) {
   .blog__inner h2 {
     padding-left: 0rem;
     display: inline-flex;
     align-items: baseline;
-    margin-bottom: 0;
   }
 }
 .blog__inner h2::before {

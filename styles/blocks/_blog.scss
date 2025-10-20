@@ -19,13 +19,11 @@
         h2 {
             position: relative;
             padding-left: rem(110);
-            margin-bottom: 50px;
 
             @include mobile {
                 padding-left: rem(0);
                 display: inline-flex;
                 align-items: baseline;
-                margin-bottom: 0;
             }
 
             &::before {
