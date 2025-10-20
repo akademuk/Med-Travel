@@ -3,6 +3,7 @@ import Transformed from "./Transformed.js";
 import Counter from "./Counter.js";
 import Reviews from "./Reviews.js";
 import Faq from "./Faq.js";
+import LeadingDoctors from "./LeadingDoctors.js";
 
 new Header();
 
@@ -13,4 +14,6 @@ new Counter();
 new Reviews();
 
 new Faq();
+
+new LeadingDoctors();
 

@@ -1,6 +1,5 @@
 class Transformed {
     constructor() {
-        console.log('Transformed initialized');
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
                 this.initTabs();
@@ -30,11 +29,7 @@ class Transformed {
     }
 
     initSliders() {
-        console.log('Initializing Swiper sliders...');
-        
-        // Check if Swiper is available
         if (typeof Swiper === 'undefined') {
-            console.error('Swiper library is not loaded');
             return;
         }
 
@@ -50,31 +45,25 @@ class Transformed {
         sliderIds.forEach(sliderId => {
             this.createSwiper(sliderId);
         });
-        console.log('All Swiper sliders initialized');
     }
 
     createSwiper(sliderId) {
         const sliderElement = document.getElementById(sliderId);
         if (!sliderElement) {
-            console.warn(`Slider element with ID "${sliderId}" not found`);
             return;
         }
 
-        // Add swiper classes to the existing structure
         const wrapper = sliderElement.querySelector('.transformed__slider-wrapper');
         const slides = sliderElement.querySelectorAll('.transformed__slider-slide');
 
         if (!wrapper || !slides.length) {
-            console.warn(`Required slider elements not found for "${sliderId}"`);
             return;
         }
 
-        // Add Swiper classes to existing elements
         sliderElement.classList.add('swiper');
         wrapper.classList.add('swiper-wrapper');
         slides.forEach(slide => slide.classList.add('swiper-slide'));
 
-        // Create navigation buttons
         this.createNavigationButtons(sliderElement, sliderId);
 
         try {
@@ -83,26 +72,18 @@ class Transformed {
                 spaceBetween: 24,
                 loop: false,
                 grabCursor: true,
-                
 
                 navigation: {
                     nextEl: `#${sliderId} .transformed__slider-btn.next-btn`,
                     prevEl: `#${sliderId} .transformed__slider-btn.prev-btn`,
-                },
-
-                on: {
-                    init: function() {
-                        console.log(`Swiper initialized for ${sliderId}`);
-                    }
                 }
             });
         } catch (error) {
-            console.error(`Error initializing Swiper for ${sliderId}:`, error);
+            // Silent error handling
         }
     }
 
     createNavigationButtons(sliderElement, sliderId) {
-        // Check if navigation buttons already exist
         let prevBtn = sliderElement.querySelector('.transformed__slider-btn.prev-btn');
         let nextBtn = sliderElement.querySelector('.transformed__slider-btn.next-btn');
 
@@ -118,8 +99,6 @@ class Transformed {
             sliderElement.appendChild(nextBtn);
         }
     }
-
-
 }
 
 export default Transformed;

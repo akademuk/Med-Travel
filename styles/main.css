@@ -2360,4 +2360,198 @@ img {
   }
 }
 
+.leading-doctors {
+  padding: 11.0625rem 0rem 6.25rem 0rem;
+}
+@media (width <= 47.99875rem) {
+  .leading-doctors {
+    padding: 3.125rem 0rem;
+  }
+}
+.leading-doctors__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+@media (width <= 47.99875rem) {
+  .leading-doctors__inner {
+    gap: 2rem;
+  }
+}
+.leading-doctors__inner h2 {
+  position: relative;
+  padding-left: 8.75rem;
+  margin-bottom: 50px;
+}
+@media (width <= 47.99875rem) {
+  .leading-doctors__inner h2 {
+    padding-left: 0rem;
+    display: inline-flex;
+    align-items: baseline;
+  }
+}
+.leading-doctors__inner h2::before {
+  content: "";
+  background-image: url(../images/leading-doctors__svg.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 11.25rem;
+  height: 7.6875rem;
+}
+@media (width <= 47.99875rem) {
+  .leading-doctors__inner h2::before {
+    width: 6.25rem;
+    height: 4.0625rem;
+    position: static;
+    display: inline-flex;
+    flex-shrink: 0;
+    margin-right: -25px;
+    background-position: bottom;
+  }
+}
+.leading-doctors__card {
+  height: 300px;
+  border: var(--border);
+  display: flex;
+}
+.leading-doctors__card-image {
+  width: 140px;
+  height: 100%;
+  flex-shrink: 0;
+}
+.leading-doctors__card-image img {
+  height: 100%;
+}
+.leading-doctors__card-content {
+  padding: 1.25rem 0.625rem;
+}
+.leading-doctors__card-content h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 0.625rem 0;
+}
+.leading-doctors__card-country {
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
+  margin-bottom: 0.625rem;
+}
+.leading-doctors__card-country span {
+  font-size: 12px;
+}
+.leading-doctors__card-specializations {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.875rem;
+}
+.leading-doctors__card-specializations span {
+  font-size: 15px;
+  font-weight: 300;
+}
+.leading-doctors__card-specializations h4 {
+  margin: 0;
+  font-size: 15px;
+  color: var(--color-gold);
+  font-weight: 300;
+  text-decoration: underline;
+}
+.leading-doctors__card-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.9375rem;
+}
+.leading-doctors__card-rating-value {
+  margin: 0 0.4375rem 0 0.1875rem;
+  font-size: 12px;
+}
+.leading-doctors__card-stars {
+  color: #F7C345;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+.leading-doctors__card-stars span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2px;
+}
+.leading-doctors__card-contents {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 17px;
+}
+.leading-doctors__card-contents p {
+  font-size: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+.leading-doctors__card-contents a {
+  font-size: 10px;
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+.leading-doctors__card-link {
+  padding: 0.625rem 1.5625rem;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+@media (any-hover: hover) {
+  .leading-doctors__card-link:hover {
+    background: var(--color-light);
+    color: var(--color-dark);
+  }
+}
+@media (any-hover: none) {
+  .leading-doctors__card-link:active {
+    background: var(--color-light);
+    color: var(--color-dark);
+  }
+}
+.leading-doctors__verified {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.125rem;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.leading-doctors__verified-icon {
+  width: 0.625rem;
+  height: 0.625rem;
+  flex-shrink: 0;
+}
+.leading-doctors__link-button {
+  border: var(--border);
+  color: var(--color-dark);
+  width: max-content;
+  margin: 0 auto;
+}
+.leading-doctors__navigation {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5625rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+.leading-doctors__slide {
+  width: calc(33.333% - 16px);
+}
+@media (width <= 63.99875rem) {
+  .leading-doctors__slide {
+    width: calc(50% - 12px);
+  }
+}
+@media (width <= 47.99875rem) {
+  .leading-doctors__slide {
+    width: calc(100% - 0px);
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
