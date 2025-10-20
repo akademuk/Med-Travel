@@ -860,6 +860,11 @@ img {
   display: flex;
   flex-direction: column;
 }
+@media (width <= 47.99875rem) {
+  .hero {
+    min-height: 800px;
+  }
+}
 .hero::before {
   position: absolute;
   inset: 0;
