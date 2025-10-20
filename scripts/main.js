@@ -4,6 +4,7 @@ import Counter from "./Counter.js";
 import Reviews from "./Reviews.js";
 import Faq from "./Faq.js";
 import LeadingDoctors from "./LeadingDoctors.js";
+import Blog from "./Blog.js";
 
 new Header();
 
@@ -17,3 +18,4 @@ new Faq();
 
 new LeadingDoctors();
 
+new Blog();

@@ -25,6 +25,7 @@
                 padding-left: rem(0);
                 display: inline-flex;
                 align-items: baseline;
+                margin-bottom: 0;
             }
 
             &::before {
@@ -154,6 +155,7 @@
             width: 100%;
             display: inline-flex;
             justify-content: center;
+            align-items: center;
 
             @include hover {
                 background: var(--color-light);
