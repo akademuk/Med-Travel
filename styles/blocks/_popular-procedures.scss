@@ -1,7 +1,7 @@
 @use '../helpers' as *;
 
 .popular-procedures {
-    padding: rem(100) rem(0);
+    padding: rem(177) rem(0) rem(100) rem(0);
 
     @include mobile {
         padding: rem(50) rem(0);
@@ -153,6 +153,12 @@
 }
 
 .popular-procedures.popular-procedures--countries {
+    padding-top: rem(105);
+
+    .popular-procedures__inner {
+        gap: 45px;
+    }
+
     .popular-procedures__list {
         display: grid;
         grid-template-columns: repeat(4, 1fr);

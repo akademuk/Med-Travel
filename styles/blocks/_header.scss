@@ -41,13 +41,13 @@
         &-navigation {
             display: flex;
             align-items: center;
-            column-gap: rem(66);
+            column-gap: rem(47);
         }
 
         &-nav-list {
             display: flex;
             align-items: center;
-            column-gap: rem(30);
+            column-gap: rem(24);
         }
 
         &-contact {
@@ -176,7 +176,7 @@
         &-list {
             display: flex;
             align-items: center;
-            column-gap: rem(20);
+            column-gap: rem(33);
 
             @include mobile {
                 flex-direction: column;
@@ -239,7 +239,7 @@
     }
 
     &__search {
-        margin: 0 rem(69) 0 rem(37);
+        margin: 0 rem(69) 0 rem(23);
 
         @include tablet {
             margin: rem(0) rem(0) rem(0) rem(32);

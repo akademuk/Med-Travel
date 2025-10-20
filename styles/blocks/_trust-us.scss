@@ -1,7 +1,7 @@
 @use '../helpers' as *;
 
 .trust-us {
-    padding: rem(100) rem(0);
+    padding: rem(177) rem(0);
 
     @include mobile {
         padding: rem(50) rem(0);
@@ -18,7 +18,7 @@
 
         h2 {
             position: relative;
-            padding-left: rem(165);
+            padding-left: rem(170);
 
             @include mobile {
                 padding-left: rem(100);

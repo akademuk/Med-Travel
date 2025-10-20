@@ -1,7 +1,7 @@
 @use '../helpers' as *;
 
 .we-help {
-    padding: rem(100) rem(0);
+    padding: rem(176) rem(0) rem(100) rem(0);
 
     @include mobile {
         padding: rem(50) rem(0);
@@ -10,7 +10,7 @@
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: rem(60);
+        gap: rem(45);
 
         @include mobile {
             gap: rem(32);
@@ -19,7 +19,7 @@
 
     h2 {
         position: relative;
-        padding-left: rem(140);
+        padding-left: rem(144);
 
         @include mobile {
             padding-left: rem(0);
@@ -34,7 +34,7 @@
             background-size: contain;
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: rem(10);
             width: rem(237);
             height: rem(112);
 

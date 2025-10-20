@@ -1,7 +1,7 @@
 @use '../helpers' as *;
 
 .reviews {
-    padding: rem(100) rem(0);
+    padding: rem(183) rem(0) rem(100) rem(0);
 
     @include mobile {
         padding: rem(50) rem(0);

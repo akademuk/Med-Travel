@@ -10,7 +10,7 @@
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: rem(60);
+        gap: rem(45);
 
         @include mobile {
             gap: rem(32);
