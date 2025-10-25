@@ -1,96 +1,57 @@
 @use '../helpers' as *;
 
 .faq {
-    padding: rem(179) rem(0) rem(100) rem(0);
-
-    @include mobile {
-        padding: rem(50) rem(0);
-    }
 
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: rem(60);
-
-        @include mobile {
-            gap: rem(32);
-        }
-
-        h2 {
-            position: relative;
-            padding-left: rem(120);
-
-            @include mobile {
-                padding-left: rem(0);
-                display: inline-flex;
-                align-items: baseline;
-            }
-
-            &::before {
-                content: '';
-                background-image: url(../images/faq__svg.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: rem(228);
-                height: rem(127);
-
-                @include mobile {
-                    width: rem(100);
-                    height: rem(65);
-                    background-position: bottom;
-                    position: static;
-                    display: inline-flex;
-                    flex-shrink: 0;
-                    margin-right: -40px;
-                }
-            }
-        }
     }
 
     &__body {
         display: flex;
         flex-direction: column;
-        row-gap: rem(30);
+        row-gap: 30px;
     }
 
     &__tabs {
         display: flex;
         flex-wrap: wrap;
-        gap: rem(8);
+        gap: 8px;
         justify-content: space-between;
 
-        @include tablet {
+        @media (max-width: 992px) {
             justify-content: flex-start;
         }
     }
 
     &__tab-button {
-        @include fluid-text(22, 18);
+        font-size: var(--font-size-xl);
         text-transform: uppercase;
         background: transparent;
         border: none;
-        color: var(--color-dark);
+        color: var(--color-text-primary);
         border-bottom: none;
         white-space: nowrap;
         display: flex;
         flex-direction: column;
-        gap: rem(10);
+        gap: 10px;
         transition-duration: var(--transition-duration);
+
+                         @media (max-width: 576px) {
+                    font-size: 15px;
+                }
 
         &::after {
             content: "";
-            height: rem(1.5);
+            height: 1.5px;
             width: 0;
-            background: var(--color-gold);
+            background: var(--color-accent);
             transition-duration: var(--transition-duration);
         }
 
         &.active {
-            color: var(--color-gold);
-            font-weight: 300;
+            color: var(--color-accent);
+            font-weight: var(--font-weight-light);
 
             &::after {
                 width: 100%;
@@ -98,7 +59,7 @@
         }
 
         @include hover {
-            color: var(--color-gold);
+            color: var(--color-accent);
 
             &::after {
                 width: 100%;
@@ -116,52 +77,51 @@
         &-button {
             display: flex;
             flex-direction: column;
-            gap: rem(15);
+            gap: 15px;
         }
     }
 
     &__accordion-header {
         max-width: 486px;
         width: 100%;
-        padding: rem(0);
+        padding: 0px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         background: transparent;
         border: none;
 
-        @include tablet {
+        @media (max-width: 992px) {
             max-width: 350px;
         }
 
-        @include mobile {
+        @media (max-width: 768px) {
             max-width: 100%;
         }
 
         @include hover {
-           &:not(:has(.active)) h3 {
-             color: var(--color-gold);
-           }
+            &:not(:has(.active)) h3 {
+                color: var(--color-accent);
+            }
 
-           .faq__accordion-icon {
-            filter: brightness(0) saturate(100%) invert(52%) sepia(44%) saturate(267%) hue-rotate(356deg) brightness(99%) contrast(88%);
-           }
+            .faq__accordion-icon {
+                filter: brightness(0) saturate(100%) invert(52%) sepia(44%) saturate(267%) hue-rotate(356deg) brightness(99%) contrast(88%);
+            }
         }
-        
+
 
         h3 {
-            font-size: var(--font-family-base);
-            color: var(--color-gold);
-            font-size: 18px;
-            font-weight: 300;
+            color: var(--color-accent);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-light);
             margin: 0;
             transition-duration: var(--transition-duration);
             text-align: left;
         }
 
         &:not(:has(.active)) h3 {
-            color: var(--color-dark);
-            font-weight: 100;
+            color: var(--color-text-primary);
+            font-weight: var(--font-weight-thin);
         }
     }
 
@@ -175,33 +135,33 @@
         transition-duration: var(--transition-duration);
         overflow: hidden;
 
-        @include tablet  {
+        @media (max-width: 992px) {
             left: 374px;
         }
 
-        @include mobile {
+        @media (max-width: 768px) {
             position: static;
             max-height: 500px !important;
         }
 
         h4 {
-            @include fluid-text(27, 18);
-            font-weight: 200;
+            font-size: var(--font-size-xxl);
+            font-weight: var(--font-weight-extralight);
             margin: 0 0 24px 0;
 
-            @include mobile {
+            @media (max-width: 768px) {
                 margin: 0 0 8px 0;
             }
         }
 
         p {
-            font-size: 15px;
+            font-size: var(--font-size-md);
         }
 
         &:not(.active) {
             display: none;
 
-             @include mobile {
+            @media (max-width: 768px) {
                 display: block;
                 overflow: hidden;
                 max-height: 0 !important;
@@ -216,7 +176,7 @@
             transform: rotate(-90deg);
             filter: brightness(0) saturate(100%) invert(52%) sepia(44%) saturate(267%) hue-rotate(356deg) brightness(99%) contrast(88%);
 
-            @include mobile {
+            @media (max-width: 768px) {
                 transform: rotate(180deg);
             }
         }
@@ -227,24 +187,33 @@
         position: relative;
     }
 
-    &__accordion-body--scrollable {
+    &__accordion-body {
         height: 100%;
         max-height: 100%;
         overflow-y: auto;
         padding-right: 16px;
 
-        @include mobile {
+        @media (max-width: 768px) {
             height: 100%;
             max-height: 300px;
+        }
+
+        img {
+            margin-bottom: 0.666em;
+        }
+
+        h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 1em;
         }
     }
 
     &__tab-content-button-info {
-        
-        @include mobile {
+
+        @media (max-width: 768px)  {
             display: flex;
             flex-direction: column;
-            gap: rem(16);
+            gap: 16px;
         }
     }
 }

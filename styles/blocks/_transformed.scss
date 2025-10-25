@@ -1,63 +1,25 @@
 @use '../helpers' as *;
 
 .transformed {
-    padding: rem(100) rem(0);
-
-    @include mobile {
-        padding: rem(50) rem(0);
-    }
 
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: rem(60);
-
-        @include mobile {
-            gap: rem(32);
-        }
-
-        h2 {
-            position: relative;
-            padding-left: rem(170);
-
-            @include mobile {
-                padding-left: rem(100);
-            }
-
-            &::before {
-                content: '';
-                background-image: url(../images/transformed__svg.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                position: absolute;
-                left: 0;
-                bottom: 55px;
-                width: rem(292);
-                height: rem(112);
-
-                @include mobile {
-                    bottom: 0;
-                    width: rem(150);
-                    height: rem(60);
-                    top: -30px;
-                }
-            }
-        }
     }
 
     &__container {
         display: flex;
         flex-direction: column;
-        gap: rem(30);
+        gap: 30px;
     }
 
     &__tabs {
         display: flex;
         flex-wrap: wrap;
-        gap: rem(8);
+        gap: 8px;
         justify-content: space-between;
 
-        @include tablet {
+        @media (max-width: 992px) {
             justify-content: flex-start;
         }
     }
@@ -68,23 +30,23 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: rem(24);
+        gap: var(--gap);
 
         &-controls {
             margin-left: auto;
             display: flex;
-            gap: rem(24);
+            gap: var(--gap);
         }
     }
 
     &__slider-slide {
         width: calc(33.333% - 16px);
-        
-        @include tablet {
-            width: calc(50% - 12px); 
+
+        @media (max-width: 992px) {
+            width: calc(50% - 12px);
         }
-        
-        @include mobile {
+
+        @media (max-width: 768px) {
             width: calc(100% - 0px);
         }
     }
@@ -102,25 +64,25 @@
     }
 
     &__slider-btn {
-        width: rem(40);
-        height: rem(40);
+        width: 40px;
+        height: 40px;
         border: var(--border);
         @include flex-center;
         transition-duration: var(--transition-duration);
         background: transparent;
 
         img {
-            width: rem(10);
-            height: rem(10);
+            width: 10px;
+            height: 10px;
         }
 
         @include hover {
-            background: var(--color-btn);
+            background: var(--color-surface-accent);
         }
 
         &:active,
         &:focus {
-            background: var(--color-btn);
+            background: var(--color-surface-accent);
         }
 
         &:disabled {
@@ -132,29 +94,29 @@
 
     // Tab functionality
     &__tab-button {
-        @include fluid-text(22, 18);
+        font-size: var(--font-size-xl);
         text-transform: uppercase;
         background: transparent;
         border: none;
-        color: var(--color-dark);
+        color: var(--color-text-primary);
         border-bottom: none;
         white-space: nowrap;
         display: flex;
         flex-direction: column;
-        gap: rem(10);
+        gap: 10px;
         transition-duration: var(--transition-duration);
 
         &::after {
             content: "";
-            height: rem(1.5);
+            height: 1.5px;
             width: 0;
-            background: var(--color-gold);
+            background: var(--color-accent);
             transition-duration: var(--transition-duration);
         }
 
         &.active {
-            color: var(--color-gold);
-            font-weight: 300;
+            color: var(--color-accent);
+            font-weight: var(--font-weight-light);
 
             &::after {
                 width: 100%;
@@ -162,11 +124,15 @@
         }
 
         @include hover {
-            color: var(--color-gold);
+            color: var(--color-accent);
 
             &::after {
                 width: 100%;
             }
+        }
+
+        @media (max-width: 576px) {
+            font-size: 15px;
         }
     }
 
@@ -178,5 +144,15 @@
         }
     }
 
-   
+
+}
+
+.transformed-link {
+    width: max-content;
+    margin: 32px auto 0 auto;
+
+    @include hover {
+        background: var(--color-text-primary);
+        color: var(--color-light);
+    }
 }

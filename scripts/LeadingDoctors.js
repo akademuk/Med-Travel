@@ -45,6 +45,16 @@ class LeadingDoctors {
                 navigation: {
                     nextEl: '.leading-doctors__navigation-btn.next-btn',
                     prevEl: '.leading-doctors__navigation-btn.prev-btn',
+                },
+                 breakpoints: {
+                    650: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 24
+                    }
                 }
             });
         } catch (error) {

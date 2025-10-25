@@ -1,48 +1,10 @@
 @use '../helpers' as *;
 
 .trust-us {
-    padding: rem(177) rem(0);
-
-    @include mobile {
-        padding: rem(50) rem(0);
-    }
 
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: rem(60);
-
-        @include mobile {
-            gap: rem(32);
-        }
-
-        h2 {
-            position: relative;
-            padding-left: rem(170);
-
-            @include mobile {
-                padding-left: rem(100);
-            }
-
-            &::before {
-                content: '';
-                background-image: url(../images/transformed__svg.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                position: absolute;
-                left: 0;
-                bottom: 10px;
-                width: rem(292);
-                height: rem(112);
-
-                @include mobile {
-                    bottom: 0;
-                    width: rem(150);
-                    height: rem(60);
-                    top: -30px;
-                }
-            }
-        }
     }
 
     &__body {
@@ -50,12 +12,12 @@
         height: 400px;
         flex-wrap: wrap;
         
-        @include tablet {
+        @media (max-width: 992px) {
             height: auto
         }
 
-        @include mobile {
-            gap: rem(24);
+        @media (max-width: 768px) {
+            gap: var(--gap);
         }
 
         &--column {
@@ -63,34 +25,36 @@
             border-right: none;
             display: flex;
 
-            @include mobile {
+            @media (max-width: 768px) {
                 flex: 1 1 100%;
                 min-width: 200px;
+                flex-wrap: wrap;
             }
 
             &:not(:has(.trust-us__body--image)) {
                 flex: 1 1 25%;
                 border-right: var(--border);
 
-                @include mobile {
+                @media (max-width: 768px) {
                     flex: 1 1 calc(50% - 12px);
                 }
             }
 
             &-text {
-                @include fluid-text(18, 14);
+                font-size: var(--font-size-lg)
             }
 
             &-number {
-                @include fluid-text(70, 32);
+               font-size: 70px;
                 text-transform: uppercase;
+                margin: 0;
             }
 
             &--center {
-                padding-left: rem(24);
+                padding-left: 24px;
 
-                 @include mobile {
-                    padding-left: rem(0);
+                 @media (max-width: 768px) {
+                    padding-left: 0;
                 }
             }
         }
@@ -100,7 +64,11 @@
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
-            padding-top: rem(20);
+            padding-top: 20px;
+
+            @media (max-width: 768px) {
+                height: auto;
+            }
         }
 
         &--image {
@@ -109,21 +77,21 @@
             position: relative;
             height: 100%;
             flex-shrink: 0;
-            margin-right: rem(24);
-            padding-left: rem(24);
-            padding-top: rem(20);
+            margin-right: 24px;
+            padding-left: 24px;
+            padding-top: 20px;
             display: flex;
             flex-direction: column;
 
-            @include tablet {
+            @media (max-width: 992px) {
                 max-width: 200px;
                 height: 300px;
             }
 
-            @include mobile {
-                flex: 1 1 50%;
+            @media (max-width: 768px) {
+                flex: 1 1 100%;
                 height: 200px;
-                max-width: 200px;
+                max-width: 100%;
                 flex-shrink: 0;
             }
 

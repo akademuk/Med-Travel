@@ -5,6 +5,7 @@ import Reviews from "./Reviews.js";
 import Faq from "./Faq.js";
 import LeadingDoctors from "./LeadingDoctors.js";
 import Blog from "./Blog.js";
+import Catalog from "./Catalog.js";
 
 new Header();
 
@@ -19,3 +20,5 @@ new Faq();
 new LeadingDoctors();
 
 new Blog();
+
+new Catalog();

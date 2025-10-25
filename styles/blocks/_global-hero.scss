@@ -1,0 +1,56 @@
+@use '../helpers' as *;
+
+.global-hero {
+    min-height: 756px;
+    position: relative;
+    padding-top: 254px;
+
+    &::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        height: 155px;
+        background: rgba(0, 0, 0, 0.50);
+        filter: blur(75px);
+        z-index: 1;
+    }
+
+
+    &-background {
+        @include abs-center;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        img {
+            height: 100%;
+            object-position: right;
+        }
+    }
+
+    &__inner {
+        max-width: 894px;
+        width: 100%;
+
+        h1 {
+            font-size: 80px;
+            text-transform: uppercase;
+            margin: 15px 0 20px 0;
+
+
+
+            @media (max-width: 576px) {
+                font-size: 58px;
+            }
+
+        }
+    }
+
+    &__content-text {
+        max-width: 486px;
+        width: 100%;
+        font-size: var(--font-size-lg);
+        color: var(--color-light);
+        margin-bottom: 30px;
+    }
+}

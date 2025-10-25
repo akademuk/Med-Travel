@@ -1,0 +1,33 @@
+@use '../helpers' as *;
+
+.breadcrumbs {
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: var(--font-size-xs);
+        padding: 0;
+    }
+
+    &__item {
+        list-style: none;
+        margin: 0;
+    }
+
+    &__link {
+        color: var(--color-light);
+        font-size: var(--font-size-sm);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &::after {
+            content: "→";
+            font-size: var(--font-size-sm);
+        }
+
+        &:not(a)::after {
+            content: none;
+        }
+    }
+}

@@ -11,13 +11,8 @@
 }
 
 .hidden-mobile {
-    @include mobile {
+    @media (max-width: 768px) {
         display: none !important;
     }
 }
 
-.visible-mobile {
-    @include mobile-above {
-        display: none !important;
-    }
-}

@@ -1,64 +1,22 @@
 @use '../helpers' as *;
 
 .popular-procedures {
-    padding: rem(177) rem(0) rem(100) rem(0);
-
-    @include mobile {
-        padding: rem(50) rem(0);
-    }
 
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: rem(60);
-
-        @include mobile {
-            gap: rem(32);
-        }
-
-        h2 {
-            position: relative;
-            padding-left: rem(120);
-
-            @include mobile {
-                padding-left: rem(0);
-                display: inline-flex;
-                align-items: baseline;
-            }
-
-            &::before {
-                content: '';
-                background-image: url(../images/popular-procedures__svg.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: rem(180);
-                height: rem(127);
-                
-                @include mobile {
-                    width: rem(100);
-                    height: rem(65);
-                    position: static;
-                    display: inline-flex;
-                    flex-shrink: 0;
-                    margin-right: -40px;
-                }
-            }
-        }
     }
 
     &__list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: rem(24);
+        gap: var(--gap);
 
-        @include tablet {
+        @media (max-width: 992px) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @include mobile-s {
+        @media (max-width: 576px) {
             grid-template-columns: 1fr;
         }
     }
@@ -68,14 +26,15 @@
         flex-direction: column;
 
         h3 {
-            padding: rem(15);
-            @include fluid-text(27, 18);
-            font-weight: 100;
+            padding: 15px;
+            font-size: var(--font-size-xxl);
+            font-weight: var(--font-weight-thin);
             text-transform: uppercase;
             display: flex;
             align-items: center;
             column-gap: 8px;
             transition-duration: var(--transition-duration);
+            margin: 0;
 
             &::after {
                 content: "";
@@ -89,14 +48,14 @@
                 opacity: 0;
             }
 
-            @include mobile-s {
-                background: var(--background);
+            @media (max-width: 576px) {
+                background: var(--color-surface);
             }
         }
 
         @include hover {
             .popular-procedures__image {
-                height: rem(360);
+                height: 360px;
                 &:before {
                     opacity: 1;
                 }
@@ -111,7 +70,7 @@
                     opacity: 1;
                 }
 
-                @include mobile-s {
+                @media (max-width: 576px) {
                     background: transparent;
                 }
             }
@@ -119,7 +78,7 @@
     }
 
     &__image {
-        height: rem(296);
+        height: 296px;
         transition-duration: var(--transition-duration);
         position: relative;
 
@@ -145,7 +104,7 @@
     &__item {
         min-height: 360px;
 
-         @include mobile-s {
+         @media (max-width: 576px) {
             position: sticky;
             top: 140px;
          }
@@ -153,26 +112,29 @@
 }
 
 .popular-procedures.popular-procedures--countries {
-    padding-top: rem(105);
 
     .popular-procedures__inner {
         gap: 45px;
+
+        h2 {
+                margin-bottom: -28px;
+        }
     }
 
     .popular-procedures__list {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: rem(24);
+        gap: var(--gap);
 
-        @include tablet {
+        @media (max-width: 992px) {
             grid-template-columns: repeat(3, 1fr);
         }
 
-        @include mobile {
+        @media (max-width: 768px) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @include mobile-s {
+        @media (max-width: 576px) {
             grid-template-columns: 1fr;
         }
     }

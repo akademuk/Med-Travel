@@ -9,9 +9,11 @@
 @use 'blocks/button';
 @use 'blocks/burger-button';
 @use 'blocks/header';
-@use 'blocks/badge';
 @use 'blocks/soc1als';
 @use 'blocks/footer';
+@use 'blocks/breadcrumbs';
+@use 'blocks/pagination';
+@use 'blocks/info-modal';
 
 @use 'blocks/hero';
 @use 'blocks/ticker';
@@ -27,3 +29,9 @@
 @use 'blocks/leading-doctors';
 @use 'blocks/fixed-contact';
 @use 'blocks/blog';
+
+
+@use 'blocks/global-hero';
+@use 'blocks/catalog';
+@use 'blocks/banner';
+@use 'blocks/countries';

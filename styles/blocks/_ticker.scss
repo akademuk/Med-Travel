@@ -2,7 +2,7 @@
 
 .ticker {
     height: 55px;
-    padding: rem(18) rem(0);
+    padding: 18px 0;
     border-top: var(--border);
     border-bottom: var(--border);
     overflow: hidden;
@@ -20,17 +20,17 @@
 
     &-content {
         display: flex;
-        gap: rem(27);
+        gap: 27px;
         flex-shrink: 0;
-        padding-right: rem(27);
+        padding-right: 27px;
     }
 
     &-item {
-        font-weight: 100;
+        font-weight: var(--font-weight-thin);
         text-transform: uppercase;
         white-space: nowrap;
         flex: 0 0 auto;
-        font-size: 15px;
+        font-size: var(--font-size-sm);
     }
 }
 

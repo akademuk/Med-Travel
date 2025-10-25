@@ -45,6 +45,16 @@ class Blog {
                 navigation: {
                     nextEl: '.blog__navigation-btn.next-btn',
                     prevEl: '.blog__navigation-btn.prev-btn',
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 24
+                    }
                 }
             });
         } catch (error) {

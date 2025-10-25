@@ -1,26 +1,75 @@
 @use 'helpers' as *;
 
 :root {
-    --color-light: #FFFFFF;
+    /* Контейнер */
+    --container-width: 1200px;
 
-    --background: #F7FAFD;
-
-    --color-dark: #000000;
-    --color-gold: #A38C6A;
-    --color-btn: #D8C2A0;
-
-    --border: #{rem(1)} solid var(--color-dark);
-
-    --font-family-base: 'Geologica', sans-serif;
-    --font-family-title: 'Cormorant Garamond', sans-serif;
+    /* Шрифты */
+    --font-base: 'Geologica', sans-serif;
+    /* Основной шрифт интерфейса */
+    --font-decorative: 'Cormorant Garamond', serif;
+    /* Декоративный шрифт для заголовков и акцентов */
     --font-family-accent: 'Albert Sans', sans-serif;
+    --font-family-number: "SloopScriptPro", sans-serif;
 
-    --container-width: #{rem(1200)};
-    --container-padding-x: #{rem(16)};
+    /* Цвета */
+    --color-light: #FFFFFF;
+    --color-text-primary: #000000;
+    /* Основной цвет текста */
+    --color-accent: #A38C6A;
+    /* Акцентный цвет: ссылки, заголовки, активные элементы */
+    --color-surface: #F7FAFD;
+    /* Голубой цвет фона */
+    --color-surface-accent: #D8C2A0;
+    /* Кофейный цвет фона */
+    --heading-bg-color: linear-gradient(90deg, rgba(236, 214, 180, 0.50) 0%, rgba(255, 242, 207, 0.50) 100%);
+
+    /* Базовый размер */
+    --font-size-base: 1em;
+    /* 15px */
+
+    /* Размеры шрифта */
+    --font-size-xs: 0.67em;
+    /* 10px — описание врача, текст под логотипом */
+    --font-size-s: 0.8em;
+    /* 12px — подписи, копирайт, рейтинг, меню 2-3 уровня */
+    --font-size-sm: 1em;
+    /* 15px — меню, основной текст, бегущая строка */
+    --font-size-lg: 1.2em;
+    /* 18px — заголовки в футере, аккордеон FAQ */
+    --font-size-l: 1.33em;
+    /* 20px — заголовки в футере, аккордеон FAQ */
+    --font-size-xl: 1.47em;
+    /* 22px — кнопки, заголовки в квадратиках, FAQ */
+    --font-size-xxl: 1.8em;
+    /* 27px — заголовки в квадратиках (процедуры, страны) */
+    --font-size-section-title: 2.53em;
+    /* 38px — заголовки секций */
+    --font-size-decorative: 4em;
+
+    --font-weight-thin: 100;
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    --line-height-tight: 1;
+    /* 100% */
+
+    /* Отступы */
+    --section-padding-top: 100px;
+    --section-padding-bottom: 100px;
+    --section-padding-top-mobile: 32px;
+    --section-padding-bottom-mobile: 32px;
+    --section-margin: 60px;
+
+    --gap: 24px;
+    --small-gap: 15px;
+
+    --container-width: 1200px;
+    --container-padding-x: 16px;
 
     --transition-duration: 0.2s;
 
-    @include laptop {
-         --container-width: #{rem(1200)};
-    }
+    --border: 1px solid var(--color-text-primary);
 }

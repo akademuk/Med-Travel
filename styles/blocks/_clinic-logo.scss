@@ -1,23 +1,23 @@
 @use '../helpers' as *;
 
 .clinic-logo {
-    padding: rem(70) rem(0);
+    padding: 70px 0;
     background: var(--color-light);
 
-    @include mobile {
-        padding: rem(32) rem(0);
+    @media (max-width: 768px) {
+        padding: 32px 0px;
     }
 
     &__list {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: rem(24);
+        gap: var(--gap);
 
-        @include tablet {
+        @media (max-width: 992px) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @include mobile {
+        @media (max-width: 768px) {
             grid-template-columns: 1fr;
         }
     }

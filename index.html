@@ -9,11 +9,11 @@
     <link rel="preload" href="fonts/Geologica-Thin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/CormorantGaramond-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
-    <style>
+    <!-- <style>
         @font-face {
             font-family: 'Geologica';
             src: url('fonts/Geologica-Thin.woff2') format('woff2');
-            font-weight: 100;
+            font-weight: var(--font-weight-thin);
             font-display: swap;
             font-style: normal;
         }
@@ -21,22 +21,22 @@
         @font-face {
             font-family: "Cormorant Garamond";
             src: url('fonts/CormorantGaramond-Regular.woff2') format('woff2');
-            font-weight: 400;
+            font-weight: var(--font-weight-regular);
             font-style: normal;
             font-display: swap;
         }
 
         body {
             font-family: 'Geologica', sans-serif;
-            font-weight: 100;
+            font-weight: var(--font-weight-thin);
         }
 
         h1,
         h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 400;
+            font-weight: var(--font-weight-regular);
         }
-    </style>
+    </style> -->
 
     <link rel="stylesheet" href="styles/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -52,7 +52,7 @@
             <div class="header__promo-inner container">
                 <address class="header__promo-contact">
                     <a href="tel:+15705840343" class="header__promo-contact-link">+1 570 584 0343</a>
-                    <a href="mailto:info@gmail.com" class="header__promo-contact-link">info@gmail.com</a>
+                    <a href="mailto:info@gmail.com" class="header__promo-contact-link header__promo-contact-link--email">info@gmail.com</a>
                 </address>
                 <div class="header__promo-navigation">
                     <nav class="header__promo-nav" aria-label="Additional navigation">
@@ -143,24 +143,630 @@
                     <img src="images/logo.svg" alt="" class="logo__image" width="102" height="43">
                 </a>
                 <div class="header__overlay" data-js-header-overlay>
-                    <nav class="header__menu">
-                        <ul class="header__menu-list">
-                            <li class="header__menu-item">
-                                <a href="/" class="header__menu-link is-active">FACE</a>
+                    <nav class="header__menu-position">
+                        <ul class="header__menu-position-list">
+                            <li class="header__menu-position-item">
+                                <a class="header__menu-position-link is-active">FACE</a>
+                                <div class="header__menu">
+                                    <ul class="header__menu-wrapper">
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Offers</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Services</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Coffee Origins</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
-                            <li class="header__menu-item">
-                                <a href="/" class="header__menu-link">BODY</a>
+                            <li class="header__menu-position-item">
+                                <a class="header__menu-position-link">BODY</a>
+                                <div class="header__menu">
+                                    <ul class="header__menu-wrapper">
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Offers</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Services</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Coffee Origins</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
-                            <li class="header__menu-item">
-                                <a href="/" class="header__menu-link">HAIR</a>
+                            <li class="header__menu-position-item">
+                                <a class="header__menu-position-link">HAIR</a>
+                                <div class="header__menu">
+                                    <ul class="header__menu-wrapper">
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Offers</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Services</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Coffee Origins</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
-                            <li class="header__menu-item">
-                                <a href="/" class="header__menu-link">TEETH</a>
+                            <li class="header__menu-position-item">
+                                <a class="header__menu-position-link">TEETH</a>
+                                <div class="header__menu">
+                                    <ul class="header__menu-wrapper">
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Offers</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Services</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Coffee Origins</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
-                            <li class="header__menu-item">
-                                <a href="/" class="header__menu-link">PACKAGES</a>
+                            <li class="header__menu-position-item">
+                                <a href="/" class="header__menu-position-link">PACKAGES</a>
+                                <div class="header__menu">
+                                    <ul class="header__menu-wrapper">
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Offers</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Services</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children header__menu-item h0">
+                                            <a class="header__menu-link">Coffee Origins</a>
+                                            <ul class="header__submenu">
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-turkey/"
+                                                        class="header__submenu-link">Price
+                                                        list in Turkey 1</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-europe/"
+                                                        class="header__submenu-link">Price
+                                                        list in Europe</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/header-menu.jpg" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-azerbaijan/"
+                                                        class="header__submenu-link">Price
+                                                        list in Azerbaijan</a>
+                                                    <div class="header__submenu-img">
+                                                        <img src="images/banner-image.png" alt="">
+                                                    </div>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat header__submenu-item h-1">
+                                                    <a href="https://arabicatrade.com/catalog/offer-list-transit/"
+                                                        class="header__submenu-link">Price
+                                                        list in “Afloat &amp; Transit”</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
+
                         <ul class="header__promo-nav-list">
                             <li class="header__promo-nav-item">
                                 <span class="header__promo-nav-link" data-js-header-submenu-link>CLINICS</span>
@@ -326,6 +932,7 @@
         <section class="welcome">
             <div class="welcome__inner container">
                 <div class="welcome__content">
+                    <span class="welcome__content-subtext">Welcome to</span>
                     <h2>aesthetic med travel</h2>
                     <p>Lorem ipsum dolor sit amet consectetur. Magna tortor suspendisse faucibus mauris enim vivamus.
                         Platea viverra in ac lorem. Eget tortor ornare massa enim morbi est. Accumsan dignissim eu
@@ -357,9 +964,9 @@
             </div>
         </section>
 
-        <section class="popular-procedures">
-            <div class="popular-procedures__inner container">
-                <h2 class="popular-procedures__title">opular procedures</h2>
+        <section class="popular-procedures sections-padding">
+            <div class="popular-procedures__inner container heading--spaced decorative-heading">
+                <h2>Popular procedures</h2>
                 <div class="popular-procedures__list">
                     <article class="popular-procedures__item">
                         <a href="/" class="popular-procedures__link" title="Facelift"
@@ -491,9 +1098,9 @@
             </div>
         </section>
 
-        <section class="transformed">
-            <div class="transformed__inner container">
-                <h2>e have already transformed <br> over 500k people</h2>
+        <section class="transformed sections-padding">
+            <div class="transformed__inner container heading--spaced decorative-heading">
+                <h2>We have already transformed <br> over 500k people</h2>
 
                 <div class="transformed__container">
                     <div class="transformed__tabs">
@@ -1293,9 +1900,9 @@
             </div>
         </div>
 
-        <section class="trust-us">
-            <div class="trust-us__inner container">
-                <h2>hy you can trust us?</h2>
+        <section class="trust-us sections-padding">
+            <div class="trust-us__inner container heading--spaced decorative-heading">
+                <h2>Why you can trust us?</h2>
                 <div class="trust-us__body">
                     <div class="trust-us__body--column">
                         <div class="trust-us__body--content">
@@ -1335,9 +1942,9 @@
             </div>
         </section>
 
-        <section class="popular-procedures popular-procedures--countries">
-            <div class="popular-procedures__inner container">
-                <h2 class="popular-procedures__title">opular countries</h2>
+        <section class="popular-procedures popular-procedures--countries sections-padding">
+            <div class="popular-procedures__inner container decorative-heading heading">
+                <h2>Popular countries</h2>
                 <div class="popular-procedures__list">
                     <article class="popular-procedures__item">
                         <a href="/" class="popular-procedures__link" title="Spain"
@@ -1566,9 +2173,9 @@
             </div>
         </div>
 
-        <section class="we-help">
-            <div class="we-help__inner container">
-                <h2 class="we-help__title">ow We Can Help</h2>
+        <section class="we-help sections-padding">
+            <div class="we-help__inner container heading decorative-heading">
+                <h2>How We Can Help</h2>
 
                 <div class="we-help__list">
                     <article class="we-help__item">
@@ -1651,9 +2258,9 @@
             </div>
         </section>
 
-        <section class="reviews">
-            <div class="reviews__inner container">
-                <h2>atient Reviews</h2>
+        <section class="reviews sections-padding">
+            <div class="reviews__inner container heading--spaced decorative-heading">
+                <h2>Patient Reviews</h2>
 
                 <div class="reviews__body">
 
@@ -1699,12 +2306,25 @@
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                             </div>
-                                            <span class="review-card__verified">
-                                                Verified review
-                                                <sup class="review-card__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="review-card__gallery">
@@ -1774,12 +2394,25 @@
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                             </div>
-                                            <span class="review-card__verified">
-                                                Verified review
-                                                <sup class="review-card__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="review-card__gallery">
@@ -1849,12 +2482,25 @@
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                             </div>
-                                            <span class="review-card__verified">
-                                                Verified review
-                                                <sup class="review-card__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="review-card__gallery">
@@ -1924,12 +2570,25 @@
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                             </div>
-                                            <span class="review-card__verified">
-                                                Verified review
-                                                <sup class="review-card__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="review-card__gallery">
@@ -1999,12 +2658,25 @@
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                             </div>
-                                            <span class="review-card__verified">
-                                                Verified review
-                                                <sup class="review-card__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="review-card__gallery">
@@ -2074,12 +2746,25 @@
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                             </div>
-                                            <span class="review-card__verified">
-                                                Verified review
-                                                <sup class="review-card__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="review-card__gallery">
@@ -2149,12 +2834,25 @@
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                                 <span class="review-card__star review-card__star--filled">★</span>
                                             </div>
-                                            <span class="review-card__verified">
-                                                Verified review
-                                                <sup class="review-card__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="review-card__gallery">
@@ -2202,9 +2900,9 @@
             </div>
         </section>
 
-        <section class="faq">
-            <div class="faq__inner container">
-                <h2>aq</h2>
+        <section class="faq sections-padding">
+            <div class="faq__inner container heading--spaced decorative-heading">
+                <h2>Faq</h2>
 
                 <div class="faq__body">
                     <div class="faq__tabs">
@@ -2237,6 +2935,31 @@
                                             recommended, and is used for the first weeks after
                                             your Rhinoplasty procedure. It is important to be sun-smart (using UVA and
                                             UVB sun protection) prior to surgery.</p>
+                                        <ul>
+                                            <li>Do not take aspirin, anti-inflammatory drugs, and herbal supplements
+                                                for
+                                                2 weeks before surgery as these may increase bleeding.</li>
+                                            <li>If you smoke, you should stop smoking at least two weeks before and
+                                                two
+                                                weeks after surgery to promote better healing.</li>
+                                            <li>Avoid drinking alcohol for at least 48 hours before surgery as it can
+                                                lead
+                                                to complications with anesthesia and can increase swelling.</li>
+                                        </ul>
+                                        <img src="images/welcome__image.jpg" alt="">
+                                        <p>Approximately two weeks prior to your nose job in New York, you will have a
+                                            comprehensive visit in the office. A complete list of what to do and what to
+                                            avoid is reviewed. Prescriptions for medications to be taken post-op are
+                                            given, and the pre and post-op instructions are reviewed. Any questions that
+                                            remain can be answered during this visit. Routine laboratory testing is
+                                            ordered. Obtaining a cool mist humidifier for your room before surgery is
+                                            recommended, and is used for the first weeks after
+                                            your Rhinoplasty procedure. It is important to be sun-smart (using UVA and
+                                            UVB sun protection) prior to surgery.</p>
+                                        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni maxime
+                                            aperiam quod, distinctio tempora architecto pariatur optio sed beatae minima
+                                            nam amet consectetur assumenda iusto ab ut, repudiandae voluptas recusandae.
+                                        </h5>
                                     </div>
                                 </div>
                             </div>
@@ -3959,30 +4682,48 @@
             </div>
         </section>
 
-        <section class="cta-form">
-            <div class="cta-form__inner container">
-                <h2>ooking for a specific service?</h2>
+        <section class="cta-form sections-padding">
+            <div class="cta-form__inner container heading decorative-heading">
+                <h2>Looking for a specific service?</h2>
                 <p>Leave a request for a free consultation and we will contact you shortly!</p>
-                <form class="cta-form__form" method="post" action="#">
-                    <div class="cta-form__form-group">
-                        <label for="cta-name">Your Name*</label>
-                        <input type="text" id="cta-name" name="name" class="cta-form__input no-valid"
-                            placeholder="Please write how we can address you" required>
-                        <span class="cta-form__error">Error</span>
+                <form class="cta-form__form" method="POST" id="cotactForm">
+                    <div class="form-group input-field cta-form__form-group">
+                        <label for="full_name">Your Name*</label>
+                        <input id="acform-full_name" value="" name="full_name" type="" required="1"
+                            group_class="input-field" placeholder="Name &amp; surname"
+                            class="acform-full_name cta-form__input">
+                        <div class="acform-error error"></div>
                     </div>
-                    <div class="cta-form__form-group">
-                        <label for="cta-phone">Phone Number*</label>
-                        <input type="tel" id="cta-phone" name="phone" class="cta-form__input valid"
-                            placeholder="Enter your phone number" required>
-                        <span class="cta-form__error">Error</span>
+                    <div class="form-group input-field cta-form__form-group">
+                        <label for="phone">Phone Number*</label>
+                        <input id="acform-phone" value="" name="phone" type="" required="1" group_class="input-field"
+                            placeholder="Enter your phone number" class="acform-phone cta-form__input ">
+                        <div class="acform-error error"></div>
                     </div>
-                    <div class="cta-form__form-group">
-                        <label for="service">Service</label>
-                        <select name="service" id="service">
-                            <option value="">Specify which service you are interested in</option>
+                    <div class="form-group input-field cta-form__form-group">
+                        <label for="phone">Service</label>
+                        <select id="acform-reason" name="reason" group_class="input-field" class="acform-reason">
+                            <option value="Choose the option">Specify which service you are interested in</option>
+                            <option value="Buy Green Coffee from Origin">Buy Green Coffee from Origin</option>
+                            <option value="Buy Green Coffee from Europe">Buy Green Coffee from Europe</option>
+                            <option value="Buy Green Coffee from Azerbaijan">Buy Green Coffee from Azerbaijan</option>
+                            <option value="Buy Coffee from Turkey">Buy Coffee from Turkey</option>
+                            <option value="Coffee Roasting Consultations">Coffee Roasting Consultations</option>
+                            <option value="Wholesale Roasted Coffee">Wholesale Roasted Coffee</option>
+                            <option value="Buy Equipment">Buy Equipment</option>
                         </select>
+                        <div class="acform-error error"></div>
                     </div>
-                    <button type="submit" class="cta-form__submit gold-button">leave a request</button>
+                    <div class="form-group actions form-group-btn">
+                        <button type="submit" value="Send" group_class="actions form-group-btn"
+                            class="acform-Submit cta-form__form-btn gold-button">leave a request</button>
+                        <div class="acform-error error"></div>
+                    </div>
+                    <div style="display:none" class="acform-ok"></div>
+                    <input type="hidden" name="action" value="contact">
+
+
+
                 </form>
             </div>
             <div class="cta-form__image">
@@ -4003,9 +4744,9 @@
             </div>
         </section>
 
-        <section class="leading-doctors">
-            <div class="leading-doctors__inner container">
-                <h2>eading Doctors</h2>
+        <section class="leading-doctors sections-padding">
+            <div class="leading-doctors__inner container heading--spaced decorative-heading">
+                <h2>Leading Doctors</h2>
 
                 <div class="leading-doctors__body">
                     <div class="leading-doctors__slider slider">
@@ -4049,12 +4790,25 @@
                                             <p class="leading-doctors__card-rating-value">
                                                 4.8/5
                                             </p>
-                                            <span class="leading-doctors__verified">
-                                                Verified review
-                                                <sup class="leading-doctors__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="leading-doctors__card-contents">
                                             <p>Lorem ipsum dolor sit amet consectetur. Magna tortor suspendisse faucibus
@@ -4104,12 +4858,25 @@
                                             <p class="leading-doctors__card-rating-value">
                                                 4.8/5
                                             </p>
-                                            <span class="leading-doctors__verified">
-                                                Verified review
-                                                <sup class="leading-doctors__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="leading-doctors__card-contents">
                                             <p>Lorem ipsum dolor sit amet consectetur. Magna tortor suspendisse faucibus
@@ -4159,12 +4926,25 @@
                                             <p class="leading-doctors__card-rating-value">
                                                 4.8/5
                                             </p>
-                                            <span class="leading-doctors__verified">
-                                                Verified review
-                                                <sup class="leading-doctors__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="leading-doctors__card-contents">
                                             <p>Lorem ipsum dolor sit amet consectetur. Magna tortor suspendisse faucibus
@@ -4214,12 +4994,25 @@
                                             <p class="leading-doctors__card-rating-value">
                                                 4.8/5
                                             </p>
-                                            <span class="leading-doctors__verified">
-                                                Verified review
-                                                <sup class="leading-doctors__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="leading-doctors__card-contents">
                                             <p>Lorem ipsum dolor sit amet consectetur. Magna tortor suspendisse faucibus
@@ -4269,12 +5062,25 @@
                                             <p class="leading-doctors__card-rating-value">
                                                 4.8/5
                                             </p>
-                                            <span class="leading-doctors__verified">
-                                                Verified review
-                                                <sup class="leading-doctors__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="leading-doctors__card-contents">
                                             <p>Lorem ipsum dolor sit amet consectetur. Magna tortor suspendisse faucibus
@@ -4324,12 +5130,25 @@
                                             <p class="leading-doctors__card-rating-value">
                                                 4.8/5
                                             </p>
-                                            <span class="leading-doctors__verified">
-                                                Verified review
-                                                <sup class="leading-doctors__verified-icon">
-                                                    <img src="images/info.svg" width="10" height="10" alt="">
-                                                </sup>
-                                            </span>
+                                            <div class="review-card__verified">
+                                                <div class="info-box">
+                                                    <span>Verified review</span>
+                                                    <div class="info-wrapper">
+                                                        <div class="info-icon"></div>
+                                                        <div class="info-popup">
+                                                            <button class="close-popup">×</button>
+                                                            <div class="info-popup-title">Verified review</div>
+                                                            <div class="info-popup-text">
+                                                                Content Manager & Medical Author with over 5 years of
+                                                                experience in
+                                                                healthcare writing. Hafsa specializes in translating
+                                                                complex
+                                                                medical
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="leading-doctors__card-contents">
                                             <p>Lorem ipsum dolor sit amet consectetur. Magna tortor suspendisse faucibus
@@ -4361,9 +5180,9 @@
             </div>
         </section>
 
-        <section class="blog">
-            <div class="blog__inner container">
-                <h2>ur blog</h2>
+        <section class="blog sections-padding">
+            <div class="blog__inner container heading decorative-heading">
+                <h2>Our blog</h2>
 
                 <div class="blog__slider slider">
                     <div class="blog__wrapper slider-wrapper">
@@ -4660,7 +5479,7 @@
                             </a>
                         </li>
                         <li class="footer__contact-socail-item">
-                            <a href="/" class="footer__contact-socail-link" aria-label="linkedin" title="linkedin" >
+                            <a href="/" class="footer__contact-socail-link" aria-label="linkedin" title="linkedin">
                                 <img src="icons/social4.svg" width="25" height="25" alt="">
                             </a>
                         </li>
@@ -4679,6 +5498,8 @@
     </footer>
 </body>
 
+
+<script src="scripts/script.js"></script>
 
 </html>
 

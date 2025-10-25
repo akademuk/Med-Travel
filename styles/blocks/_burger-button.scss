@@ -1,23 +1,29 @@
 @use '../helpers' as *;
 
 .burger-button {
-    @include square(rem(34));
-
-    display: inline-flex;
+    display: none;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
     flex-direction: column;
     justify-content: space-between;
-    padding: rem(8.5) rem(4.25);
+    padding: 8.5px 4.25px;
     color: var(--color-light);
     background-color: transparent;
     border: none;
 
+    @media (max-width: 768px) {
+        display: flex;
+    }
+
     @include hover {
-        color: var(--color-btn);
+        color: var(--color-surface-accent);
     }
 
     &.is-active {
-        color: var(--color-dark);
+        color: var(--color-text-primary);
         .burger-button__line {
+            background-color: var(--color-text-primary);
             &:first-child {
                 rotate: 45deg;
                 transform-origin: 0;
@@ -35,10 +41,10 @@
     }
 
     &__line {
-        background-color: currentColor;
+        background-color: var(--color-light);
         width: 100%;
-        height: rem(2);
-        border-radius: rem(1);
+        height: 2px;
+        border-radius: 1px;
         transition-duration: var(--transition-duration);
 
         &:last-child {

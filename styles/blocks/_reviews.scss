@@ -1,67 +1,26 @@
 @use '../helpers' as *;
 
 .reviews {
-    padding: rem(183) rem(0) rem(100) rem(0);
-
-    @include mobile {
-        padding: rem(50) rem(0);
-    }
 
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: rem(60);
 
-        @include mobile {
-            gap: rem(32);
-        }
-
-        h2 {
-            position: relative;
-            padding-left: rem(120);
-
-            @include mobile {
-                padding-left: rem(0);
-                display: inline-flex;
-                align-items: baseline;
-            }
-
-            &::before {
-                content: '';
-                background-image: url(../images/popular-procedures__svg.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: rem(180);
-                height: rem(127);
-
-                @include mobile {
-                    width: rem(100);
-                    height: rem(65);
-                    position: static;
-                    display: inline-flex;
-                    flex-shrink: 0;
-                    margin-right: -40px;
-                }
-            }
-        }
     }
 
     &__body {
         display: flex;
         flex-direction: column;
-        row-gap: rem(10);
+        row-gap: 10px;
 
         &-slide {
             width: calc(33.333% - 16px);
 
-            @include tablet {
+            @media (max-width: 992px) {
                 width: calc(50% - 12px);
             }
 
-            @include mobile {
+            @media (max-width: 768px) {
                 width: calc(100% - 0px);
             }
         }
@@ -69,16 +28,17 @@
 
     &__navigation {
         display: flex;
-        column-gap: rem(24);
+        column-gap: var(--gap);
         justify-content: flex-end;
-        margin-top: rem(25);
+        margin-top: 25px;
     }
 
     &__all-link {
         width: max-content;
         margin: 0 auto;
         border: var(--border);
-        color: var(--color-dark);
+        color: var(--color-text-primary);
+        padding: 10px 43px;
     }
 
     &__slider {
@@ -89,16 +49,15 @@
 .review {
     &-card {
         border: var(--border);
-        padding: rem(20);
-        min-height: rem(520);
+        padding: 20px;
 
         &__header {
-            margin-bottom: rem(10);
+            margin-bottom: 5px;
             &-top {
                 display: flex;
                 align-items: center;
-                gap: rem(10);
-                margin-bottom: rem(15);
+                gap: 10px;
+                margin-bottom: 15px;
             }
         }
 
@@ -113,18 +72,20 @@
         &__info {
             display: flex;
             flex-direction: column;
-            gap: rem(5);
+            gap: 5px;
         }
 
         &__name {
-            font-family: var(--font-family-base);
-            font-size: 15px;
-            font-weight: 700;
+            font-family: var(--font-base);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-bold);
+            margin: 0;
         }
 
         &__procedure {
-            font-size: 15px;
-            font-weight: 300;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-light);
+            margin: 0;
         }
 
         &__flag {
@@ -138,32 +99,33 @@
         &__meta {
             display: flex; 
             align-items: center;
-            gap: rem(5);
+            gap: 5px;
         }
 
         &__country {
-            font-size: 15px;
+            font-size: var(--font-size-sm);
         }
 
         &__date {
-            font-size: 12px;
+            font-size: var(--font-size-s);
             margin-left: 7px;
         }
 
         &__rating {
             display: flex;
             align-items: center;
-            gap: rem(10);
+            gap: 10px;
         }
 
         &__star {
-            font-size: 20px;
+            font-size: 15px;
             color: #F7C345
         }
 
         &__verified {
             display: flex;
             align-items: flex-start;
+            font-size: var(--font-size-s);
 
             &-icon {
                 width: 10px;
@@ -175,7 +137,7 @@
 
         &__gallery {
             height: 176px;
-            margin-bottom: rem(15);
+            margin-bottom: 15px;
 
             img {
                 height: 100%;
@@ -185,7 +147,7 @@
         &__content {
             display: flex;
             flex-direction: column;
-            gap: rem(10);
+            gap: 10px;
 
             &-text {
                 display: flex;
@@ -195,18 +157,22 @@
                     white-space: nowrap;
                     margin-top: auto;
                     display: block;
-                    color: var(--color-gold);
+                    font-weight: var(--font-weight-light);
+                    color: var(--color-accent);
                 }
 
             h4 {
                 margin: 0;
-                font-size: 15px;
-                font-weight: 300;
-                font-size: var(--font-family-base);
+                font-size: var(--font-size-sm);
+                font-weight: var(--font-weight-light);
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
 
             p {
-                font-size: 15px;
+                font-size: var(--font-size-sm);
                 display: -webkit-box;
                 -webkit-line-clamp: 7;
                 -webkit-box-orient: vertical;

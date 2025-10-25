@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
 
-    @include mobile {
+    @media (max-width: 768px) {
         min-height: 800px;
     }
 
@@ -57,6 +57,10 @@
         margin: 0 0 123px 0;
         position: relative;
 
+        @media (max-width: 768px) {
+            font-size: 48px;
+        }
+
         &::before {
             content: "";
             background-image: url(../images/title-before.svg);
@@ -68,7 +72,7 @@
             width: 486px;
             height: 124px;
 
-            @include mobile {
+            @media (max-width: 768px) {
                 width: 100%;
                 height: 100px;
             }
@@ -85,7 +89,7 @@
             width: 180px;
             height: 134px;
 
-            @include mobile {
+            @media (max-width: 768px) {
                 left: -15px;
                 top: -76px;
                 width: 140px;
@@ -103,7 +107,7 @@
         &--action {
             display: flex;
             flex-wrap: wrap;
-            gap: rem(24);
+            gap: var(--gap);
             margin-block-end: 50px;
 
             a, button {
@@ -116,8 +120,10 @@
         &-text {
             color: var(--color-light);
             text-align: center;
-            @include fluid-text(18, 14);
-            font-weight: 100;
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-thin);
+            margin: 0;
+            line-height: normal;
         }
     }
 }

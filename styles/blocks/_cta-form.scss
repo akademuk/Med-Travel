@@ -1,9 +1,8 @@
 @use '../helpers' as *;
 
-
 .cta-form {
-    padding: rem(162) rem(0) rem(90) rem(0);
     position: relative;
+    padding-bottom: 90px;
 
     &__image {
         @include abs-center;
@@ -25,45 +24,16 @@
         height: 100%;
 
         h2 {
-            position: relative;
-            padding-left: rem(135);
-            color: var(--color-dark);
-            margin-bottom: 45px;
-
-            @include mobile {
-                padding-left: rem(0);
-                display: inline-flex;
-                align-items: baseline;
-            }
-
-            &::before {
-                content: '';
-                background-image: url(../images/cta-form__svg.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                position: absolute;
-                left: 0;
-                bottom: -5px;
-                width: rem(180);
-                height: rem(123);
-
-                @include mobile {
-                    width: rem(100);
-                    height: rem(65);
-                    position: static;
-                    display: inline-flex;
-                    flex-shrink: 0;
-                    margin-right: -30px;
-                    margin-bottom: -10px;
-                    background-position: bottom;
-                }
-            }
+            margin-bottom: 0;
+            color: var(--color-text-primary);
         }
+
 
         p {
             font-family: var(--font-family-accent);
-            font-weight: 300;
-            margin: 0 0 rem(30) 0;
+            font-weight: var(--font-weight-light);
+            font-size: var(--font-size-lg);
+            margin: 0 0 30px 0;
         }
     }
 
@@ -73,86 +43,101 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: rem(15);
+        gap: 15px;
 
         &-group {
             display: flex;
             flex-direction: column;
-            gap: rem(5);
 
             label {
                 color: #FF3D00;
-                font-size: 14px;
+                font-size: var(--font-size-md);
                 font-family: var(--font-family-accent);
-                font-weight: 300;
+                font-weight: var(--font-weight-light);
+                margin-bottom: 5px;
             }
 
-            input, select {
+            input,
+            select {
                 outline: none;
-                padding: 13px 15px;
-                font-size: 13px;
+                padding: 9px 15px;
+                font-size: var(--font-size-sm);
                 font-family: var(--font-family-accent);
-                font-weight: 300;
+                font-weight: var(--font-weight-light);
                 border: var(--border);
                 transition-duration: var(--transition-duration);
-                
+
             }
 
             input {
-                 border: 1px solid #FF3D00;
+                border: 1px solid #FF3D00;
             }
 
-            span {
+            .acform-error {
                 color: #FF3D00;
                 font-family: var(--font-family-accent);
-                font-size: 13px;
+                font-size: var(--font-size-sm);
                 font-style: normal;
-                font-weight: 300;
+                font-weight: var(--font-weight-light);
                 line-height: normal;
                 display: block;
             }
 
-            &:not(:has(.no-valid)) span{
+            &:not(:has(.acform-error)) span {
                 display: none;
             }
 
-            &:not(:has(.no-valid)) label{
-                color: var(--color-dark);
+            &:not(:has(.acform-error)) label {
+                color: var(--color-text-primary);
             }
 
-            &:not(:has(.no-valid)) input{
+            &:not(:has(.acform-error)) input {
                 border: var(--border);
             }
 
             @include hover {
-                input, select, label {
-                    border-color: var(--color-gold);
-                    color: var(--color-gold);
+
+                input,
+                select,
+                label {
+                    border-color: var(--color-accent);
+                    color: var(--color-accent);
 
                     &::placeholder {
-                        color: var(--color-gold);
+                        color: var(--color-accent);
                     }
                 }
             }
 
-            &:focus, &:focus-visible {
-                  input, select, label {
-                    border-color: var(--color-gold);
-                    color: var(--color-gold);
-                    
+            &:focus,
+            &:focus-visible {
+
+                input,
+                select,
+                label {
+                    border-color: var(--color-accent);
+                    color: var(--color-accent);
+
 
                     &::placeholder {
-                        color: var(--color-gold);
+                        color: var(--color-accent);
                     }
                 }
             }
         }
 
-        button, > input {
+
+        button,
+        >input {
             @include hover {
                 background: var(--color-light);
-                color: var(--color-dark);
+                color: var(--color-text-primary);
             }
         }
     }
+
+            &__form-btn {
+            width: 100%;
+            margin-top: 16px;
+        }
 }

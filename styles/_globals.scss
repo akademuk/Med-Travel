@@ -1,63 +1,185 @@
 @use 'helpers' as *;
 
+
 html {
+    font-size: 15px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+
     &.is-lock {
         overflow: hidden
     }
 }
 
 body {
-    @include fluid-text(18, 14);
-    display: flex;
-    flex-direction: column;
-    font-family: var(--font-family-base);
-    font-weight: 100;
+    font-family: var(--font-base);
+    /* Geologica, sans-serif */
+    font-size: 1em;
+    /* 1em = 15px */
+    font-weight: var(--font-weight-thin);
+    /* Thin по умолчанию */
+    // line-height: var(--line-height-tight);
     line-height: normal;
-    color: var(--color-dark);
-    background-color: var(--background);
+    /* 100% */
+    color: var(--color-text-primary);
+    /* #000000 */
+    background-color: var(--color-surface);
+
+}
+
+
+p,
+li:not(li>p),
+table {
+    font-size: 1em;
+    margin-bottom: 0.666em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: 1.667em;
+}
+
+h1 {
+    // font-size: 2.13em;
+    font-size: 115px;
+    color: var(--color-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: var(--font-weight-regular);
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+    color: var(--color-accent);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: var(--font-weight-regular);
+    line-height: 1.2;
+}
+
+.decorative-heading h2::first-letter {
+    font-family: var(--font-family-number);
+    font-size: var(--font-size-decorative);
+    margin-right: -5px;
+    line-height: 1;
+}
+
+
+
+.decorative-heading h2 {
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+h5 {
+    font-size: 0.867em;
+}
+
+
+b,
+strong {
+    font-weight: var(--font-weight-bold);
+}
+
+
+ul {
+    padding: 0 20px;
+}
+
+ul,
+ul li {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+
+
+
+/*Общие классы*/
+
+/*Присваиваем секциям с голубым фоном*/
+
+.bg-surface {
+    background-color: var(--color-surface);
+    /* #F7FAFD */
+}
+
+/*Присваиваем блокам с кофейным фоном*/
+.bg-surface-accent {
+    background-color: var(--color-surface-accent);
+}
+
+/*Присваиваем секциям, чтобы подтянулись паддинги*/
+.sections-padding {
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
+
+    @media (max-width: 1024px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+.sections-margin {
+    margin-top: var(--section-padding-top);
+    margin-bottom: var(--section-padding-bottom);
+
+    @media (max-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+/*Присваиваем секциям, чтобы подтянулись нужные расстояния между заголовками*/
+
+.heading h2 {
+    font-size: var(--font-size-section-title);
+    /* 38px */
+    margin: 0 0 30px;
+    /* 30px */
+
+    @media (max-width: 768px) {
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+}
+
+.heading-bg h2 {
+    padding: 8px 0 8px 12px;
+    background: var(--heading-bg-color);
+    color: var(--color-text-primary);
+    font-family: var(--font-base);
+    font-size: var(--font-size-section-title);
+    font-weight: var(--font-weight-light);
+    line-height: normal;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.heading--spaced h2 {
+    font-size: var(--font-size-section-title);
+    /* 38px */
+    margin: 0 0 30px;
+    /* 60px */
+
+    @media (max-width: 768px) {
+        font-size: 30px;
+    }
 }
 
 main {
     flex-grow: 1;
-}
-
-h1,
-.h1 {
-    font-family: var(--font-family-title);
-    color: var(--color-light);
-    font-weight: 400;
-    font-size: 115px;
-
-    @include mobile {
-        @include fluid-text(68, 54);
-    }
-}
-
-h2,
-.h2 {
-    font-family: var(--font-family-title);
-    color: var(--color-gold);
-    font-weight: 400;
-    text-transform: uppercase;
-    @include fluid-text(38, 28);
-    margin: 0;
-}
-
-h3,
-.h3 {
-    color: var(--color-dark);
-}
-
-h3,
-.h3-big {
-    @include fluid-text(27, 22);
-    font-weight: 200;
-}
-
-h3,
-.h3-smoll {
-    @include fluid-text(22, 18);
-    font-weight: 100;
 }
 
 
@@ -75,7 +197,7 @@ a {
     color: inherit;
 
     @include hover {
-        color: var(--color-gold);
+        color: var(--color-accent);
     }
 
     &[class] {
@@ -83,26 +205,6 @@ a {
     }
 }
 
-// :focus-visible {
-//     outline: rem(2) dashed var(--color-light);
-//     outline-offset: rem(4);
-//     transition-duration: 0s !important;
-// }
-
-
-// a,
-// button {
-//     &[aria-label] {
-//         position: relative;
-
-//         &::before {
-//             @include abs-center;
-//             @include square(rem(44));
-
-//             content: "";
-//         }
-//     }
-// }
 
 img {
     width: 100%;
@@ -117,8 +219,8 @@ img {
 
 .swiper-button-prev,
 .swiper-button-next {
-    width: rem(40);
-    height: rem(40);
+    width: 40px;
+    height: 40px;
     border: var(--border);
     @include flex-center;
     transition-duration: var(--transition-duration);
@@ -131,17 +233,17 @@ img {
     }
 
     img {
-        width: rem(10);
-        height: rem(10);
+        width: 10px;
+        height: 10px;
     }
 
     @include hover {
-        background: var(--color-btn);
+        background: var(--color-surface-accent);
     }
 
     &:active,
     &:focus {
-        background: var(--color-btn);
+        background: var(--color-surface-accent);
     }
 
     &:disabled {

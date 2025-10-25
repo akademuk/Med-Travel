@@ -3,10 +3,10 @@
 .icon {
     display: inline-flex;
     align-items: center;
-    column-gap: rem(10);
+    column-gap: 10px;
 
     &::after {
-        --size: #{rem(24)};
+        --size: 24px;
 
         @include square(var(--size));
 
@@ -25,7 +25,7 @@
 
     @include laptop {
         &::after {
-            --size: #{rem(20)};
+            --size: 20px;
         }
     }
 }

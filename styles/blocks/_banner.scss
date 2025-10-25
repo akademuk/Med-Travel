@@ -1,0 +1,99 @@
+@use '../helpers' as *;
+
+.banner {
+    position: relative;
+    padding: 30px 30px 30px 276px;
+    background: linear-gradient(90deg, #ECD6B4 0%, #FFF2CF 100%);
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.10);
+
+    @media (max-width: 992px) {
+        padding: 30px;
+    }
+
+    @media (max-width: 576px) {
+        padding: 16px 12px;
+    }
+
+    &__image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 400px;
+        height: 100%;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            object-position: right;
+        }
+
+        @media (max-width: 992px) {
+            opacity: 0.2;
+            width: 100%;
+        }
+
+    }
+
+    &:not(:has(.banner__image)) {
+        padding: 30px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        position: relative;
+        z-index: 1;
+
+        h3 {
+            margin: 0;
+            font-size: var(--font-size-xxl)
+        }
+
+        p {
+            font-size: var(--font-size-lg);
+            font-family: var(--font-family-accent);
+            font-weight: var(--font-weight-light);
+            margin: 0;
+        }
+
+        &--features {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+                    flex-wrap: wrap;
+        }
+    }
+
+    &__link {
+        width: max-content;
+
+        @include hover {
+            background-color: var(--color-text-primary);
+            color: var(--color-light);
+            border: var(--border);
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 calc(50% - 15px);
+        padding: 0;
+    }
+
+    &__item {
+        display: flex;
+        align-items: baseline;
+        gap: 7px;
+        padding: 7px 0;
+        border-bottom: 1px solid var(--color-accent);
+        font-size: var(--font-size-sm);
+        margin: 0;
+
+        strong {
+            font-size: var(--font-size-xl);
+            font-family: var(--font-family-number);
+        }
+    }
+}
