@@ -1,0 +1,149 @@
+@use '../helpers' as *;
+
+.packages {
+
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap);
+    }
+
+    &__card {
+        flex: 0 0 calc(50% - 12px);
+        border-bottom: var(--border);
+        display: flex;
+        align-items: flex-end;
+        cursor: pointer;
+        overflow: hidden;
+
+        @include hover {
+            .packages__card-content-box {
+                max-height: 500px;
+                height: 100%;
+                visibility: visible;
+            }
+
+            .packages__card-content {
+                background: var(--color-light);
+                gap: 10px;
+            }
+        }
+
+        &-image {
+            width: 282px;
+            height: 400px;
+            flex-shrink: 0;
+        }
+
+        &-content {
+            padding: 20px;
+            transition-duration: var(--transition-duration);
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            justify-content: flex-end;
+            
+
+            &-title {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                span {
+                    color: var(--color-accent);
+                }
+
+                h3 {
+                    font-size: var(--font-size-xxl);
+                    font-weight: var(--font-weight-thin);
+                    text-transform: uppercase;
+                    margin: 0;
+                }
+            }
+
+            &-box {
+                max-height: 0;
+                overflow: hidden;
+                visibility: hidden;
+                display: flex;
+                flex-direction: column;
+                transition-duration: var(--transition-duration);
+
+                &-value {
+                    font-size: var(--font-size-lg);
+                    margin-bottom: 10px;
+                }
+            }
+
+            &-location {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                margin-bottom: 10px;
+
+                img {
+                    width: 19px;
+                    height: 19px;
+                    flex-shrink: 0;
+                    aspect-ratio: 1/1;
+                }
+            }
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin: 0 0 20px 0;
+                padding: 0;
+            }
+
+            &-item {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                list-style: none;
+                margin: 0;
+
+                img {
+                    width: 19px;
+                    height: 19px;
+                    flex-shrink: 0;
+                    aspect-ratio: 1/1;
+                }
+            }
+
+            &-description {
+                p {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 4;
+                    overflow: hidden;
+                    font-size: var(--font-size-s);
+                }
+            }
+
+            &-link {
+                margin-top: auto;
+                padding: 10px 33px;
+                min-height: auto;
+                background-color: var(--color-accent);
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                color: var(--color-light);
+
+                @include hover {
+                    background-color: var(--color-surface-accent);
+                }
+
+                img {
+                    width: 13px;
+                    height: 19px;
+                    flex-shrink: 0;
+                    aspect-ratio: 13/19;
+                }
+            }
+        }
+    }
+    
+}

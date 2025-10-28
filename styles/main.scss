@@ -35,3 +35,10 @@
 @use 'blocks/catalog';
 @use 'blocks/banner';
 @use 'blocks/countries';
+
+@use 'blocks/clinic-detail';
+@use 'blocks/about-clinic';
+@use 'blocks/procedures';
+@use 'blocks/price-section';
+@use 'blocks/packages';
+@use 'blocks/doctors-card';

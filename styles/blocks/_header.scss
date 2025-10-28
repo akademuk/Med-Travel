@@ -155,6 +155,33 @@
             align-items: center;
             justify-content: space-between;
         }
+
+        &--clinic {
+            background-color: var(--color-surface);
+
+            .header__logo {
+                width: 282px;
+                height: 17px;
+                aspect-ratio: unset;
+            }
+
+            .header__menu-position-link {
+                color: var(--color-text-primary);
+            }
+
+            .header__search-button {
+                color: var(--color-text-primary);
+            }
+
+            .header__search-img img {
+                filter: brightness(0) saturate(100%)
+            }
+
+            .border-button {
+                color: var(--color-text-primary);
+                border-color: var(--color-text-primary);
+            }
+        }
     }
 
     &__overlay {

@@ -37,9 +37,9 @@
         gap: 10px;
         transition-duration: var(--transition-duration);
 
-                         @media (max-width: 576px) {
-                    font-size: 15px;
-                }
+        @media (max-width: 576px) {
+            font-size: 15px;
+        }
 
         &::after {
             content: "";
@@ -202,7 +202,11 @@
             margin-bottom: 0.666em;
         }
 
-        h2, h3, h4, h5, h6 {
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             margin-top: 0;
             margin-bottom: 1em;
         }
@@ -210,7 +214,7 @@
 
     &__tab-content-button-info {
 
-        @media (max-width: 768px)  {
+        @media (max-width: 768px) {
             display: flex;
             flex-direction: column;
             gap: 16px;

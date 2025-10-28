@@ -1,0 +1,78 @@
+@use '../helpers' as *;
+
+.price-section {
+
+
+    .price-tabs {
+        display: flex;
+        gap: var(--gap);
+
+        &__nav {
+            width: 282px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        &__content {
+            flex-grow: 1;
+        }
+
+        &__button {
+            padding: 10px 0;
+            border: none;
+            background: transparent;
+            text-align: left;
+            border-bottom: var(--border);
+            font-size: var(--font-size-xl);
+
+            &--active {
+                font-weight: var(--font-weight-light);
+                border-color: var(--color-accent);
+                color: var(--color-accent);
+            }
+
+            @include hover {
+                color: var(--color-accent);
+            }
+        }
+    }
+
+    .price-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .price-table__header {
+        padding: 12px 10px;
+        text-align: left;
+        font-weight: 500;
+        border: var(--border);
+    }
+
+    .price-table__body .price-table__row {
+        border-bottom: var(--border);
+    }
+
+
+
+    .price-table__cell {
+        padding: 12px 10px;
+        border-left: var(--border);
+        border-right: var(--border);
+    }
+    .price-table__cell:last-child {
+        text-align: left;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+
+        .price-table__header,
+        .price-table__cell {
+            padding: 10px 12px;
+            font-size: 13px;
+        }
+    }
+}

@@ -516,6 +516,190 @@ function initTabs() {
     });
 }
 
+// Gallery initialization with Swiper and Fancybox
+function initGallery() {
+    const thumbsElement = document.getElementById('galleryThumbs');
+    const mainElement = document.getElementById('galleryMain');
+
+    if (!thumbsElement || !mainElement) {
+        console.error('Gallery elements not found');
+        return;
+    }
+
+    var thumbsSwiper = new Swiper('#galleryThumbs', {
+        spaceBetween: 24,
+        slidesPerView: 'auto',
+        freeMode: true,
+        watchSlidesProgress: true,
+        allowTouchMove: true,
+        grabCursor: true,
+        slideToClickedSlide: true,
+        centeredSlides: false,
+        resistance: true,
+        resistanceRatio: 0.85,
+    });
+
+    var mainSwiper = new Swiper('#galleryMain', {
+        spaceBetween: 0,
+        slidesPerView: 1,
+        loop: false,
+        effect: 'slide',
+        allowTouchMove: true,
+        grabCursor: true,
+        keyboard: {
+            enabled: true,
+        },
+        thumbs: {
+            swiper: thumbsSwiper,
+        },
+        on: {
+            slideChange: function () {
+                if (thumbsSwiper) {
+                    thumbsSwiper.update();
+                }
+            }
+        }
+    });
+
+    thumbsSwiper.slides.forEach(function (slide, index) {
+        slide.addEventListener('click', function () {
+            mainSwiper.slideTo(index);
+        });
+    });
+
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        Toolbar: {
+            display: {
+                left: [],
+                middle: ['infobar'],
+                right: ['slideshow', 'fullscreen', 'close'],
+            },
+        },
+        Images: {
+            zoom: true,
+        },
+        Video: {
+            tpl: '<video class="fancybox__html5video" playsinline controls controlsList="nodownload" poster="{{poster}}">' +
+                '<source src="{{src}}" type="{{format}}" />' +
+                'Sorry, your browser doesn\'t support embedded videos.</video>',
+            format: "mp4",
+            autoplay: true,
+        },
+        Youtube: {
+            controls: 1,
+            showinfo: 0,
+            rel: 0,
+        },
+        Vimeo: {
+            color: "00adef",
+        },
+        Thumbs: {
+            autoStart: true,
+        },
+        animated: true,
+        showClass: "f-fadeIn",
+        hideClass: "f-fadeOut",
+    });
+}
+
+// Video player control initialization
+function initVideoPlayer() {
+    const playButton = document.querySelector('.video-player__play-button');
+    const video = document.querySelector('.video-player__video');
+    const videoPlayer = document.querySelector('.video-player');
+
+    if (!playButton || !video || !videoPlayer) return;
+
+    playButton.addEventListener('click', function () {
+        if (video.paused) {
+            video.play();
+            playButton.style.display = 'none';
+            videoPlayer.classList.add('playing');
+            video.setAttribute('controls', 'true');
+        }
+    });
+
+    video.addEventListener('pause', function () {
+        playButton.style.display = 'flex';
+        videoPlayer.classList.remove('playing');
+    });
+
+    video.addEventListener('ended', function () {
+        playButton.style.display = 'flex';
+        videoPlayer.classList.remove('playing');
+    });
+}
+
+// Procedures cards with "Load More" functionality
+function initProceduresCards() {
+    const VISIBLE_ITEMS = 5;
+
+    document.querySelectorAll('.procedures-card').forEach(card => {
+        const allItems = card.querySelectorAll('.procedures-card__item');
+        const toggleBtn = card.querySelector('.procedures-card__toggle');
+
+        if (allItems.length > VISIBLE_ITEMS) {
+            allItems.forEach((item, index) => {
+                if (index >= VISIBLE_ITEMS) {
+                    item.style.display = 'none';
+                }
+            });
+        } else {
+            if (toggleBtn) {
+                toggleBtn.style.display = 'none';
+            }
+        }
+    });
+
+    document.querySelectorAll('.procedures-card__toggle').forEach(button => {
+        button.addEventListener('click', function () {
+            const card = this.closest('.procedures-card');
+            const allItems = card.querySelectorAll('.procedures-card__item');
+
+            allItems.forEach(item => {
+                item.style.display = '';
+            });
+
+            this.style.display = 'none';
+        });
+    });
+}
+
+// Price tabs switching functionality
+function initPriceTabs() {
+    const tabButtons = document.querySelectorAll('.price-tabs__button');
+    const tabPanels = document.querySelectorAll('.price-tabs__panel');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const targetTab = this.getAttribute('data-tab');
+            const targetPanel = document.getElementById(`tab-${targetTab}`);
+
+            // Remove active state from all buttons
+            tabButtons.forEach(btn => {
+                btn.classList.remove('price-tabs__button--active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+
+            // Hide all panels
+            tabPanels.forEach(panel => {
+                panel.classList.remove('price-tabs__panel--active');
+                panel.setAttribute('hidden', '');
+            });
+
+            // Activate clicked button
+            this.classList.add('price-tabs__button--active');
+            this.setAttribute('aria-selected', 'true');
+
+            // Show target panel
+            if (targetPanel) {
+                targetPanel.classList.add('price-tabs__panel--active');
+                targetPanel.removeAttribute('hidden');
+            }
+        });
+    });
+}
+
 // main.js - вызов всех функций
 document.addEventListener('DOMContentLoaded', () => {
     initHeader();
@@ -530,4 +714,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initInfo();
     initCatalogNav();
     initTabs();
+    initGallery();
+    initVideoPlayer();
+    initProceduresCards();
+    initPriceTabs();
 });
