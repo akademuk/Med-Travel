@@ -1,0 +1,33 @@
+@use '../helpers' as *;
+
+.doctors-quironsalud {
+
+
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap);
+        margin-bottom: 35px;
+    }
+
+    &__card {
+        flex: 0 0 calc(33.33% - (48px / 3));
+        flex-direction: column;
+        gap: var(--gap);
+        border: none;
+
+        &-box {
+            display: flex;
+            gap: 10px;
+        }
+
+
+        .doctors__card-content {
+            padding: 0 0 0 10px;
+        }
+    }
+
+    &-lead {
+        margin: 0 auto;
+    }
+}

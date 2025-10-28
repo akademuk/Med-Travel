@@ -4606,6 +4606,33 @@ img {
   font-weight: var(--font-weight-light);
   text-decoration: underline;
 }
+.doctors__card-experience {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-extralight);
+  margin-bottom: 15px;
+}
+.doctors__card-details {
+  padding: 10px 15px;
+  width: 100%;
+  min-height: auto;
+  font-size: var(--font-size-sm);
+}
+.doctors__card-consultation {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+.doctors__card-consultation span {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-extralight);
+}
+.doctors__card-consultation a {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-light);
+  color: var(--color-accent);
+  text-decoration: underline;
+}
 .doctors__card-rating {
   display: flex;
   align-items: center;
@@ -4655,15 +4682,38 @@ img {
 }
 @media (any-hover: hover) {
   .doctors__card-link:hover {
-    background: var(--color-light);
-    color: var(--color-text-primary);
+    background: var(--color-text-primary);
+    color: var(--color-light);
   }
 }
 @media (any-hover: none) {
   .doctors__card-link:active {
-    background: var(--color-light);
-    color: var(--color-text-primary);
+    background: var(--color-text-primary);
+    color: var(--color-light);
   }
+}
+
+.doctors-quironsalud__body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  margin-bottom: 35px;
+}
+.doctors-quironsalud__card {
+  flex: 0 0 calc(33.33% - 16px);
+  flex-direction: column;
+  gap: var(--gap);
+  border: none;
+}
+.doctors-quironsalud__card-box {
+  display: flex;
+  gap: 10px;
+}
+.doctors-quironsalud__card .doctors__card-content {
+  padding: 0 0 0 10px;
+}
+.doctors-quironsalud-lead {
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map */

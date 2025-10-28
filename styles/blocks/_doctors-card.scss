@@ -63,6 +63,38 @@
         }
     }
 
+    &-experience {
+        font-size: var(--font-size-s);
+        font-weight: var(--font-weight-extralight);
+        margin-bottom: 15px;
+    }
+
+    &-details {
+        padding: 10px 15px;
+        width: 100%;
+        min-height: auto;
+        font-size: var(--font-size-sm);
+    }
+
+    &-consultation {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 15px;
+
+        span {
+            font-size: var(--font-size-s);
+            font-weight: var(--font-weight-extralight);
+        }
+
+        a {
+             font-size: var(--font-size-s);
+             font-weight: var(--font-weight-light);
+             color: var(--color-accent);
+                text-decoration: underline;
+        }
+    }
+
     &-rating {
         display: flex;
         align-items: center;
@@ -116,8 +148,8 @@
         align-items: center;
 
         @include hover {
-            background: var(--color-light);
-            color: var(--color-text-primary);
+            background: var(--color-text-primary);
+            color: var(--color-light);
         }
     }
 }

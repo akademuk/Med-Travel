@@ -700,6 +700,63 @@ function initPriceTabs() {
     });
 }
 
+// Doctors cards "Load More" functionality
+function initDoctorsLoadMore() {
+    const cards = document.querySelectorAll('.doctors-quironsalud__card');
+    const loadMoreBtn = document.querySelector('.doctors-quironsalud-lead');
+    
+    if (!cards.length || !loadMoreBtn) return;
+    
+    let visibleCount = getInitialVisibleCount();
+    
+    // Hide cards beyond initial visible count
+    function updateCardsVisibility() {
+        cards.forEach((card, index) => {
+            if (index < visibleCount) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Hide button if all cards are visible
+        if (visibleCount >= cards.length) {
+            loadMoreBtn.style.display = 'none';
+        } else {
+            loadMoreBtn.style.display = '';
+        }
+    }
+    
+    // Get initial visible count based on screen size
+    function getInitialVisibleCount() {
+        return window.innerWidth <= 768 ? 4 : 9;
+    }
+    
+    // Load more cards on button click
+    loadMoreBtn.addEventListener('click', function() {
+        visibleCount = cards.length;
+        updateCardsVisibility();
+    });
+    
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            const newInitialCount = getInitialVisibleCount();
+            // Only reset if user hasn't clicked "load more" yet
+            if (visibleCount === 4 || visibleCount === 9) {
+                visibleCount = newInitialCount;
+                updateCardsVisibility();
+            }
+        }, 250);
+    });
+    
+    // Initial setup
+    updateCardsVisibility();
+}
+
+
 // main.js - вызов всех функций
 document.addEventListener('DOMContentLoaded', () => {
     initHeader();
@@ -718,4 +775,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initVideoPlayer();
     initProceduresCards();
     initPriceTabs();
+    initDoctorsLoadMore();
 });
