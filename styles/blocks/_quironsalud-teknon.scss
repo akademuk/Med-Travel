@@ -1,0 +1,10 @@
+@use '../helpers' as *;
+
+.quironsalud-teknon {
+
+
+    &__inner {
+        display: flex;
+        gap: 126px;
+    }
+}
