@@ -305,29 +305,35 @@ function initFooterMobileMenu() {
     document.addEventListener('DOMContentLoaded', function () {
         const navItems = document.querySelectorAll('.footer__nav-item');
 
+        if (navItems.length === 0) {
+            return;
+        }
+
         navItems.forEach(item => {
             const mainLink = item.querySelector('.footer__nav-link');
             const submenu = item.querySelector('.footer__submenu');
 
-            if (mainLink && submenu) {
-                mainLink.addEventListener('click', function (e) {
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
+            if (mainLink) {
+                if (submenu) {
+                    mainLink.addEventListener('click', function (e) {
+                        if (window.innerWidth <= 1280) {
+                            e.preventDefault();
 
-                        navItems.forEach(otherItem => {
-                            if (otherItem !== item) {
-                                otherItem.classList.remove('is-active');
-                            }
-                        });
+                            navItems.forEach(otherItem => {
+                                if (otherItem !== item) {
+                                    otherItem.classList.remove('is-active');
+                                }
+                            });
 
-                        item.classList.toggle('is-active');
-                    }
-                });
+                            item.classList.toggle('is-active');
+                        }
+                    });
+                }
             }
         });
 
         document.addEventListener('click', function (e) {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 1280) {
                 if (!e.target.closest('.footer__nav-item')) {
                     navItems.forEach(item => {
                         item.classList.remove('is-active');
@@ -337,6 +343,11 @@ function initFooterMobileMenu() {
         });
     });
 }
+
+initFooterMobileMenu();
+
+
+
 
 function initHeaderDropdownMenu() {
     const OPEN_CLASS = 'is-open';
