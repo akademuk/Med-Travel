@@ -46,6 +46,10 @@
             @include hover {
                 color: var(--color-accent);
             }
+
+            @media(max-width: 576px) {
+               font-size: var(--font-size-sm);
+            }
         }
     }
 

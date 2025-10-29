@@ -253,6 +253,10 @@ img {
 
 .main-page {
     padding-top: 148px;
+
+    @media(max-width: 1280px) {
+        padding-top: 120px;
+    }
 }
 
 .breadcrumb {
@@ -266,6 +270,10 @@ img {
         padding: 0;
         width: 100%;
         overflow: auto;
+
+        @media (max-width: 1280px) {
+            width: calc(100% + 16px);
+        }
     }
 
     &__item {

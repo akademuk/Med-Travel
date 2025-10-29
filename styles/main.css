@@ -606,6 +606,11 @@ img {
 .main-page {
   padding-top: 148px;
 }
+@media (max-width: 1280px) {
+  .main-page {
+    padding-top: 120px;
+  }
+}
 
 .breadcrumb {
   padding: 20px 0;
@@ -618,6 +623,11 @@ img {
   padding: 0;
   width: 100%;
   overflow: auto;
+}
+@media (max-width: 1280px) {
+  .breadcrumb__list {
+    width: calc(100% + 16px);
+  }
 }
 .breadcrumb__item {
   list-style: none;
@@ -819,6 +829,9 @@ img {
   border-radius: 1px;
   transition-duration: var(--transition-duration);
 }
+.burger-button__line--black {
+  background-color: var(--color-text-primary);
+}
 .burger-button__line:last-child {
   width: 55%;
   align-self: flex-end;
@@ -979,9 +992,9 @@ img {
   height: 17px;
   aspect-ratio: unset;
 }
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .header__body--clinic .header__logo {
-    width: 200px;
+    width: 150px;
     height: auto;
   }
 }
@@ -2667,12 +2680,12 @@ img {
 .reviews-box__grid .review-card {
   flex: 0 0 calc(33.33% - 16px);
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .reviews-box__grid .review-card {
-    flex: 0 0 calc(50% - 15px);
+    flex: 0 0 calc(50% - 12px);
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .reviews-box__grid .review-card {
     flex: 1 1 100%;
   }
@@ -3920,7 +3933,7 @@ img {
 }
 .catalog__content-section-image--smoll img {
   display: flex;
-  flex: 0 0 calc(50% - 12px);
+  flex: 1 1 calc(50% - 12px);
   height: 285px;
 }
 
@@ -4078,6 +4091,7 @@ img {
   display: flex;
   gap: var(--gap);
   align-items: flex-start;
+  overflow: hidden;
 }
 @media (max-width: 576px) {
   .clinic-detail-info__header {
@@ -4174,6 +4188,11 @@ img {
   gap: 10px;
   margin-bottom: 2em;
 }
+@media (max-width: 576px) {
+  .clinic-detail-info__languages {
+    margin-bottom: 0;
+  }
+}
 .clinic-detail-info__highlights {
   display: flex;
   flex-direction: column;
@@ -4198,7 +4217,7 @@ img {
   align-items: center;
   gap: var(--gap);
 }
-@media (max-width: 992px) {
+@media (max-width: 1280px) {
   .clinic-detail-info__actions {
     flex-wrap: wrap;
   }
@@ -4261,6 +4280,7 @@ img {
 @media (max-width: 768px) {
   .gallery__thumbnail {
     height: 100px;
+    flex: 0 0 calc((100% - 24px) / 3);
   }
 }
 .gallery__thumbnail img {
@@ -4301,9 +4321,13 @@ img {
   padding-left: 1.6em;
   margin: 0;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 8px 20px;
+}
+@media (max-width: 1280px) {
+  .highlights {
+    padding: 0;
+  }
 }
 .highlights__item {
   list-style: none;
@@ -4323,15 +4347,11 @@ img {
 .accreditations__item {
   list-style: none;
   flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 150px;
   display: flex;
   align-items: center;
   gap: 5px;
   margin: 0;
-}
-@media (max-width: 768px) {
-  .accreditations__item {
-    flex: 1 1 50%;
-  }
 }
 .accreditations__item img {
   width: 40px;
@@ -4460,12 +4480,11 @@ img {
   flex-direction: column;
   gap: var(--small-gap);
   height: auto;
-  min-height: 507px;
 }
 @media (max-width: 992px) {
   .procedures-card {
-    flex: 0 0 calc(50% - 24px);
-    min-height: none;
+    flex: 0 0 calc(50% - 12px);
+    min-height: auto;
   }
 }
 @media (max-width: 576px) {
@@ -4486,7 +4505,7 @@ img {
 .procedures-card__content {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: calc(100% - 280px);
 }
 .procedures-card__title {
   margin-bottom: 0.467em;
@@ -4519,9 +4538,13 @@ img {
 .procedures-card__button {
   margin-top: auto;
 }
+@media (max-width: 1280px) {
+  .procedures-card__button {
+    font-size: var(--font-size-sm);
+  }
+}
 @media (max-width: 992px) {
   .procedures-card__button {
-    margin-top: 2em;
     font-size: var(--font-size-sm);
   }
 }
@@ -4578,6 +4601,11 @@ img {
     color: var(--color-accent);
   }
 }
+@media (max-width: 576px) {
+  .price-section .price-tabs__button {
+    font-size: var(--font-size-sm);
+  }
+}
 .price-section .price-table {
   width: 100%;
   border-collapse: collapse;
@@ -4612,11 +4640,6 @@ img {
   flex-wrap: wrap;
   gap: var(--gap);
 }
-@media (max-width: 1280px) {
-  .packages__body {
-    flex-direction: column;
-  }
-}
 .packages__card {
   flex: 0 0 calc(50% - 12px);
   border-bottom: var(--border);
@@ -4625,16 +4648,19 @@ img {
   cursor: pointer;
   overflow: hidden;
 }
-@media (max-width: 1280px) {
+@media (max-width: 992px) {
   .packages__card {
-    flex: 1 1 100%;
-    align-items: stretch;
+    flex: 0 0 calc(50% - 12px);
   }
 }
 @media (max-width: 576px) {
   .packages__card {
+    flex: 1 1 100%;
+  }
+}
+@media (max-width: 992px) {
+  .packages__card {
     flex-direction: column;
-    width: 100%;
   }
 }
 @media (min-width: 1280px) and (any-hover: hover) {
@@ -4664,15 +4690,21 @@ img {
   height: 400px;
   flex-shrink: 0;
 }
-@media (max-width: 576px) {
+@media (max-width: 1280px) {
+  .packages__card-image {
+    width: 225px;
+    height: 100%;
+  }
+}
+@media (max-width: 992px) {
   .packages__card-image {
     width: 100%;
     height: 250px;
   }
-  .packages__card-image img {
-    width: 100%;
-    height: 100%;
-  }
+}
+.packages__card-image img {
+  width: 100%;
+  height: 100%;
 }
 .packages__card-content {
   padding: 1.333em;
@@ -4682,9 +4714,9 @@ img {
   flex-direction: column;
   justify-content: flex-end;
 }
-@media (max-width: 1280px) {
+@media (max-width: 992px) {
   .packages__card-content {
-    height: auto;
+    height: calc(100% - 250px);
     justify-content: flex-start;
   }
 }
@@ -4717,7 +4749,7 @@ img {
 @media (max-width: 1280px) {
   .packages__card-content-box {
     max-height: none;
-    height: auto;
+    height: 100%;
     visibility: visible;
   }
 }
@@ -4762,12 +4794,14 @@ img {
 }
 .packages__card-content-link {
   margin-top: auto;
-  padding: 0.667em 2em;
+  padding: 0.667em 0;
   min-height: auto;
   background-color: var(--color-accent);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
+  width: 100%;
   color: var(--color-light);
 }
 @media (any-hover: hover) {
@@ -4778,12 +4812,6 @@ img {
 @media (any-hover: none) {
   .packages__card-content-link:active {
     background-color: var(--color-surface-accent);
-  }
-}
-@media (max-width: 1280px) {
-  .packages__card-content-link {
-    width: max-content;
-    margin-top: auto;
   }
 }
 .packages__card-content-link img {
@@ -4950,10 +4978,10 @@ img {
 }
 @media (max-width: 992px) {
   .doctors-quironsalud__card {
-    flex: 0 0 calc(50% - 24px);
+    flex: 0 0 calc(50% - 12px);
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .doctors-quironsalud__card {
     flex: 1 1 100%;
   }

@@ -47,6 +47,10 @@
         border-radius: 1px;
         transition-duration: var(--transition-duration);
 
+        &--black {
+            background-color: var(--color-text-primary);
+        }
+
         &:last-child {
             width: 55%;
             align-self: flex-end;

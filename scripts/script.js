@@ -538,7 +538,7 @@ function initGallery() {
     }
 
     var thumbsSwiper = new Swiper('#galleryThumbs', {
-        spaceBetween: 24,
+        spaceBetween: 12,
         slidesPerView: 'auto',
         freeMode: true,
         watchSlidesProgress: true,
@@ -548,6 +548,12 @@ function initGallery() {
         centeredSlides: false,
         resistance: true,
         resistanceRatio: 0.85,
+
+        breakpoints: {
+            1280: {
+                spaceBetween: 24,
+            },
+        }
     });
 
     var mainSwiper = new Swiper('#galleryMain', {

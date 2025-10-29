@@ -15,11 +15,10 @@
        flex-direction: column;
        gap: var(--small-gap);
        height: auto;
-       min-height: 507px;
 
         @media (max-width: 992px) {
-            flex: 0 0 calc(50% - (48px / 2));
-            min-height: none;
+            flex: 0 0 calc(50% - (24px / 2));
+            min-height: auto;
         }
 
         @media (max-width: 576px) {
@@ -41,7 +40,11 @@
        &__content {
             display: flex;
             flex-direction: column;
-            height: 100%;
+            height: calc(100% - 280px);
+
+            // @media (max-width: 1280px) {
+            //     height: calc(100% - 280px);
+            // }
        }
 
        &__title {
@@ -78,8 +81,11 @@
        &__button {
         margin-top: auto;
 
+         @media (max-width: 1280px)  {
+            font-size: var(--font-size-sm);
+         }
+
         @media (max-width: 992px) {
-            margin-top: 2em;
             font-size: var(--font-size-sm);
         }
        }
