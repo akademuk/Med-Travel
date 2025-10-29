@@ -13,7 +13,8 @@
         flex-wrap: wrap;
         
         @media (max-width: 992px) {
-            height: auto
+            height: auto;
+            gap: var(--gap);
         }
 
         @media (max-width: 768px) {
@@ -27,7 +28,7 @@
 
             @media (max-width: 768px) {
                 flex: 1 1 100%;
-                min-width: 200px;
+                min-width: 250px;
                 flex-wrap: wrap;
             }
 
@@ -84,7 +85,7 @@
             flex-direction: column;
 
             @media (max-width: 992px) {
-                max-width: 200px;
+                max-width: 250px;
                 height: 300px;
             }
 

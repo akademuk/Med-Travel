@@ -521,8 +521,8 @@ function initGallery() {
     const thumbsElement = document.getElementById('galleryThumbs');
     const mainElement = document.getElementById('galleryMain');
 
+    // Если элементов галереи нет на странице, просто выходим из функции
     if (!thumbsElement || !mainElement) {
-        console.error('Gallery elements not found');
         return;
     }
 

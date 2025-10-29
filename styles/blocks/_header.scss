@@ -335,7 +335,7 @@
 
     &__request-link {
 
-        @media (max-width: 992px) {
+        @media (max-width: 1200px) {
             display: none;
         }
     }
@@ -466,5 +466,29 @@
 .header__promo-contact-link--email {
     @media (max-width: 576px) {
         display: none;
+    }
+}
+
+.header__menu-position-item {
+    .header__menu-position-link {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+
+        &::after {
+        content: none;
+        }
+    }
+
+    &:has(:not(.header__menu)) .header__menu-position-link::after {
+        content: '';
+            background-image: url(../icons/select.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 10px;
+            height: 10px;
+            flex-shrink: 0;
+            margin-left: 3px;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7475%) hue-rotate(296deg) brightness(97%) contrast(99%);
     }
 }

@@ -1125,7 +1125,7 @@ img {
   opacity: 0;
   visibility: hidden;
 }
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .header__request-link {
     display: none;
   }
@@ -1246,6 +1246,26 @@ img {
   .header__promo-contact-link--email {
     display: none;
   }
+}
+
+.header__menu-position-item .header__menu-position-link {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.header__menu-position-item .header__menu-position-link::after {
+  content: none;
+}
+.header__menu-position-item:has(:not(.header__menu)) .header__menu-position-link::after {
+  content: "";
+  background-image: url(../icons/select.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  margin-left: 3px;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7475%) hue-rotate(296deg) brightness(97%) contrast(99%);
 }
 
 .footer {
@@ -1687,7 +1707,7 @@ img {
 }
 @media (max-width: 768px) {
   .hero {
-    min-height: 800px;
+    min-height: 900px;
   }
 }
 .hero::before {
@@ -1853,12 +1873,17 @@ img {
 .welcome__inner h2 {
   text-transform: uppercase;
   font-size: 2.5em;
-  margin: 0 0 2.667em 0;
+  margin: 0 0 1.06em 0;
+}
+@media (max-width: 1200px) {
+  .welcome__inner h2 {
+    margin-bottom: 1em;
+  }
 }
 .welcome__content {
   max-width: 588px;
   width: 100%;
-  padding: 8.2em 0 8.8em 0;
+  padding: 8.667em 0;
 }
 .welcome__content-subtext {
   font-family: var(--font-family-number);
@@ -1905,7 +1930,7 @@ img {
   height: 100%;
   min-width: 708px;
   inset: 0;
-  object-position: right;
+  object-position: right bottom;
 }
 @media (max-width: 992px) {
   .welcome__image img {
@@ -1968,9 +1993,10 @@ img {
   transition-duration: var(--transition-duration);
   opacity: 0;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .popular-procedures__link h3 {
     background: var(--color-surface);
+    padding: 0.5em;
   }
 }
 @media (any-hover: hover) {
@@ -2239,6 +2265,7 @@ img {
 @media (max-width: 992px) {
   .trust-us__body {
     height: auto;
+    gap: var(--gap);
   }
 }
 @media (max-width: 768px) {
@@ -2254,7 +2281,7 @@ img {
 @media (max-width: 768px) {
   .trust-us__body--column {
     flex: 1 1 100%;
-    min-width: 200px;
+    min-width: 250px;
     flex-wrap: wrap;
   }
 }
@@ -2309,7 +2336,7 @@ img {
 }
 @media (max-width: 992px) {
   .trust-us__body--image {
-    max-width: 200px;
+    max-width: 250px;
     height: 300px;
   }
 }
