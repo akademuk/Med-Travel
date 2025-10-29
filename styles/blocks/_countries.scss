@@ -16,6 +16,10 @@
             gap: 10px;
             flex: 1 1 calc(33.33% - 16px);
 
+            @media (max-width: 576px) {
+                flex: 1 1 calc(50% - 12px);
+            }
+
             img {
                 width: 32px;
                 height: 32px;

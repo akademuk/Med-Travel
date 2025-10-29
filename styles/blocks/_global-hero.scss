@@ -15,6 +15,10 @@
         z-index: 1;
     }
 
+    @media (max-width: 1280px) {
+        padding-bottom: 4em;
+    }
+
 
     &-background {
         @include abs-center;
@@ -37,6 +41,9 @@
             text-transform: uppercase;
             margin: 1em 0 1.333em 0;
 
+            @media (max-width: 1280px) {
+                margin: 0.5em 0;
+            }
 
 
             @media (max-width: 576px) {

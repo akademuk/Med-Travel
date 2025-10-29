@@ -17,9 +17,19 @@
        height: auto;
        min-height: 507px;
 
+        @media (max-width: 992px) {
+            flex: 0 0 calc(50% - (48px / 2));
+            min-height: none;
+        }
+
+        @media (max-width: 576px) {
+            flex: 1 1 100%;
+        }
+
        &-image {
             height: 296px;
             width: 100%;
+            overflow: hidden;
 
             img {
                 height: 100%;
@@ -59,10 +69,19 @@
         text-decoration: underline;
         margin-right: auto;
         margin-bottom: 1.333em;
+
+        @media (max-width: 992px) {
+            margin-bottom: 0;
+        }
        }
 
        &__button {
         margin-top: auto;
+
+        @media (max-width: 992px) {
+            margin-top: 2em;
+            font-size: var(--font-size-sm);
+        }
        }
     }
 }

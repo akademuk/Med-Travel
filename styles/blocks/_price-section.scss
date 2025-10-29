@@ -7,12 +7,22 @@
         display: flex;
         gap: var(--gap);
 
+        @media (max-width: 992px) {
+            flex-direction: column;
+        }
+
         &__nav {
             width: 282px;
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
             gap: 10px;
+
+            @media (max-width: 992px) {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
         }
 
         &__content {

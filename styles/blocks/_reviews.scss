@@ -123,6 +123,7 @@
         display: flex;
         align-items: center;
         gap: 5px;
+        flex-wrap: wrap;
     }
 
     &__country {
@@ -214,10 +215,19 @@
         flex-wrap: wrap;
         gap: var(--gap);
         margin-bottom: 2.333em;
+
         
 
         .review-card {
             flex: 0 0 calc(33.33% - (48px / 3));
+
+             @media (max-width: 768px) {
+                flex: 0 0 calc(50% - (30px / 2));
+            }
+
+             @media (max-width: 576px) {
+                flex: 1 1 100%;
+            }
         }
     }
 

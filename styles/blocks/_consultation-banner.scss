@@ -72,5 +72,6 @@
         background: linear-gradient(90deg, #ECD6B4 32.46%, #FFF2CF 100%), linear-gradient(90deg, #ECD6B4 0%, #FFF2CF 100%);
         text-transform: uppercase;
         font-size: var(--font-size-l);
+        white-space: nowrap;
     }
 }
