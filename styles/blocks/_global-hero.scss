@@ -3,7 +3,7 @@
 .global-hero {
     min-height: 756px;
     position: relative;
-    padding-top: 254px;
+    padding-top: 16.933em;
 
     &::before {
         position: absolute;
@@ -33,14 +33,14 @@
         width: 100%;
 
         h1 {
-            font-size: 80px;
+            font-size: 5.333em;
             text-transform: uppercase;
-            margin: 15px 0 20px 0;
+            margin: 1em 0 1.333em 0;
 
 
 
             @media (max-width: 576px) {
-                font-size: 58px;
+                font-size: 3.867em;
             }
 
         }
@@ -51,6 +51,6 @@
         width: 100%;
         font-size: var(--font-size-lg);
         color: var(--color-light);
-        margin-bottom: 30px;
+        margin-bottom: 2em;
     }
 }

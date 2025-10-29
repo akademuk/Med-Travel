@@ -1,11 +1,11 @@
 @use '../helpers' as *;
 
 .clinic-detail {
-    padding-bottom: 70px;
+    padding-bottom: 4.667em;
     &__inner {
         display: flex;
         align-items: flex-start;
-        gap: 24px;
+        gap: var(--gap);
     }
 
     &__gallery {
@@ -18,7 +18,7 @@
 
         &__header {
             display: flex;
-            gap: 24px;
+            gap: var(--gap);
             align-items: flex-start;
 
             &-excellent {
@@ -87,11 +87,11 @@
         }
 
         &__recommended {
-            margin: 5px 0 10px 0;
+            margin: 0.333em 0 0.667em 0;
             display: flex;
             align-items: center;
             gap: 5px;
-            font-size: 8px;
+            font-size: var(--font-size-x);
 
             &:before {
                 content: '';
@@ -108,7 +108,7 @@
             align-items: center;
             gap: 4px;
             font-size: var(--font-size-s);
-            margin-bottom: 30px;
+            margin-bottom: 2em;
 
             img {
                 width: 7px;
@@ -121,14 +121,14 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 2em;
         }
 
         &__highlights {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin-bottom: 35px;
+            gap: var(--small-gap);
+            margin-bottom: 2.333em;
         }
 
         &__label {
@@ -143,13 +143,13 @@
             display: flex;
             flex-direction: column;
             gap: 10px;  
-            margin-bottom: 40px;
+            margin-bottom: 2.667em;
         }
 
         &__actions {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: var(--gap);
         }
 
         &__social-list {
@@ -189,7 +189,7 @@
 
     &__thumbnails {
         display: flex;
-        gap: 24px;
+        gap: var(--gap);
         width: 100%;
         overflow: hidden;
     }
@@ -217,14 +217,14 @@
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px;
+    gap: var(--small-gap);
 
     &__item {
         list-style: none;
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: 8px;
+        font-size: var(--font-size-x);
         margin: 0;
 
         img {
@@ -238,7 +238,7 @@
 }
 
 .highlights {
-    padding-left: 24px;
+    padding-left: 1.6em;
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -249,7 +249,7 @@
         list-style: none;
         max-width: 155px;
         width: 100%;
-        font-size: 8px;
+        font-size: var(--font-size-x);
         margin: 0;
     }
 }
@@ -259,7 +259,7 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 24px;
+    gap: 10px var(--gap);
 
     &__item {
         list-style: none;
@@ -277,7 +277,7 @@
         }
 
         &-text {
-            font-size: 8px;
+            font-size: var(--font-size-x);
         }
     }
 }

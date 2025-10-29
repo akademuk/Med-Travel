@@ -30,7 +30,7 @@
         display: flex;
         column-gap: var(--gap);
         justify-content: flex-end;
-        margin-top: 25px;
+        margin-top: 1.667em;
     }
 
     &__all-link {
@@ -38,7 +38,7 @@
         margin: 0 auto;
         border: var(--border);
         color: var(--color-text-primary);
-        padding: 10px 43px;
+        padding: 0.667em 2.867em;
     }
 
     &__slider {
@@ -49,16 +49,16 @@
 .review-card {
 
     border: var(--border);
-    padding: 20px;
+    padding: 1.333em;
 
     &__header {
-        margin-bottom: 5px;
+        margin-bottom: 0.333em;
 
         &-top {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 1em;
         }
     }
 
@@ -87,7 +87,7 @@
             &::after {
                 content: '';
                 display: inline-block;
-                margin-left: 4px;
+                margin-left: 0.267em;
                 transform: translateY(-5px);
                 width: 15px;
                 height: 15px;
@@ -131,7 +131,7 @@
 
     &__date {
         font-size: var(--font-size-s);
-        margin-left: 7px;
+        margin-left: 0.467em;
     }
 
     &__rating {
@@ -141,7 +141,7 @@
     }
 
     &__star {
-        font-size: 15px;
+        font-size: var(--font-size-sm);
         color: #F7C345
     }
 
@@ -160,7 +160,7 @@
 
     &__gallery {
         height: 176px;
-        margin-bottom: 15px;
+        margin-bottom: 1em;
 
         img {
             height: 100%;
@@ -213,7 +213,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: var(--gap);
-        margin-bottom: 35px;
+        margin-bottom: 2.333em;
         
 
         .review-card {

@@ -1,11 +1,11 @@
 @use '../helpers' as *;
 
 .clinic-logo {
-    padding: 70px 0;
+    padding: 4.667em 0;
     background: var(--color-light);
 
     @media (max-width: 768px) {
-        padding: 32px 0px;
+        padding: 2.133em 0px;
     }
 
     &__list {

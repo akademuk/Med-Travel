@@ -36,7 +36,7 @@
         }
 
         &-content {
-            padding: 20px;
+            padding: 1.333em;
             transition-duration: var(--transition-duration);
             display: flex;
             height: 100%;
@@ -71,7 +71,7 @@
 
                 &-value {
                     font-size: var(--font-size-lg);
-                    margin-bottom: 10px;
+                    margin-bottom: 0.667em;
                 }
             }
 
@@ -79,7 +79,7 @@
                 display: flex;
                 align-items: center;
                 gap: 5px;
-                margin-bottom: 10px;
+                margin-bottom: 0.667em;
 
                 img {
                     width: 19px;
@@ -93,7 +93,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-                margin: 0 0 20px 0;
+                margin: 0 0 1.333em 0;
                 padding: 0;
             }
 
@@ -124,7 +124,7 @@
 
             &-link {
                 margin-top: auto;
-                padding: 10px 33px;
+                padding: 0.667em 2em;
                 min-height: auto;
                 background-color: var(--color-accent);
                 display: flex;

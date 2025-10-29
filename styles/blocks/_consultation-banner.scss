@@ -7,7 +7,7 @@
     flex-shrink: 0;
     background: linear-gradient(270deg, rgba(255, 242, 207, 0.30) 0%, rgba(236, 214, 180, 0.30) 100%);
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.10);
-    padding: 40px 17px;
+    padding: 2.667em 1.133em;
 
     &__title {
         text-align: center;
@@ -15,17 +15,17 @@
         font-size: var(--font-size-xl);
         font-weight: var(--font-weight-light);
         text-transform: uppercase;
-        margin-bottom: 15px;
+        margin-bottom: 1em;
     }
 
     &__text {
         text-align: center;
         font-size: var(--font-size-s);
-        margin-bottom: 25px;
+        margin-bottom: 1.667;
     }
 
     &__socials {
-        margin: 0 0 29px 0;
+        margin: 0 0 2em 0;
         padding: 0;
         display: flex;
         justify-content: center;
@@ -38,11 +38,11 @@
     }
 
     &__text-list {
-        margin: 0 0 30px 0;
+        margin: 0 0 2em 0;
         padding: 0;
 
         &-item {
-            padding: 5px 0;
+            padding: 0.333em 0;
             margin: 0;
             display: flex;
             align-items: center;
@@ -68,7 +68,7 @@
 
     &__link {
         width: 100%;
-        padding: 13px 15px;
+        padding: 0.867em 1em;
         background: linear-gradient(90deg, #ECD6B4 32.46%, #FFF2CF 100%), linear-gradient(90deg, #ECD6B4 0%, #FFF2CF 100%);
         text-transform: uppercase;
         font-size: var(--font-size-l);

@@ -2,14 +2,14 @@
 
 .footer {
     background-color: var(--color-text-primary);
-    padding: 54px 0 30px 0px;
+    padding: 1.067em 0 2em 0px;
 
     &__inner {
 
         &-body {
             display: flex;
             gap: var(--gap);
-            padding-bottom: 30px;
+            padding-bottom: 2em;
 
             @media (max-width: 992px) {
                 padding-right: 0px;
@@ -22,7 +22,7 @@
         }
 
         &-bottom {
-            padding-top: 15px;
+            padding-top: 1em;
             border-top: 1px solid var(--color-light);
             display: flex;
             justify-content: flex-start;
@@ -31,7 +31,7 @@
             @media (max-width: 768px) {
                 justify-content: space-between;
                 flex-wrap: wrap;
-                gap: 15px;
+                gap: var(--small-gap);
             }
 
             &-box {
@@ -79,7 +79,7 @@
         p {
             font-size: var(--font-size-sm);
             color: var(--color-light);
-            margin: 9px 0 20px 0;
+            margin: 0.6em 0 1.333em 0;
 
             @media (max-width: 768px) {
                 text-align: center;
@@ -105,7 +105,7 @@
             align-items: center;
             gap: 8px;
             font-size: var(--font-size-md);
-            line-height: 150%;
+            line-height: 1.5;
             color: var(--color-light);
             letter-spacing: 0.15px;
 
@@ -129,20 +129,20 @@
         &-link {
             color: var(--color-light);
             font-size: var(--font-size-lg);
-            margin-bottom: 14px;
+            margin-bottom: 0.933em;
         }
 
         &-socail {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: var(--small-gap);
+            margin-bottom: 1.333em;
             padding: 0;
         }
 
         &-btn {
             font-size: var(--font-size-sm);
-            padding: 0 15px;
+            padding: 0 1em;
             min-height: 40px;
             display: flex;
             align-items: center;
@@ -154,7 +154,7 @@
         display: flex;
         flex-direction: column;
         gap: 5px;
-        margin-bottom: 25px;
+        margin-bottom: 1.667em;
 
         a {
             font-size: var(--font-size-md);
@@ -170,7 +170,7 @@
         color: var(--color-light);
 
         @media(max-width: 1200px) {
-            margin-right: 50px;
+            margin-right: 3.333em;
         }
 
         @media (max-width: 992px) {
@@ -207,7 +207,7 @@
             margin-bottom: 0;
 
             &--big {
-                margin-bottom: 9px;
+                margin-bottom: 0.6em;
 
                 a {
                     font-size: var(--font-size-lg);
@@ -234,7 +234,7 @@
         top: 100%;
         left: 0;
         width: 154px;
-        padding: 15px;
+        padding: 1em;
         background: var(--color-light);
         display: flex;
         flex-direction: column;

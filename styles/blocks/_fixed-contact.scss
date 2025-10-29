@@ -6,7 +6,7 @@
     right: 70px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: var(--small-gap);
     z-index: 1000;
 
     @media (max-width: 768px) {

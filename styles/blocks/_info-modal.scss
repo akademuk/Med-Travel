@@ -12,7 +12,7 @@
     display: inline-block;
     position: relative;
     vertical-align: middle;
-    margin-left: 8px;
+    margin-left: 0.625em;
 }
 
 .info-icon {
@@ -35,9 +35,9 @@
     position: absolute;
     bottom: calc(100% + 10px);
     right: -250%;
-    background: white;
+    background:var(--color-light);
     border-radius: 8px;
-    padding: 15px;
+    padding: 1em;
     min-width: 250px;
     max-width: 350px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -75,7 +75,7 @@
 
 .info-popup-title {
     font-weight: var(--font-weight-bold);
-    margin-bottom: 8px;
+    margin-bottom: 0.5em;
 }
 
 .info-popup-text {
@@ -92,8 +92,7 @@
     border: none;
     background: none;
     cursor: pointer;
-    font-size: 18px;
+    font-size: var(--font-size-lg);
     color: var(--color-text-primary);
     padding: 0;
-    line-height: 1;
 }

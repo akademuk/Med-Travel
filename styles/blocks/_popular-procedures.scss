@@ -26,7 +26,7 @@
         flex-direction: column;
 
         h3 {
-            padding: 15px;
+            padding: 1em;
             font-size: var(--font-size-xxl);
             font-weight: var(--font-weight-thin);
             text-transform: uppercase;
@@ -63,7 +63,7 @@
 
             h3 {
                 color: var(--color-light);
-                margin-top: -63px;
+                margin-top: -4.2em;
                 z-index: 1;
 
                 &::after {
@@ -112,14 +112,6 @@
 }
 
 .popular-procedures.popular-procedures--countries {
-
-    .popular-procedures__inner {
-        gap: 45px;
-
-        h2 {
-                margin-bottom: -28px;
-        }
-    }
 
     .popular-procedures__list {
         display: grid;

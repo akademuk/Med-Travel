@@ -20,12 +20,12 @@
     }
 
     &-content {
-        padding: 20px 10px;
+        padding: 1.333em 0.667em;
 
         h3 {
             font-size: var(--font-size-sm);
             font-weight: var(--font-weight-bold);
-            margin: 0 0 10px 0;
+            margin: 0 0 0.667em 0;
             display: -webkit-box;
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
@@ -37,7 +37,7 @@
         display: flex;
         align-items: center;
         gap: 5px;
-        margin-bottom: 10px;
+        margin-bottom: 0.667em;
 
         span {
             font-size: var(--font-size-s);
@@ -47,7 +47,7 @@
     &-specializations {
         display: flex;
         flex-direction: column;
-        margin-bottom: 14px;
+        margin-bottom: 0.933em;
 
         span {
             font-size: var(--font-size-sm);
@@ -66,11 +66,11 @@
     &-experience {
         font-size: var(--font-size-s);
         font-weight: var(--font-weight-extralight);
-        margin-bottom: 15px;
+        margin-bottom: 1em;
     }
 
     &-details {
-        padding: 10px 15px;
+        padding: 0.667em 1em;
         width: 100%;
         min-height: auto;
         font-size: var(--font-size-sm);
@@ -80,7 +80,7 @@
         display: flex;
         align-items: center;
         gap: 5px;
-        margin-bottom: 15px;
+        margin-bottom: 1em;
 
         span {
             font-size: var(--font-size-s);
@@ -98,11 +98,11 @@
     &-rating {
         display: flex;
         align-items: center;
-        margin-bottom: 15px;
+        margin-bottom: 1em;
         flex-wrap: wrap;
 
         &-value {
-            margin: 0 7px 0 3px;
+            margin: 0 0.467em 0 0.2em;
             font-size: var(--font-size-s);
         }
     }
@@ -115,14 +115,14 @@
 
         span {
             @include flex-center;
-            margin-top: -2px;
+            margin-top: -0.133em;
         }
     }
 
     &-contents {
         display: flex;
         flex-direction: column;
-        margin-bottom: 17px;
+        margin-bottom: 1.133em;
 
         p {
             font-size: var(--font-size-xs);
@@ -141,7 +141,7 @@
     }
 
     &-link {
-        padding: 10px 25px;
+        padding: 0.667em 1.667em;
         width: 100%;
         display: inline-flex;
         justify-content: center;

@@ -7,7 +7,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: var(--gap);
-        margin-bottom: 35px;
+        margin-bottom: 2.333em;
     }
 
     &__card {
@@ -23,7 +23,7 @@
 
 
         .doctors__card-content {
-            padding: 0 0 0 10px;
+            padding: 0 0 0 0.667em;
         }
     }
 

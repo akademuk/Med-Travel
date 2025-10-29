@@ -2,7 +2,7 @@
 
 .ticker {
     height: 55px;
-    padding: 18px 0;
+    padding: 1.2em 0;
     border-top: var(--border);
     border-bottom: var(--border);
     overflow: hidden;
@@ -22,7 +22,7 @@
         display: flex;
         gap: 27px;
         flex-shrink: 0;
-        padding-right: 27px;
+        padding-right: 1.8em;
     }
 
     &-item {

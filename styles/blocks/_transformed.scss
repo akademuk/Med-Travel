@@ -60,7 +60,7 @@
         display: flex;
         justify-content: center;
         gap: 10px;
-        margin-top: 20px;
+        margin-top: 1.333em;
     }
 
     &__slider-btn {
@@ -132,7 +132,7 @@
         }
 
         @media (max-width: 576px) {
-            font-size: 15px;
+            font-size: var(--font-size-sm);
         }
     }
 
@@ -149,7 +149,7 @@
 
 .transformed-link {
     width: max-content;
-    margin: 32px auto 0 auto;
+    margin: 2.133em auto 0 auto;
 
     @include hover {
         background: var(--color-text-primary);

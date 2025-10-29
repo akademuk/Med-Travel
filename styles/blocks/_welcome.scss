@@ -10,19 +10,19 @@
 
         h2 {
             text-transform: uppercase;
-            font-size: 38px;
-            margin: 0 0 40px 0;
+            font-size: 2.5em;
+            margin: 0 0 2.667em 0;
         }
     }
 
     &__content {
         max-width: 588px;
         width: 100%;
-        padding: 123px 0 132px 0;
+        padding: 8.2em 0 8.8em 0;
 
         &-subtext {
             font-family: var(--font-family-number);
-            font-size: 46px;
+            font-size: 3em;
             color: var(--color-accent);
             display: block;
         }
@@ -32,7 +32,7 @@
         }
 
         @media (max-width: 768px) {
-           padding: 32px 0 0 0;  
+           padding: 2.133em 0 0 0;  
            max-width: 100%;
         }
 
