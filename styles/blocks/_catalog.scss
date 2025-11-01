@@ -3,6 +3,10 @@
 .catalog {
     padding: 4.667em 0 0 0;
 
+    &--doctors {
+        padding-bottom: var(--section-padding-bottom);
+    }
+
     &__inner {
         display: flex;
         gap: var(--gap);
@@ -27,11 +31,15 @@
 
         @media (max-width: 768px) {
             width: 100%;
-            flex-direction: row;
+            flex-direction: column;
             flex-wrap: wrap;
             position: static;
             gap: var(--gap);
             align-items: flex-start;
+
+            .consultation-banner {
+                width: 100%;
+            }
         }
 
         &-nav {
@@ -41,7 +49,8 @@
             padding: 1.333em 1em;
 
             @media (max-width: 768px) {
-                flex: 1 1 calc(50% - 12px);
+                flex: 1 1 100%;
+                width: 100%;
             }
 
             &-list {
@@ -122,7 +131,8 @@
             align-items: center;
 
             @media (max-width: 768px) {
-                flex: 1 1 calc(50% - 12px);
+                flex: 1 1 100%;
+                width: 100%;
             }
 
             h3 {
@@ -210,7 +220,8 @@
                 flex-wrap: wrap;
 
                 select {
-                    width: 180px;
+                    min-width: 180px;
+                    flex: 1;
                     padding: 0.667em 1em;
                     padding-right: 2.333em;
                     border: var(--border);
@@ -317,6 +328,7 @@
 
         &-content {
             display: flex;
+            gap: var(--gap);
 
             @media (max-width: 992px) {
                 flex-direction: column;
@@ -339,17 +351,8 @@
         }
 
         &-text {
-            padding: 1.333em 1.6em;
-            width: 100%;
-            max-width: calc(100% - 282px);
-
-            @media (max-width: 992px) {
-                max-width: 100%;
-            }
-
-            @media (max-width: 576px) {
-                padding: 1.067em 0.8em;
-            }
+                width: 100%;
+                overflow: hidden;
         }
 
         &-header {
@@ -376,8 +379,35 @@
 
         }
 
+        &-specialty-list {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        &-specialty-item {
+            list-style: none;
+            margin: 0;
+            font-weight: var(--font-weight-extralight);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            span {
+                color: var(--color-accent);
+                font-weight: var(--font-weight-light);
+                text-decoration: underline;
+            }
+        }
+
+        &-title {
+            font-weight: var(--font-weight-thin);
+        }
+
         &-rating {
-            width: 60px;
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
@@ -435,6 +465,7 @@
             overflow: hidden;
             width: 100%;
             margin-bottom: 0.8em;
+            max-width: 100%;
 
             h3 {
                 font-size: var(--font-size-md);
@@ -608,6 +639,7 @@
 
 .catalog__tab-content {
     display: none;
+                padding: 1em;
     animation: fadeIn 0.4s ease;
 }
 
@@ -766,6 +798,94 @@
                 }
             }
 
+        }
+    }
+}
+
+.catalog__body-section {
+    &--doctors {
+        .catalog__body-image {
+            width: 180px;
+            height: 291px;
+        }
+
+        .catalog__body-content {
+            @media(max-width: 992px) {
+               flex-direction: row;
+            }
+
+             @media (max-width: 576px) {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        .catalog__body-text {
+            padding: 1.333em 1.333em 1.333em 0;
+
+            @media (max-width: 576px) {
+                 padding: 1.333em;
+            }
+        }
+
+        .catalog__body-header {
+            position: relative;
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+             @media (max-width: 576px) {
+                margin-bottom: 0;
+             }
+        }
+
+        .catalog__body-title {
+            display: inline;
+            min-width: 150px;
+
+            img {
+                width: 15px;
+                height: 25px;
+                display: inline;
+                padding-bottom: 10px;
+                aspect-ratio: 1/1;
+            }
+        }
+        
+        .catalog__body-rating {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            @media(max-width: 992px) {
+                position: static;
+            }
+        }
+
+        .review-card__meta {
+            margin-bottom: 15px;
+        }
+
+        .catalog__body-price {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4px;
+            font-weight: var(--font-weight-extralight);
+            margin-bottom: 1em;
+
+            span {
+                font-size: var(--font-size-sm);
+            }
+        }
+
+        .catalog__body-actions {
+            max-width: 282px;
+            width: 100%;
+
+            .gold-button {
+                width: 100%;
+            }
         }
     }
 }

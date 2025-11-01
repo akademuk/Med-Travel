@@ -19,7 +19,7 @@ body {
     font-weight: var(--font-weight-thin);
     /* Thin по умолчанию */
     // line-height: var(--line-height-tight);
-    line-height: normal;
+    line-height: 1;
     /* 100% */
     color: var(--color-text-primary);
     /* #000000 */
@@ -40,35 +40,37 @@ h2,
 h3,
 h4 {
     margin-bottom: 1.667em;
+    font-weight: var(--font-weight-regular);
 }
 
 h1 {
     // font-size: 2.13em;
     font-size: 7.67em;
-    color: var(--color-light);
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: var(--font-weight-regular);
+    font-family: var(--font-decorative);
 }
 
 h2 {
     font-size: var(--font-size-xl);
-    color: var(--color-accent);
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: var(--font-weight-regular);
-    line-height: 1.2;
+    line-height: 1;
 }
 
 .decorative-heading h2::first-letter {
     font-family: var(--font-family-number);
     font-size: var(--font-size-decorative);
     margin-right: -5px;
-    line-height: 1;
+    line-height: 0;
+
+    @media (max-width: 768px) {
+        line-height: 1;
+    }
 }
 
 
 
 .decorative-heading h2 {
+    color: var(--color-accent);
     text-transform: uppercase;
+    font-family: var(--font-decorative);
 }
 
 h3 {
@@ -124,11 +126,6 @@ ol {
 .sections-padding {
     padding-top: var(--section-padding-top);
     padding-bottom: var(--section-padding-bottom);
-
-    @media (max-width: 1280px) {
-        padding-top: var(--section-padding-top-mobile);
-        padding-bottom: var(--section-padding-bottom-mobile);
-    }
 }
 
 .sections-margin {
@@ -148,10 +145,6 @@ ol {
     /* 38px */
     margin: 0 0 1.2em;
     /* 30px */
-
-    @media (max-width: 768px) {
-        font-size: 2em;
-    }
 }
 
 .heading-bg h2 {
@@ -170,16 +163,27 @@ ol {
     /* 38px */
     margin: 0 0 1.6em;
     /* 60px */
-
-    @media (max-width: 768px) {
-        font-size: 2em;
-    }
 }
 
 main {
     flex-grow: 1;
 }
 
+.white-color {
+    color: var(--color-light);
+}
+
+.gold-color {
+    color: var(--color-accent);
+}
+
+.text-black {
+    color: var(--color-text-primary);
+}
+
+.text-white {
+    color: var(--color-light);
+}
 
 a,
 button,
@@ -262,52 +266,54 @@ img {
 .breadcrumb {
     padding: 20px 0;
 
-    &__list {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        overflow: auto;
+    &--global {
+        .breadcrumb__list {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow: auto;
 
-        @media (max-width: 1280px) {
-            width: calc(100% + 16px);
+            @media (max-width: 1280px) {
+                width: calc(100% + 16px);
+            }
         }
-    }
 
-    &__item {
-        list-style: none;
-        position: relative;
+        .breadcrumb__item {
+            list-style: none;
+            position: relative;
 
-        &:nth-last-of-type(1) {
-            .breadcrumb__link {
-                color: var(--color-accent);
-                font-weight: var(--font-weight-light);
+            &:nth-last-of-type(1) {
+                .breadcrumb__link {
+                    color: var(--color-accent);
+                    font-weight: var(--font-weight-light);
 
-                &::after {
-                    content: none;
+                    &::after {
+                        content: none;
+                    }
                 }
             }
         }
-    }
 
-    &__link {
-        font-size: var(--font-size-s);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        white-space: nowrap;
+        .breadcrumb__link {
+            font-size: var(--font-size-s);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
 
-        &:after {
-            content: "";
-            background-image: url(../icons/breadcrumb.svg);
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-            width: 11px;
-            height: 15px;
-            flex-shrink: 0;
+            &:after {
+                content: "";
+                background-image: url(../icons/breadcrumb.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: 11px;
+                height: 15px;
+                flex-shrink: 0;
+            }
         }
     }
 }

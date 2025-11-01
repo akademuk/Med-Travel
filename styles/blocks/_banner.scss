@@ -45,9 +45,11 @@
         position: relative;
         z-index: 1;
 
-        h3 {
+        h2 {
             margin: 0;
-            font-size: var(--font-size-xxl)
+            font-size: var(--font-size-xxl);
+            font-weight: var(--font-weight-thin);
+            text-transform: uppercase;
         }
 
         p {

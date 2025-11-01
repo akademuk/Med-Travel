@@ -12,7 +12,6 @@
     display: inline-block;
     position: relative;
     vertical-align: middle;
-    margin-left: 0.625em;
 }
 
 .info-icon {
@@ -27,23 +26,18 @@
     cursor: pointer;
 }
 
-.info-icon:hover {
-    transform: scale(1.1);
-}
-
 .info-popup {
     position: absolute;
-    bottom: calc(100% + 10px);
-    right: -250%;
+    top: calc(100% + 10px);
+    right: 0;
     background:var(--color-light);
     border-radius: 8px;
     padding: 1em;
-    min-width: 250px;
-    max-width: 350px;
+    min-width: 185px;
+    max-width: 250px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     opacity: 0;
-    z-index: 999;
     visibility: hidden;
     transition: all 0.3s ease;
     pointer-events: none;
@@ -52,19 +46,21 @@
 .info-popup::after {
     content: '';
     position: absolute;
-    top: 100%;
+    bottom: 98%;
     right: 20px;
     border: 8px solid transparent;
     border-top-color: var(--color-light);
+    transform: rotate(180deg);
 }
 
 .info-popup::before {
     content: '';
     position: absolute;
-    top: 100%;
+    bottom: 98%;
     right: 20px;
     border: 9px solid transparent;
     border-top-color: var(--color-light);
+    transform: rotate(180deg);
 }
 
 .info-wrapper.active .info-popup {

@@ -33,8 +33,6 @@
     }
 
     &__inner {
-        max-width: 894px;
-        width: 100%;
 
         h1 {
             font-size: 5.333em;
@@ -53,27 +51,103 @@
         }
     }
 
+    &__content {
+        max-width: 894px;
+        width: 100%;
+
+        &--action {
+            width: max-content;
+        }
+    }
+
     &__content-text {
         max-width: 486px;
         width: 100%;
         font-size: var(--font-size-lg);
-        color: var(--color-light);
         margin-bottom: 2em;
     }
 
     .breadcrumb {
         padding: 0;
+
+        &__list {
+                        display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+        }
+
+        &__item {
+            list-style: none;
+            margin: 0;
+
+            &:nth-last-of-type(1) {
+                .breadcrumb__link {
+                    font-weight: var(--font-weight-light);
+
+                    &::after {
+                        content: none;
+                    }
+                }
+            }
+        }
+
+        &__link {
+            color: var(--color-light);
+            font-size: var(--font-size-s);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+
+            &:after {
+                content: "";
+                background-image: url(../icons/breadcrumb.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: 11px;
+                height: 15px;
+                flex-shrink: 0;
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7457%) hue-rotate(15deg) brightness(114%) contrast(110%);
+            }
+
+            &--black {
+                color: var(--color-text-primary);
+
+                &:after {
+                    filter: none;
+                }
+            }
+
+            &--gold {
+                color: var(--color-accent);
+            }
+
+            &--white {
+                color: var(--color-light);
+            }
+        }
+    }
+}
+
+.global-hero.global-hero-transparent {
+
+    min-height: 645px;
+    padding-top: 13em;
+
+    &:before {
+        content: none;
     }
 
-    .breadcrumb__link {
-        color: var(--color-light);
-
-        &:after {
-            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(4deg) brightness(106%) contrast(101%);
+    .global-hero__inner  {
+        h1 {
+                margin: 28px 0 35px 0;
         }
     }
 
-    .breadcrumb__item:nth-last-of-type(1) .breadcrumb__link {
-        color: var(--color-light);
+    .gold-button {
+        padding: 0.455em 1.8em;
     }
 }

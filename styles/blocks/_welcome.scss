@@ -12,6 +12,8 @@
             text-transform: uppercase;
             font-size: 2.5em;
             margin: 0 0 1.060em 0;
+            color: var(--color-accent);
+             font-family: var(--font-decorative);
 
             @media (max-width: 1200px) {
                 margin-bottom: 1em;
@@ -22,22 +24,12 @@
     &__content {
         max-width: 588px;
         width: 100%;
-        padding: 8.667em 0;
 
         &-subtext {
             font-family: var(--font-family-number);
             font-size: 3em;
             color: var(--color-accent);
             display: block;
-        }
-
-        @media (max-width: 992px) {
-            max-width: 450px;
-        }
-
-        @media (max-width: 768px) {
-           padding: 2.133em 0 0 0;  
-           max-width: 100%;
         }
 
 
