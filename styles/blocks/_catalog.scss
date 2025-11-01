@@ -1,7 +1,6 @@
 @use '../helpers' as *;
 
 .catalog {
-    padding: 4.667em 0 0 0;
 
     &--doctors {
         padding-bottom: var(--section-padding-bottom);
@@ -83,7 +82,7 @@
                 flex-direction: column;
 
                 h3 {
-                    font-size: var(--font-size-md);
+                    font-size: var(--font-size-sm);
                     text-transform: uppercase;
                     margin: 0;
                 }
@@ -136,7 +135,7 @@
             }
 
             h3 {
-                font-size: var(--font-size-md);
+                font-size: var(--font-size-sm);
                 text-align: center;
                 font-weight: var(--font-weight-light);
                 margin: 0 0 2em 0;
@@ -326,6 +325,21 @@
             }
         }
 
+        &-star {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: var(--font-size-s);
+            margin-bottom: 1em;
+
+            img {
+                width: 15px;
+                height: 15px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+            }
+        }
+
         &-content {
             display: flex;
             gap: var(--gap);
@@ -358,13 +372,15 @@
         &-header {
             display: flex;
             gap: var(--gap);
-            margin-bottom: 0.667em;
+            margin-bottom: 1em;
 
             h2 {
                 color: var(--color-text-primary);
                 font-size: var(--font-size-xxl);
                 font-family: var(--font-base);
                 margin: 0;
+                display: inline-block;
+                text-transform: uppercase;
 
                 @media (max-width: 576px) {
                     font-size: var(--font-size-l);
@@ -381,11 +397,34 @@
 
         &-specialty-list {
             display: flex;
-            gap: 10px;
+            gap: 20px;
             flex-direction: column;
             flex-wrap: wrap;
             padding: 0;
+            margin-bottom: 1.3em;
+        }
+
+        &-performs {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-extralight);
             margin-bottom: 1em;
+            max-width: 588px;
+            width: 100%;
+
+            &__list {
+                margin: 0;
+                padding: 0;
+                display: inline;
+            }
+
+            &__item {
+                display: inline;
+                font-size: 18px;
+                font-weight: var(--font-weight-extralight);
+                color: var(--color-accent);
+                text-decoration: underline;
+                line-height: 1.2;
+            }
         }
 
         &-specialty-item {
@@ -396,10 +435,14 @@
             align-items: center;
             gap: 4px;
 
-            span {
+            a {
                 color: var(--color-accent);
                 font-weight: var(--font-weight-light);
                 text-decoration: underline;
+            }
+
+            span, a {
+                font-weight: var(--font-weight-light);
             }
         }
 
@@ -412,7 +455,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 3px;
+            gap: 5px;
 
 
             @media (max-width: 576px) {
@@ -420,7 +463,7 @@
             }
 
             &-value {
-                font-size: var(--font-size-md);
+                font-size: var(--font-size-sm);
             }
 
             img {
@@ -429,7 +472,7 @@
             }
 
             &-quality {
-                font-size: var(--font-size-s);
+                font-size: var(--font-size-sm);
                 display: flex;
                 align-items: flex-start;
             }
@@ -461,15 +504,16 @@
         &-gallery {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: var(--small-gap);
             overflow: hidden;
             width: 100%;
             margin-bottom: 0.8em;
             max-width: 100%;
 
             h3 {
-                font-size: var(--font-size-md);
+                font-size: var(--font-size-lg);
                 margin: 0;
+                font-weight: var(--font-weight-extralight);
             }
 
             &-list {
@@ -490,10 +534,10 @@
         }
 
         &-content-text {
-            margin-bottom: 1.333em;
+            margin-bottom: 1em;
 
             p {
-                font-size: var(--font-size-sm);
+                font-size: var(--font-size-s);
                 margin: 0;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
@@ -502,7 +546,7 @@
             }
 
             a {
-                font-size: var(--font-size-sm);
+                font-size: var(--font-size-s);
                 color: var(--color-accent);
                 text-decoration: underline;
             }
@@ -665,7 +709,6 @@
         flex-direction: column;
         gap: 37px;
         padding-bottom: 0;
-        overflow: hidden;
 
         > h2 {
             font-size: var(--font-size-section-title);
@@ -681,6 +724,7 @@
             display: flex;
             flex-direction: column;
             gap: var(--gap);
+            position: relative;
 
             h2 {
                 @media (max-width: 576px) {
@@ -799,6 +843,33 @@
             }
 
         }
+
+        &-section-slide {
+            height: 204px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-section-slider {
+            width: calc(100% - 100px);
+            margin: 0 auto;
+        }
+
+            .catalog__content-section-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateX(-50%);
+                left: 20px;
+
+                &.next-btn {
+                    right: -20px;
+                    left: auto;
+                }
+            }
     }
 }
 
@@ -863,7 +934,7 @@
         }
 
         .review-card__meta {
-            margin-bottom: 15px;
+            margin-bottom: 1.5em;
         }
 
         .catalog__body-price {

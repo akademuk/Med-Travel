@@ -104,7 +104,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: var(--font-size-md);
+            font-size: var(--font-size-sm);
             line-height: 1.5;
             color: var(--color-light);
             letter-spacing: 0.15px;
@@ -157,7 +157,7 @@
         margin-bottom: 1.667em;
 
         a {
-            font-size: var(--font-size-md);
+            font-size: var(--font-size-sm);
             color: var(--color-light);
             text-decoration: none;
         }
@@ -198,7 +198,7 @@
         }
 
         &-link {
-            font-size: var(--font-size-md);
+            font-size: var(--font-size-sm);
         }
 
         &-item {

@@ -245,6 +245,42 @@ function initReviews() {
     } catch (error) { }
 }
 
+// reviews.js
+function initCatalog() {
+    if (typeof Swiper === 'undefined') return;
+
+    const catalogSliderElement = document.querySelector('.catalog__content-section-slider');
+    if (!catalogSliderElement) return;
+
+    const wrapper = catalogSliderElement.querySelector('.catalog__content-section-slider-wrapper');
+    const slides = catalogSliderElement.querySelectorAll('.catalog__content-section-slide');
+
+    if (!wrapper || !slides.length) return;
+
+    catalogSliderElement.classList.add('swiper');
+    wrapper.classList.add('swiper-wrapper');
+    slides.forEach(slide => slide.classList.add('swiper-slide'));
+
+    try {
+        new Swiper(catalogSliderElement, {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            grabCursor: true,
+            navigation: {
+                nextEl: '.catalog__content-section-btn.swiper-button-next',
+                prevEl: '.catalog__content-section-btn.swiper-button-prev',
+            },
+
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                }
+            }
+        });
+    } catch (error) { }
+}
+
 // transformed.js
 function initTransformed() {
     const tabButtons = document.querySelectorAll('.transformed__tab-button');
@@ -793,4 +829,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initProceduresCards();
     initPriceTabs();
     initDoctorsLoadMore();
+    initCatalog();
 });

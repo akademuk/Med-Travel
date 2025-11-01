@@ -1,0 +1,119 @@
+@use '../helpers' as *;
+
+.page-doctor {
+    .catalog__body-section {
+        background: transparent;
+        box-shadow: none;
+
+        .catalog__body-price {
+            font-size: var(--font-size-lg);
+        }
+
+        .catalog__body-text {
+            padding: 0;
+        }
+
+        .catalog__body-specialty-item {
+            a, span {
+                font-weight: var(--font-weight-extralight);
+            }
+        }
+
+        .catalog__body-rating-value {
+            font-size: var(--font-size-lg);
+        }
+
+        .catalog__body-gallery, .catalog__body-content-text {
+            max-width: 588px;
+            width: 100%;
+        }
+
+
+        .catalog__body-header {
+            @media(max-width: 768px) {
+                flex-direction: column;
+                margin-bottom: 2em;
+
+                .catalog__body-rating {
+                    width: max-content;
+                }
+            }
+        }
+
+        .catalog__body-image {
+            width: 384px;
+            height: 100%;
+            flex-shrink: 0;
+
+            @media(max-width: 768px) {
+                margin: 0 auto;
+                height: 450px;
+                width: auto;
+
+                img {
+                    max-width: 100%;
+                    object-position: top;
+                }
+            }
+
+            @media(max-width: 576px) {
+                width: 100%;
+            }
+        }
+
+        .catalog__body-specialty-item {
+            font-size: var(--font-size-lg);
+
+            a, span {
+                font-size: inherit;
+            }
+        }
+
+        .catalog__body-gallery-item {
+            width: 88px;
+            height: 88px;
+        }
+    }
+
+    .catalog__body-content {
+        @media(max-width: 768px) {
+            flex-direction: column;
+        }
+
+        @media(max-width: 576px) {
+            gap: var(--gap);
+        }
+    }
+
+    .review-card__country {
+        font-size: var(--font-size-lg);
+    }
+}
+
+.banner.banner-make {
+    padding: 2.667em 5.333em;
+    margin: 0 auto var(--section-padding-bottom) auto;
+
+    @media(max-width: 768px) {
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+
+    .banner__content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .banner__content-box {
+            display: flex;
+            flex-direction: column;
+            gap: var(--small-gap);
+        }
+    }
+
+    .banner__link  {
+        max-width: 235px;
+        width: 100%;
+    }
+}

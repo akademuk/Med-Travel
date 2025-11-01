@@ -26,6 +26,14 @@
     cursor: pointer;
 }
 
+.info-icon.info-icon-not {
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
 .info-popup {
     position: absolute;
     top: calc(100% + 10px);
