@@ -155,6 +155,10 @@ ol {
     /* 38px */
     margin: 0 0 0.6em;
     /* 30px */
+
+    @media (max-width: 576px) {
+        font-size: var(--font-decorative-mobile);
+    }
 }
 
 .heading-bg h2 {
@@ -302,6 +306,7 @@ img {
         .breadcrumb__item {
             list-style: none;
             position: relative;
+            margin: 0;
 
             &:nth-last-of-type(1) {
                 .breadcrumb__link {

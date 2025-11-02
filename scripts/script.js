@@ -37,6 +37,45 @@ function initBlog() {
     } catch (error) { }
 }
 
+// blog.js
+function initBlog2() {
+    if (typeof Swiper === 'undefined') return;
+
+    const sliderElement = document.querySelector('.blog__slider2');
+    if (!sliderElement) return;
+
+    const wrapper = sliderElement.querySelector('.blog__wrapper2');
+    const slides = sliderElement.querySelectorAll('.blog__slide2');
+
+    if (!wrapper || !slides.length) return;
+
+    sliderElement.classList.add('swiper');
+    wrapper.classList.add('swiper-wrapper');
+    slides.forEach(slide => slide.classList.add('swiper-slide'));
+
+    try {
+        new Swiper(sliderElement, {
+            slidesPerView: "auto",
+            spaceBetween: 24,
+            grabCursor: true,
+            navigation: {
+                nextEl: '.blog__navigation-btn.next-btn',
+                prevEl: '.blog__navigation-btn.prev-btn',
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 24
+                }
+            }
+        });
+    } catch (error) { }
+}
+
 // counter.js
 function initCounter() {
     const trustUsSection = document.querySelector('.trust-us');
@@ -990,4 +1029,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initDoctorsLoadMore();
     initCatalog();
     initResults();
+    initBlog2();
 });

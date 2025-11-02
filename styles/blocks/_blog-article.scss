@@ -1,0 +1,322 @@
+@use '../helpers' as *;
+
+.blog-article {
+    .catalog {
+        @media (max-width: 992px) {
+            flex-direction: column;
+
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding-bottom: var(--section-padding-bottom-mobile);
+    }
+
+    .catalog__sidebar {
+        height: 100%;
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    .catalog__body {
+        width: 100%;
+        max-width: calc(100% - 282px - 126px);
+        gap: 0;
+
+        @media (max-width: 992px) {
+            max-width: 100%;
+        }
+    }
+
+    .breadcrumb {
+        padding: 0 0 20px 0;
+    }
+
+    .blog-grid-page__content-image {
+        height: 422px;
+        margin-bottom: 2em;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    h1 {
+        margin: 0 0 0.8em 0;
+        font-family: var(--font-base);
+        font-size: var(--font-size-xxl);
+        font-weight: var(--font-weight-light);
+        text-transform: uppercase;
+    }
+
+    .catalog__content-info-time {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap);
+        margin: 0 0 1em 0;
+        padding: 0;
+        justify-content: space-between;
+
+        .reading {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            &::before {
+                content: "";
+                background-image: url(../icons/time.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 19px;
+                height: 19px;
+            }
+        }
+    }
+
+    .catalog__content {
+        gap: 30px;
+    }
+
+    .sections-padding {
+        @media (max-width: 768px) {
+            padding: 0;
+        }
+    }
+
+    .breadcrumb {
+
+        .breadcrumb__list {
+            padding-bottom: 10px;
+        }
+
+        .container {
+            @media (max-width: 768px) {
+                padding: 0;
+            }
+        }
+    }
+
+    .catalog__content-navigation {
+        border: 1px solid var(--color-accent);
+
+        h3 {
+            padding: 14px 25px;
+            margin: 0;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-light);
+            background: linear-gradient(270deg, rgba(255, 242, 207, 0.30) 0%, rgba(236, 214, 180, 0.30) 100%);
+            border-bottom: 1px solid var(--color-accent);
+        }
+
+        .catalog__sidebar-nav-item {
+            padding: 14px 25px;
+            transition-duration: var(--transition-duration);
+
+            &:hover {
+                font-weight: var(--font-weight-light);
+            }
+        }
+    }
+
+    p {
+        line-height: normal;
+        margin-bottom: 1em;
+    }
+
+    .catalog__content-section-text {
+        p {
+            a {
+                color: var(--color-accent);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .heading-bg h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    .catalog__content-section-item {
+        border-bottom: none;
+
+        span {
+            display: flex;
+            flex-direction: column;
+
+            strong {
+                color: var(--color-accent);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .banner {
+        padding: 2.5em 2.5em 2.5em 20em;
+
+        @media (max-width: 768px) {
+            padding: 1em;
+        }
+
+        .banner__image {
+            width: 270px;
+            height: 100%;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .banner__content {
+            gap: 10px;
+
+            h2 {
+                font-size: var(--font-size-xl);
+                font-weight: var(--font-weight-light);
+            }
+
+            a {
+                font-size: var(--font-size-lg);
+                color: var(--color-accent);
+                font-weight: var(--font-weight-light);
+                margin-bottom: 0;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .clinics__card {
+        flex: 1 1 calc(50% - 12px);
+    }
+
+    .faq__accordion-header {
+        max-width: 384px;
+
+        @media (max-width: 768px) {
+            max-width: 100%;
+        }
+    }
+
+    .faq__accordion-content {
+        left: 420px;
+    }
+
+    .catalog__content-section-list--not-list {
+
+        .catalog__content-section-item {
+            a {
+                color: var(--color-accent);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .catalog__content-section {
+        padding-top: 35px;
+    }
+
+    .catalog__content-social {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        span {
+            font-weight: var(--font-weight-light);
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            li {
+                list-style: none;
+                margin: 0;
+            }
+        }
+    }
+
+    .catalog__content-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 35px;
+        margin-bottom: 70px;
+
+        h3 {
+            margin: 0;
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-light);
+            text-transform: uppercase;
+        }
+    }
+
+    .cta-form__form {
+        gap: var(--gap);
+        flex-direction: row;
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .catalog__content-formleft,
+    .catalog__content-formright {
+        flex: 1 1 calc(50% - 12px);
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        textarea {
+            height: 100%;
+            padding: 1em;
+            border: 1px solid var(--color-accent);
+            resize: none;
+        }
+    }
+
+    .catalog__content-formright {
+        gap: var(--small-gap);
+    }
+
+    .cta-form__form-btn {
+        margin-top: 9px;
+    }
+
+    .catalog__content-new-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap);
+
+        .blog-grid-page__content-item {
+            flex: 1 1 calc(50% - 12px);
+
+            .blog-grid-page__content-image {
+                height: 204px;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .decorative-heading {
+        .coordinating-doctors__body {
+            margin-top: 40px;
+            justify-content: flex-start;
+            margin-bottom: 2em;
+        }
+
+        .catalog__content-new-title.border-button-black {
+            max-width: 580px;
+            margin: 0 auto;
+        }
+    }
+
+    .blog__slider2 {
+        width: 100%;
+    }
+}
