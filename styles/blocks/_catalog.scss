@@ -735,7 +735,6 @@
             &-text {
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
             }
 
             h3 {
@@ -744,16 +743,16 @@
                 font-weight: var(--font-weight-light);
             }
 
-            p,
-            span,
-            li,
-            a {
-                margin: 0;
+            &-read {
+                color: var(--color-accent);
+                text-decoration: underline;
             }
 
             ul,
             ol {
                 padding-left: 1.333em;
+                display: flex;
+                flex-direction: column;
 
                 li {
                     &::marker {
@@ -871,6 +870,11 @@
                 }
             }
     }
+
+     a.catalog__content-section-read {
+                color: var(--color-accent);
+                text-decoration: underline;
+            }
 }
 
 .catalog__body-section {

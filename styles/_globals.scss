@@ -54,11 +54,10 @@ h2 {
     line-height: 1;
 }
 
-.decorative-heading h2::first-letter {
+.decorative-heading h2 span {
     font-family: var(--font-family-number);
     font-size: var(--font-size-decorative);
-    margin-right: -5px;
-    line-height: 0;
+    flex-shrink: 0;
 
     @media (max-width: 768px) {
         line-height: 1;
@@ -71,6 +70,12 @@ h2 {
     color: var(--color-accent);
     text-transform: uppercase;
     font-family: var(--font-decorative);
+    display: inline-flex;
+    align-items: baseline;
+
+    @media (max-width: 576px) {
+        font-size: var(--font-decorative-mobile);
+    }
 }
 
 h3 {
@@ -127,7 +132,7 @@ ol {
     padding-top: var(--section-padding-top);
     padding-bottom: var(--section-padding-bottom);
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
         padding-top: var(--section-padding-top-mobile);
         padding-bottom: var(--section-padding-bottom-mobile);
     }
@@ -137,7 +142,7 @@ ol {
     margin-top: var(--section-padding-top);
     margin-bottom: var(--section-padding-bottom);
 
-    @media (max-width: 1280px) {
+    @media (max-width: 992px) {
         margin-top: var(--section-padding-top-mobile);
         margin-bottom: var(--section-padding-bottom-mobile);
     }
@@ -148,7 +153,7 @@ ol {
 .heading h2 {
     font-size: var(--font-size-section-title);
     /* 38px */
-    margin: 0 0 1.2em;
+    margin: 0 0 0.6em;
     /* 30px */
 }
 
@@ -166,8 +171,12 @@ ol {
 .heading--spaced h2 {
     font-size: var(--font-size-section-title);
     /* 38px */
-    margin: 0 0 1.6em;
+    margin: 0 0 0.8em;
     /* 60px */
+
+    @media (max-width: 576px) {
+        font-size: var(--font-decorative-mobile);
+    }
 }
 
 main {
@@ -188,6 +197,10 @@ main {
 
 .text-white {
     color: var(--color-light);
+}
+
+.white-bg {
+    background-color: var(--color-light);
 }
 
 a,

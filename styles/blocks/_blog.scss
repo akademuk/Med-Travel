@@ -76,3 +76,36 @@
         margin-top: 1.667em;
     }
 }
+
+.blog-realted {
+    .blog__slide {
+        padding: 0;
+        border: none;
+    }
+
+    .blog__card-image {
+        position: relative;
+
+        h3 {
+            position: absolute;
+            left: 14px;
+            bottom: 14px;
+            z-index: 1;
+            margin: 0;
+            max-width: 322px;
+        }
+    }
+
+    .review-card__date {
+        margin: 0 0 10px 0;
+        display: block;
+    }
+
+    .blog__card h3 {
+        margin-bottom: 0.9em;
+    }
+
+    .section-autor-box {
+         margin-bottom: 0.9em;
+    }
+}

@@ -245,6 +245,45 @@ function initReviews() {
     } catch (error) { }
 }
 
+// results.js
+function initResults() {
+    if (typeof Swiper === 'undefined') return;
+
+    const resultsSliderElement = document.querySelector('.results__slider');
+    if (!resultsSliderElement) return;
+
+    const wrapper = resultsSliderElement.querySelector('.results__wrapper');
+    const slides = resultsSliderElement.querySelectorAll('.results__slide');
+
+    if (!wrapper || !slides.length) return;
+
+    resultsSliderElement.classList.add('swiper');
+    wrapper.classList.add('swiper-wrapper');
+    slides.forEach(slide => slide.classList.add('swiper-slide'));
+
+    try {
+        new Swiper(resultsSliderElement, {
+            slidesPerView: "auto",
+            spaceBetween: 24,
+            grabCursor: true,
+            navigation: {
+                nextEl: '.results__slider .swiper-button-next',
+                prevEl: '.results__slider .swiper-button-prev',
+            },
+            breakpoints: {
+                650: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24
+                }
+            }
+        });
+    } catch (error) { }
+}
+
 // reviews.js
 function initCatalog() {
     if (typeof Swiper === 'undefined') return;
@@ -379,11 +418,6 @@ function initFooterMobileMenu() {
         });
     });
 }
-
-initFooterMobileMenu();
-
-
-
 
 function initHeaderDropdownMenu() {
     const OPEN_CLASS = 'is-open';
@@ -562,6 +596,39 @@ function initTabs() {
         });
     });
 }
+
+// Tab switching functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.procedures-section-tab');
+    const tabContents = document.querySelectorAll('.procedures-section-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const tabName = this.getAttribute('data-tab');
+            
+            // Remove active class from all buttons
+            tabButtons.forEach(btn => {
+                btn.classList.remove('procedures-section-tab--active');
+                btn.setAttribute('aria-pressed', 'false');
+            });
+            
+            // Remove active class from all content blocks
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('procedures-section-tab--active');
+            this.setAttribute('aria-pressed', 'true');
+            
+            // Show corresponding content
+            const activeContent = document.querySelector(`[data-tab-content="${tabName}"]`);
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
+        });
+    });
+});
 
 // Gallery initialization with Swiper and Fancybox
 function initGallery() {
@@ -809,6 +876,98 @@ function initDoctorsLoadMore() {
     updateCardsVisibility();
 }
 
+// Nested Tabs System
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Основні таби (країни)
+    const mainTabs = document.querySelectorAll('.package-available__tab');
+    const mainContents = document.querySelectorAll('.package-available__content');
+    
+    mainTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const tabName = this.getAttribute('data-tab');
+            
+            // Видалити активний клас з усіх основних табів
+            mainTabs.forEach(t => t.classList.remove('active'));
+            mainContents.forEach(c => c.classList.remove('active'));
+            
+            // Додати активний клас до вибраного табу
+            this.classList.add('active');
+            
+            // Показати відповідний контент
+            const activeContent = document.querySelector(`.package-available__content[data-tab-content="${tabName}"]`);
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
+        });
+    });
+    
+    // Внутрішні таби (Accommodation, Aftercare, etc.)
+    const innerTabButtons = document.querySelectorAll('.package-available__content-button');
+    
+    innerTabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const tabName = this.getAttribute('data-tab');
+            const parentContent = this.closest('.package-available__content');
+            const contentBody = parentContent.querySelector('.package-available__content-body');
+            
+            // Видалити активний клас з усіх кнопок в поточному контенті
+            const buttonsInParent = parentContent.querySelectorAll('.package-available__content-button');
+            buttonsInParent.forEach(btn => btn.classList.remove('active'));
+            
+            // Видалити активний клас з усіх внутрішніх контентів в поточному контенті
+            const contentsInParent = contentBody.querySelectorAll('.package-available__content-box');
+            contentsInParent.forEach(content => content.classList.remove('active'));
+            
+            // Додати активний клас до вибраної кнопки
+            this.classList.add('active');
+            
+            // Показати відповідний внутрішній контент
+            const activeInnerContent = contentBody.querySelector(`.package-available__content-box[data-tab-content="${tabName}"]`);
+            if (activeInnerContent) {
+                activeInnerContent.classList.add('active');
+            }
+        });
+    });
+    
+    // Ініціалізація: активувати перший таб
+    if (mainTabs.length > 0) {
+        mainTabs[0].classList.add('active');
+    }
+});
+
+// Функція для обгортання першої літери в span
+function wrapFirstLetter() {
+    // Знаходимо всі заголовки h2 в .decorative-heading
+    const headings = document.querySelectorAll('.decorative-heading h2');
+    
+    headings.forEach(heading => {
+        // Перевіряємо чи вже оброблений (щоб не було циклу)
+        if (heading.querySelector('.decorative-letter')) {
+            return; // Вже оброблено, пропускаємо
+        }
+        
+        // Отримуємо текст заголовка
+        const text = heading.textContent.trim();
+        
+        // Перевіряємо чи є текст
+        if (!text || text.length === 0) return;
+        
+        // Перша літера
+        const firstLetter = text.charAt(0);
+        // Решта тексту
+        const restText = text.slice(1);
+        
+        // Створюємо нову структуру
+        heading.innerHTML = `<span class="decorative-letter">${firstLetter}</span>${restText}`;
+    });
+}
+
+// Запускаємо після завантаження DOM
+document.addEventListener('DOMContentLoaded', wrapFirstLetter);
+
+// Для WordPress - запускаємо після повного завантаження
+window.addEventListener('load', wrapFirstLetter);
 
 // main.js - вызов всех функций
 document.addEventListener('DOMContentLoaded', () => {
@@ -830,4 +989,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initPriceTabs();
     initDoctorsLoadMore();
     initCatalog();
+    initResults();
 });
