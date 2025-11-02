@@ -3270,6 +3270,107 @@ img {
   margin-bottom: 0.9em;
 }
 
+.blog-grid-page .catalog {
+  display: flex;
+  gap: 126px;
+}
+@media (max-width: 1280px) {
+  .blog-grid-page .catalog {
+    gap: var(--gap);
+  }
+}
+@media (max-width: 768px) {
+  .blog-grid-page .catalog {
+    flex-direction: column;
+  }
+}
+.blog-grid-page .catalog__main {
+  max-width: calc(100% - 282px - 126px);
+  flex: 1;
+}
+@media (max-width: 1280px) {
+  .blog-grid-page .catalog__main {
+    max-width: calc(100% - 282px - 24px);
+  }
+}
+@media (max-width: 768px) {
+  .blog-grid-page .catalog__main {
+    max-width: 100%;
+  }
+}
+.blog-grid-page .catalog__sidebar-nav-item::before {
+  content: none;
+}
+.blog-grid-page__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+.blog-grid-page__content-item {
+  flex: 1 1 calc(50% - 12px);
+  min-width: 288px;
+}
+.blog-grid-page__content-item-link {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.blog-grid-page__content-item:nth-of-type(1) {
+  flex: 1 1 100%;
+}
+.blog-grid-page__content-item:nth-of-type(1) .blog-grid-page__content-image {
+  height: 422px;
+}
+.blog-grid-page__content-item:nth-of-type(1) .blog-grid-page__content-info {
+  gap: var(--gap);
+}
+.blog-grid-page__content-item:nth-of-type(1) .blog-grid-page__content-info h3 {
+  font-size: var(--font-size-xxl);
+}
+.blog-grid-page__content-item:nth-of-type(1) .review-card__date {
+  font-size: var(--font-size-lg);
+}
+.blog-grid-page__content-item:nth-of-type(1) .section-autor-box {
+  margin-top: 0;
+}
+.blog-grid-page__content-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+  min-height: 200px;
+}
+.blog-grid-page__content-info .review-card__date {
+  margin: 0;
+  display: block;
+}
+.blog-grid-page__content-info h3 {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-light);
+  text-transform: uppercase;
+}
+.blog-grid-page__content-info .section-autor-box {
+  margin-top: auto;
+}
+.blog-grid-page__content-image {
+  width: 100%;
+  height: 204px;
+  flex-shrink: 0;
+}
+.blog-grid-page__content-image img {
+  height: 100%;
+}
+.blog-grid-page .blog-grid-page__pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+.blog-grid-page .blog-grid-page__pagination span {
+  font-size: var(--font-size-xs);
+}
+
 .global-hero {
   min-height: 756px;
   position: relative;
@@ -3394,6 +3495,19 @@ img {
 }
 .global-hero.global-hero-transparent .gold-button {
   padding: 0.455em 1.8em;
+}
+
+.global-hero.global-hero--blog {
+  min-height: 512px;
+}
+.global-hero.global-hero--blog .global-hero-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(236, 214, 180, 0.33) 0%, rgba(255, 242, 207, 0.33) 100%), #FFF;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .catalog--doctors {
@@ -3809,7 +3923,8 @@ img {
   font-weight: var(--font-weight-light);
   text-decoration: underline;
 }
-.catalog__body-specialty-item span, .catalog__body-specialty-item a {
+.catalog__body-specialty-item span,
+.catalog__body-specialty-item a {
   font-weight: var(--font-weight-light);
 }
 .catalog__body-title {
@@ -4250,6 +4365,44 @@ img {
 }
 .catalog__body-section--doctors .catalog__body-actions .gold-button {
   width: 100%;
+}
+
+.blog-grid .catalog {
+  display: flex;
+  gap: 126px;
+}
+@media (max-width: 1280px) {
+  .blog-grid .catalog {
+    gap: var(--gap);
+  }
+}
+@media (max-width: 768px) {
+  .blog-grid .catalog {
+    flex-direction: column;
+  }
+}
+.blog-grid .catalog__main {
+  max-width: calc(100% - 282px - 126px);
+  flex: 1;
+}
+@media (max-width: 1280px) {
+  .blog-grid .catalog__main {
+    max-width: calc(100% - 282px - 24px);
+  }
+}
+@media (max-width: 768px) {
+  .blog-grid .catalog__main {
+    max-width: 100%;
+  }
+}
+.blog-grid .catalog__content-section--autor {
+  padding-top: 35px;
+}
+.blog-grid .catalog__content {
+  gap: var(--gap);
+}
+.blog-grid .catalog__content h2 {
+  font-size: var(--font-size-xxl);
 }
 
 .banner {
@@ -5334,6 +5487,7 @@ img {
   background: linear-gradient(270deg, rgba(255, 242, 207, 0.3) 0%, rgba(236, 214, 180, 0.3) 100%);
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   padding: 2.667em 1.133em;
+  height: auto;
 }
 .consultation-banner__title {
   text-align: center;
