@@ -808,6 +808,11 @@ img {
   background-color: var(--color-light);
 }
 
+.privecy-style a, .privecy-style span {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
 .global-hero-sinle-package {
   padding-bottom: 4em;
 }
@@ -1183,6 +1188,10 @@ img {
 }
 .header__body--clinic .header__menu-position-link {
   color: var(--color-text-primary);
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 50px 200px;
 }
 .header__body--clinic .header__search-button {
   color: var(--color-text-primary);
@@ -1509,6 +1518,10 @@ img {
     box-shadow: 0 0 1px 0 var(--color-text-primary-40);
     background: var(--color-surface);
   }
+}
+
+[id^=privecySection] {
+  scroll-margin-top: 150px;
 }
 
 .footer {
@@ -3688,6 +3701,24 @@ img {
   z-index: -1;
 }
 
+.global-hero.privecy-hero {
+  min-height: 450px;
+}
+@media (max-width: 768px) {
+  .global-hero.privecy-hero {
+    min-height: 350px;
+  }
+}
+.global-hero.privecy-hero .background-image::after {
+  content: "";
+  background: linear-gradient(90deg, rgba(236, 214, 180, 0.4) 0%, rgba(255, 242, 207, 0.4) 100%), #FFF;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 .catalog--doctors {
   padding-bottom: var(--section-padding-bottom);
 }
@@ -3738,7 +3769,7 @@ img {
   }
 }
 .catalog__sidebar-nav-list {
-  max-height: 500px;
+  max-height: 1500px;
   transition-duration: var(--transition-duration);
   padding: 0;
 }

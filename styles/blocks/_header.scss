@@ -172,6 +172,11 @@
 
             .header__menu-position-link {
                 color: var(--color-text-primary);
+
+                 animation-name: scrolling-header;
+                animation-fill-mode: both;
+                animation-timeline: scroll();
+                animation-range: 50px 200px;
             }
 
             .header__search-button {
@@ -539,4 +544,8 @@
             background: var(--color-surface);
         }
     }
+}
+
+[id^="privecySection"] {
+  scroll-margin-top: 150px;
 }

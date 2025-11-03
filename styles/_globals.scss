@@ -471,6 +471,13 @@ img {
     background-color: var(--color-light);
 }
 
+.privecy-style {
+    a, span {
+        color: var(--color-accent);
+        text-decoration: underline;
+    }
+}
+
 .global-hero-sinle-package {
 
     padding-bottom: 4em;
