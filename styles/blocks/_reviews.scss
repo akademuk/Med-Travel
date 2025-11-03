@@ -52,7 +52,7 @@
     padding: 1.333em;
 
     &__header {
-        margin-bottom: 0.333em;
+        margin-bottom: 0.7em;
 
         &-top {
             display: flex;
@@ -149,7 +149,7 @@
     &__verified {
         display: flex;
         align-items: flex-start;
-        font-size: var(--font-size-s);
+        font-size: var(--font-size-sm);
 
         &-icon {
             width: 10px;

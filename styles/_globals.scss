@@ -183,6 +183,114 @@ ol {
     }
 }
 
+.sections-padding-none {
+    padding-bottom: 0;
+}
+
+.global--responcive-box {
+    .container {
+        display: flex;
+        gap: 126px;
+
+        @media (max-width: 1280px) {
+            gap: var(--gap);
+        }
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+        }
+
+        .global--responcive-box-left {
+            width: 282px;
+            position: sticky;
+            top: 140px;
+            height: 100%;
+            flex-shrink: 0;
+
+            .consultation-banner {
+                min-height: auto;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+
+            @media (max-width: 768px) {
+                position: static;
+                width: 100%;
+            }
+        }
+
+        .global--responcive-box-right {
+            max-width: calc(100% - 282px - 126px);
+            width: 100%;
+
+            @media (max-width: 1280px) {
+                 max-width: calc(100% - 282px - 24px);
+            }
+
+            @media (max-width: 768px) {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .global--responcive-box-section {
+        &:nth-of-type(1) {
+            padding-top: 0;
+        }
+    }
+
+    .results__slide.slider-slide {
+        width: 384px;
+        height: 277px;
+
+        img {
+            height: 100%;
+        }
+
+        @media (max-width: 992px) {
+            width: 100%;
+        }
+    }
+
+    .reviews__body-slide.slider-slide {
+        width: 384px;
+        height: auto;
+
+        @media (max-width: 992px) {
+            width: 100%;
+        }
+    }
+
+    .faq__accordion-header {
+        max-width: calc(50% - 12px);
+
+        @media (max-width: 992px)  {
+            max-width: 100%;
+            margin-bottom: 2em;
+        }
+    }
+
+    .faq__accordion-content {
+        left: calc(50% + 24px);
+
+         @media (max-width: 992px)  {
+           position: static;
+        }
+    }
+    
+    .faq__accordion-body {
+        h2,  h3, h4, h5 {
+            font-size: var(--font-size-lg);
+        }
+
+        p, span, a, li {
+            font-size: var(--font-size-s);
+        }
+    }
+}
+
 main {
     flex-grow: 1;
 }
@@ -286,7 +394,7 @@ img {
 }
 
 .breadcrumb {
-    padding: 20px 0 10px 0;
+    padding: 1em 0;
 
     &--global {
         .breadcrumb__list {

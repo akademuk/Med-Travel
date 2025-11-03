@@ -270,16 +270,16 @@ function initReviews() {
                 nextEl: '.reviews__slider .swiper-button-next',
                 prevEl: '.reviews__slider .swiper-button-prev',
             },
-            breakpoints: {
-                650: {
-                    slidesPerView: 2,
-                    spaceBetween: 20
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 24
-                }
-            }
+            // breakpoints: {
+            //     650: {
+            //         slidesPerView: 2,
+            //         spaceBetween: 20
+            //     },
+            //     1024: {
+            //         slidesPerView: 3,
+            //         spaceBetween: 24
+            //     }
+            // }
         });
     } catch (error) { }
 }
@@ -309,16 +309,16 @@ function initResults() {
                 nextEl: '.results__slider .swiper-button-next',
                 prevEl: '.results__slider .swiper-button-prev',
             },
-            breakpoints: {
-                650: {
-                    slidesPerView: 2,
-                    spaceBetween: 20
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 24
-                }
-            }
+            // breakpoints: {
+            //     650: {
+            //         slidesPerView: 2,
+            //         spaceBetween: 20
+            //     },
+            //     1024: {
+            //         slidesPerView: 3,
+            //         spaceBetween: 24
+            //     }
+            // }
         });
     } catch (error) { }
 }
