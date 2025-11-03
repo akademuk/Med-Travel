@@ -54,6 +54,8 @@
     &__content {
         max-width: 894px;
         width: 100%;
+        position: relative;
+        z-index: 2;
 
         &--action {
             width: max-content;
@@ -136,6 +138,7 @@
 
     min-height: 645px;
     padding-top: 13em;
+    overflow: hidden;
 
     &:before {
         content: none;

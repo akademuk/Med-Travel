@@ -1,0 +1,67 @@
+@use '../helpers' as *; 
+
+.detailed-information {
+
+    &__body {
+        display: flex;
+        gap: var(--gap);
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        } 
+
+        &-image,
+        &-content {
+            flex: 1 1 calc(50% - 12px);
+
+            @media (max-width: 768px) {
+                flex: 1 1 100%;
+            }
+        }
+
+        &-image {
+            height: 407px;
+            
+
+            img {
+                height: 100%;
+            }
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        &-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--gap);
+
+            &-item {
+                flex: 0 0 calc(50% - (24px / 2));
+
+                @media (max-width: 475px) {
+                    flex: 1 1 100%;
+                }
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                h3 {
+                    margin: 10px 0 5px 0;
+                    font-size: var(--font-size-sm);
+                    font-weight: var(--font-weight-thin);
+                }
+
+                p {
+                    font-size: var(--font-size-s);
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

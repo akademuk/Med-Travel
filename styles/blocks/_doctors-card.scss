@@ -76,6 +76,31 @@
         font-size: var(--font-size-sm);
     }
 
+    &-procedure {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        margin-bottom: 1em;
+
+        span {
+            font-size: var(--font-size-s);
+            font-weight: var(--font-weight-extralight);
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-item {
+            font-size: var(--font-size-s);
+            font-weight: var(--font-weight-light);
+            color: var(--color-accent);
+            text-decoration: underline;
+            margin: 0;
+        }
+    }
+
     &-consultation {
         display: flex;
         align-items: center;

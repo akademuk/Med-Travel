@@ -19,7 +19,7 @@ body {
     font-weight: var(--font-weight-thin);
     /* Thin по умолчанию */
     // line-height: var(--line-height-tight);
-    line-height: 1;
+    line-height: normal;
     /* 100% */
     color: var(--color-text-primary);
     /* #000000 */
@@ -187,6 +187,18 @@ ol {
     padding-bottom: 0;
 }
 
+.global--responcive-box-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    .global--responcive-box-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+}
+
 .global--responcive-box {
     .container {
         display: flex;
@@ -210,12 +222,12 @@ ol {
             .consultation-banner {
                 min-height: auto;
 
-                @media (max-width: 768px) {
+                @media (max-width: 992px) {
                     width: 100%;
                 }
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 992px) {
                 position: static;
                 width: 100%;
             }
@@ -229,7 +241,7 @@ ol {
                  max-width: calc(100% - 282px - 24px);
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 992px) {
                 max-width: 100%;
             }
         }
@@ -287,6 +299,12 @@ ol {
 
         p, span, a, li {
             font-size: var(--font-size-s);
+        }
+    }
+
+    .heading-bg {
+        h2 {
+            font-size: var(--font-size-xxl);
         }
     }
 }
@@ -451,4 +469,42 @@ img {
 
 .white-bg {
     background-color: var(--color-light);
+}
+
+.global-hero-sinle-package {
+
+    padding-bottom: 4em;
+
+    @media (max-width: 768px) {
+        padding-top: 10em;
+    }
+    
+    .background-image {
+        top: 140px;
+        left: auto;
+        right: 0;
+        translate: none;
+        z-index: 1;
+        max-width: 1440px;
+        img {
+            object-fit: contain;
+            object-position: right;
+        }
+
+        @media (max-width: 768px) {
+            opacity: 0.2;
+            top: 0;
+
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+
+    .global-hero__content--call {
+        &:hover {
+            background: var(--color-text-primary);
+            color: var(--color-light);
+        }
+    }
 }
