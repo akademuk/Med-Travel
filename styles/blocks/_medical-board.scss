@@ -1,0 +1,317 @@
+@use '../helpers' as *;
+
+.medical-board__hero {
+    padding: 13.333em 0 6.667em 0;
+
+    .breadcrumb {
+        padding: 1em 0;
+
+        &__list {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+        }
+
+        &__item {
+            list-style: none;
+            margin: 0;
+
+            &:nth-last-of-type(1) {
+                .breadcrumb__link {
+                    font-weight: var(--font-weight-light);
+
+                    &::after {
+                        content: none;
+                    }
+                }
+            }
+        }
+
+        &__link {
+            color: var(--color-light);
+            font-size: var(--font-size-s);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+
+            &:after {
+                content: "";
+                background-image: url(../icons/breadcrumb.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: 11px;
+                height: 15px;
+                flex-shrink: 0;
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7457%) hue-rotate(15deg) brightness(114%) contrast(110%);
+            }
+
+            &--black {
+                color: var(--color-text-primary);
+
+                &:after {
+                    filter: none;
+                }
+            }
+
+            &--gold {
+                color: var(--color-accent);
+            }
+
+            &--white {
+                color: var(--color-light);
+            }
+        }
+    }
+
+    &-inner {
+        display: flex;
+        gap: var(--gap);
+    }
+
+    &-image {
+        width: 380px;
+        height: 570px;
+        flex-shrink: 0;
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    h1 {
+        font-size: 5.333em;
+        text-transform: uppercase;
+        margin: 0 0 1em 0;
+        
+        @media (max-width: 576px) {
+            font-size: 3em;
+        }
+    }
+
+    &-box {
+        display: flex;
+        align-items: flex-end;
+        gap: var(--gap);
+        margin-top: auto;
+
+        p {
+            flex: 1 1 calc(50% - 12px);
+            margin: 0;
+        }
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+    }
+}
+
+.medical-board__patient {
+
+    &__list {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        gap: var(--gap);
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        list-style: none;
+        flex: 1 1 calc(33.333% - (48px / 3));
+        margin: 0;
+
+        &-value {
+            font-family: var(--font-family-number);
+            font-size: var(--font-size-xl);
+            text-align: right;
+            padding-bottom: 10px;
+            border-bottom: var(--border);
+        }
+
+        &-text {
+            max-width: 282px;
+            margin-bottom: 0;
+            width: 100%;
+        }
+    }
+}
+
+.medical-board__advistory {
+
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap);
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 0 0 calc(33.33% - (48px / 3));
+        border: 0.5px solid var(--color-text-primary);
+        padding: 2em 1.667em;
+        background: var(--color-surface);
+
+        @media (max-width: 992px) {
+            flex: 0 0 calc(50% - 12px);
+        }
+
+        @media (max-width: 768px) {
+            flex: 1 1 100%;
+            position: sticky;
+            top: 140px;
+        }
+
+        &-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        &-avatar {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            border-radius: 1000px;
+            overflow: hidden;
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap:  10px;
+
+            h3 {
+                margin: 0;
+                font-size: var(--font-size-sm);
+            }
+
+            a {
+                font-weight: var(--font-weight-light);
+                color: var(--color-accent);
+                text-decoration: underline;
+            }
+
+            p {
+                 font-size: var(--font-size-s);
+                 margin: 0;
+            }
+        }
+
+         &-location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: var(--font-size-s);
+
+            img {
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+            }
+        }
+
+        &-body {
+            display: flex;
+            flex-direction: column;
+            gap: var(--small-gap);
+        }
+
+        &-description {
+            p {
+                margin: 0;
+            }
+        }
+
+        &-social {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &-item {
+                list-style: none;
+                margin: 0;
+            }
+
+            &-link {
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+            }
+        }
+
+    }
+
+    a.medical-board__advistory__item-link {
+         color: var(--color-accent);
+            text-decoration: underline;
+    }
+}
+
+.medical-board__experts {
+
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap) 0;
+    }
+
+    &__col {
+        height: 400px;
+        flex: 1 1 25%;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 24px;
+        border-right: var(--border);
+
+        @media (max-width: 768px) {
+            flex: 1 1 50%;
+            height: 200px;
+        }
+
+        @media (max-width: 576px) {
+            flex: 1 1 100%;
+            height: 200px;
+            padding:  0 24px 0 0;
+        }
+
+        &:has(img) {
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        &:nth-last-of-type(1) {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        &:nth-of-type(1) {
+            padding-left: 0;
+        }
+    }
+}
