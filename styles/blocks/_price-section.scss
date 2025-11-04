@@ -30,25 +30,11 @@
         }
 
         &__button {
-            padding: 0.667em 0;
-            border: none;
-            background: transparent;
-            text-align: left;
-            border-bottom: var(--border);
-            font-size: var(--font-size-xl);
+            flex: none;
 
             &--active {
-                font-weight: var(--font-weight-light);
-                border-color: var(--color-accent);
                 color: var(--color-accent);
-            }
-
-            @include hover {
-                color: var(--color-accent);
-            }
-
-            @media(max-width: 576px) {
-               font-size: var(--font-size-sm);
+                border-bottom: 1.5px solid var(--color-accent);
             }
         }
     }

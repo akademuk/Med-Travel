@@ -123,39 +123,8 @@
 
         &-button {
             white-space: nowrap;
-            background: transparent;
-            border: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            text-transform: uppercase;
             font-size: var(--font-size-lg);
-            transition-duration: var(--transition-duration);
-
-            &::after {
-                content: "";
-                height: 1.5px;
-                width: 0;
-                background: var(--color-accent);
-                transition-duration: var(--transition-duration);
-            }
-
-            &.active {
-                color: var(--color-accent);
-                font-weight: var(--font-weight-light);
-
-                &::after {
-                    width: 100%;
-                }
-            }
-
-            &:hover {
-                color: var(--color-accent);
-
-                &::after {
-                    width: 100%;
-                }
-            }
+            justify-content: center;
         }
 
         &-box {
