@@ -761,6 +761,40 @@ function initGallery() {
     });
 }
 
+ Fancybox.bind('[data-fancybox="gallerys"]', {
+        Toolbar: {
+            display: {
+                left: [],
+                middle: ['infobar'],
+                right: ['slideshow', 'fullscreen', 'close'],
+            },
+        },
+        Images: {
+            zoom: true,
+        },
+        Video: {
+            tpl: '<video class="fancybox__html5video" playsinline controls controlsList="nodownload" poster="{{poster}}">' +
+                '<source src="{{src}}" type="{{format}}" />' +
+                'Sorry, your browser doesn\'t support embedded videos.</video>',
+            format: "mp4",
+            autoplay: true,
+        },
+        Youtube: {
+            controls: 1,
+            showinfo: 0,
+            rel: 0,
+        },
+        Vimeo: {
+            color: "00adef",
+        },
+        Thumbs: {
+            autoStart: true,
+        },
+        animated: true,
+        showClass: "f-fadeIn",
+        hideClass: "f-fadeOut",
+    });
+
 // Video player control initialization
 function initVideoPlayer() {
     const playButton = document.querySelector('.video-player__play-button');
@@ -1070,6 +1104,65 @@ function initEventsGallery() {
     });
 }
 
+function initReviewForm() {
+    const form = document.getElementById('reviewForm');
+    const clearRatingBtn = document.querySelector('.review-form__clear-rating');
+    const starInputs = document.querySelectorAll('.review-form__star-input');
+    
+    // Очистка рейтингу
+    if (clearRatingBtn) {
+        clearRatingBtn.addEventListener('click', () => {
+            starInputs.forEach(input => input.checked = false);
+        });
+    }
+    
+    // Відправка форми
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action || '/submit-review', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    alert('Thank you for your review!');
+                    form.reset();
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again.');
+            }
+        });
+    }
+}
+
+function initFileUpload() {
+    const fileInputs = document.querySelectorAll('.review-form__file-input');
+    
+    fileInputs.forEach(input => {
+        input.addEventListener('change', function(e) {
+            const fileName = this.files[0]?.name;
+            const uploadWrapper = this.closest('.review-form__upload');
+            const fileNameDisplay = uploadWrapper.querySelector('.review-form__file-name');
+            
+            if (fileName) {
+                fileNameDisplay.textContent = fileName;
+                uploadWrapper.classList.add('review-form__upload--has-file');
+            } else {
+                fileNameDisplay.textContent = '';
+                uploadWrapper.classList.remove('review-form__upload--has-file');
+            }
+        });
+    });
+}
+
 // Запускаємо після завантаження DOM
 document.addEventListener('DOMContentLoaded', wrapFirstLetter);
 
@@ -1101,4 +1194,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initCountryTabs();
     initCounters();
     initEventsGallery();
+    initReviewForm();
+    initFileUpload();
 });

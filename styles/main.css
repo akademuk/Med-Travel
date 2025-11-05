@@ -7947,4 +7947,259 @@ img {
   height: 400px;
 }
 
+.patients-stories__hero {
+  min-height: 613px;
+  height: 100%;
+  padding-top: 13.733em;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .patients-stories__hero {
+    min-height: 500px;
+  }
+}
+.patients-stories__hero h2 {
+  font-size: 5.333em;
+  margin: 0;
+}
+@media (max-width: 576px) {
+  .patients-stories__hero h2 {
+    font-size: 3em;
+  }
+}
+.patients-stories__hero-content {
+  position: relative;
+  z-index: 2;
+}
+.patients-stories__hero-inner {
+  position: relative;
+}
+.patients-stories__hero-img {
+  position: absolute;
+  bottom: -90px;
+  right: -125px;
+}
+@media (max-width: 992px) {
+  .patients-stories__hero-img {
+    opacity: 0.5;
+  }
+}
+
+.patients-stories__reviews-box .review-card {
+  flex: 1 1 calc(50% - 12px);
+}
+@media (max-width: 768px) {
+  .patients-stories__reviews-box .review-card {
+    flex: 1 1 100%;
+  }
+}
+.patients-stories__reviews-box .review-card__avatar {
+  width: 100px;
+  height: 100px;
+}
+.patients-stories__reviews-box .review-card__header-top {
+  gap: 20px;
+}
+.patients-stories__reviews-box .review-card__header-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+@media (max-width: 768px) {
+  .patients-stories__reviews-box .review-card__header-top {
+    flex-wrap: wrap;
+  }
+}
+.patients-stories__reviews-box .review-card__header-top .review-card__header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.patients-stories__reviews-box .review-card__header-top .review-card__info {
+  width: 100%;
+}
+.patients-stories__reviews-box .review-card__header-top .review-card__name {
+  font-size: var(--font-size-l);
+}
+.patients-stories__reviews-box .review-card__header-top .review-card__name::after {
+  content: none;
+}
+.patients-stories__reviews-box .review-card__header-top .review-card__header-location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.patients-stories__reviews-box .review-card__header-top .review-card__date {
+  margin-left: auto;
+}
+.patients-stories__reviews-box .review-card__procedure {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.patients-stories__reviews-box .review-card__procedure li {
+  font-weight: var(--font-weight-light);
+  margin: 0;
+  list-style: none;
+}
+.patients-stories__reviews-box .review-card__procedure li a {
+  color: var(--color-surface-accent);
+}
+.patients-stories__reviews-box .review-card__star {
+  font-size: 30px;
+}
+.patients-stories__reviews-box .review-card__rating {
+  margin-bottom: 17px;
+}
+.patients-stories__reviews-box .review-card__gallery {
+  position: relative;
+  height: 276px;
+  overflow: hidden;
+}
+.patients-stories__reviews-box .gallery__video-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.patients-stories__reviews-box .gallery__video-wrapper img {
+  height: 100%;
+}
+.patients-stories__reviews-box .gallery__play-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: none;
+}
+.patients-stories__reviews-box .gallery__play-overlay img {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.review-form__file-input {
+  display: none;
+}
+
+.patients-stories__add-review {
+  padding-bottom: 6.667em;
+}
+.patients-stories__add-review__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.patients-stories__add-review__inner h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-light);
+}
+.patients-stories__add-review .review-form__row {
+  display: flex;
+  gap: var(--gap);
+}
+@media (max-width: 768px) {
+  .patients-stories__add-review .review-form__row {
+    flex-direction: column;
+  }
+}
+.patients-stories__add-review .review-form__col {
+  flex: 1 1 calc(50% - 12px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+}
+.patients-stories__add-review .review-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+.patients-stories__add-review .review-form__group input {
+  min-height: 40px;
+  padding: 13px 15px;
+  width: 100%;
+  border: 1px solid var(--color-accent);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-s);
+}
+.patients-stories__add-review .review-form__group input::placeholder {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-s);
+}
+.patients-stories__add-review .review-form__group textarea {
+  height: 118px;
+  resize: none;
+  padding: 13px 15px;
+  width: 100%;
+  border: 1px solid var(--color-accent);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-s);
+}
+.patients-stories__add-review .review-form__group textarea::placeholder {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-s);
+}
+.patients-stories__add-review .review-form__rating {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.patients-stories__add-review .review-form__rating-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.patients-stories__add-review .review-form__stars {
+  display: flex;
+  gap: 5px;
+  direction: rtl;
+}
+.patients-stories__add-review .review-form__star-input {
+  display: none;
+}
+.patients-stories__add-review .review-form__star {
+  font-size: 32px;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.patients-stories__add-review .review-form__star:hover,
+.patients-stories__add-review .review-form__star:hover ~ .review-form__star {
+  color: #ffd700;
+}
+.patients-stories__add-review .review-form__star-input:checked ~ .review-form__star {
+  color: #ffd700;
+}
+.patients-stories__add-review .review-form__clear-rating {
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  font-size: var(--font-size-s);
+}
+.patients-stories__add-review .review-form__uploads {
+  display: flex;
+  gap: 10px 66px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.patients-stories__add-review .review-form__file-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.patients-stories__add-review .review-form__submit:hover {
+  background: var(--color-text-primary);
+}
+
 /*# sourceMappingURL=main.css.map */
