@@ -1019,6 +1019,57 @@ function initCountryTabs() {
     });
 }
 
+function initCounters() {
+    const counterItems = document.querySelectorAll('.about-us__counter-value');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                entry.target.classList.add('animated');
+                
+                const targetValue = parseInt(entry.target.textContent.replace(/\s/g, ''));
+                const duration = 2000;
+                const increment = targetValue / (duration / 16);
+                let current = 0;
+                
+                entry.target.textContent = '0';
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= targetValue) {
+                        entry.target.textContent = targetValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+                        clearInterval(timer);
+                    } else {
+                        entry.target.textContent = Math.floor(current).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+                    }
+                }, 16);
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    counterItems.forEach(item => observer.observe(item));
+}
+
+function initEventsGallery() {
+    Fancybox.bind("[data-fancybox='events-gallery']", {
+        Toolbar: {
+            display: {
+                left: [],
+                middle: [],
+                right: ["close"],
+            },
+        },
+        Thumbs: {
+            type: "classic",
+        },
+        Image: {
+            zoom: true,
+        },
+    });
+}
+
 // Запускаємо після завантаження DOM
 document.addEventListener('DOMContentLoaded', wrapFirstLetter);
 
@@ -1048,4 +1099,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initResults();
     initBlog2();
     initCountryTabs();
+    initCounters();
+    initEventsGallery();
 });
