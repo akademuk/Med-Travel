@@ -84,6 +84,7 @@
     &__accordion-header {
         max-width: 486px;
         width: 100%;
+        gap: 8px;
         padding: 0px;
         display: flex;
         align-items: center;
@@ -150,6 +151,8 @@
 
             @media (max-width: 768px) {
                 margin: 0 0 0.533em 0;
+                font-weight: var(--font-weight-light);
+                font-size: var(--font-size-sm);
             }
         }
 
@@ -170,6 +173,10 @@
 
     &__accordion-icon {
         transition-duration: var(--transition-duration);
+        width: 10px;
+        height: 10px;
+        flex-shrink: 0;
+        aspect-ratio: 1/1;
 
         &.active {
             transform: rotate(-90deg);

@@ -933,14 +933,14 @@ img {
 }
 @media (any-hover: hover) {
   .gold-button:hover {
-    background: transparent;
+    background: var(--color-text-primary);
     border: 1px solid var(--color-light);
     color: var(--color-light);
   }
 }
 @media (any-hover: none) {
   .gold-button:active {
-    background: transparent;
+    background: var(--color-text-primary);
     border: 1px solid var(--color-light);
     color: var(--color-light);
   }
@@ -2675,15 +2675,10 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 768px) {
-  .clinic-logo__list {
-    grid-template-columns: 1fr;
-  }
-}
 .clinic-logo__item img {
   width: 100%;
   height: auto;
-  object-fit: none;
+  object-fit: contain;
 }
 
 .we-help__inner {
@@ -3047,6 +3042,7 @@ img {
 .faq__accordion-header {
   max-width: 486px;
   width: 100%;
+  gap: 8px;
   padding: 0px;
   display: flex;
   align-items: center;
@@ -3120,6 +3116,8 @@ img {
 @media (max-width: 768px) {
   .faq__accordion-content h4 {
     margin: 0 0 0.533em 0;
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-sm);
   }
 }
 .faq__accordion-content p {
@@ -3137,6 +3135,10 @@ img {
 }
 .faq__accordion-icon {
   transition-duration: var(--transition-duration);
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
 }
 .faq__accordion-icon.active {
   transform: rotate(-90deg);
@@ -8393,6 +8395,176 @@ img {
   position: relative;
   z-index: 2;
   background: var(--color-surface);
+}
+
+.partnership__hero {
+  min-height: 708px;
+  padding-bottom: 0;
+  overflow: hidden;
+  padding-bottom: 6.667em;
+}
+@media (max-width: 768px) {
+  .partnership__hero {
+    padding-bottom: 0;
+  }
+}
+.partnership__hero .about-us__hero-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 732px;
+  height: 100%;
+  flex-shrink: 0;
+  margin: 0;
+  max-width: 1440px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.partnership__hero .about-us__hero-image img {
+  width: 700px;
+  height: 100%;
+  object-position: top;
+}
+@media (max-width: 768px) {
+  .partnership__hero .about-us__hero-image {
+    display: none;
+  }
+}
+.partnership__hero .about-us__hero-content {
+  max-width: 610px;
+}
+.partnership__hero p {
+  margin-bottom: 2.667em;
+}
+.partnership__hero a {
+  width: max-content;
+}
+
+.partnership__section .about-us__section-list-item:nth-last-of-type(1) {
+  padding-right: var(--gap);
+}
+
+.partnership__treatment .how-we-work__body-list-value {
+  width: 80%;
+}
+
+.partnership-numbers {
+  position: relative;
+  overflow: hidden;
+}
+.partnership-numbers__inner {
+  position: relative;
+  z-index: 2;
+}
+.partnership-numbers__inner h2 {
+  color: var(--color-light);
+}
+.partnership-numbers-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.partnership-numbers-image img {
+  height: 100%;
+}
+.partnership-numbers-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.partnership-numbers__body-text {
+  max-width: 588px;
+  margin-bottom: 3.333em;
+}
+.partnership-numbers .about-us__counter-inner {
+  padding: 0;
+  margin-bottom: 3.333em;
+}
+.partnership-numbers strong {
+  color: var(--color-light);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-light);
+  margin-bottom: 1.333em;
+  display: block;
+}
+.partnership-numbers a {
+  width: max-content;
+}
+
+.partnership-about__body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.partnership-about__item {
+  flex: 1;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.partnership-about__item:nth-of-type(1) {
+  padding-left: 0;
+}
+.partnership-about__item:nth-last-of-type(1) {
+  padding-right: 0;
+}
+.partnership-about__item:nth-of-type(2) {
+  border-left: var(--border);
+  border-right: var(--border);
+}
+@media (max-width: 1280px) {
+  .partnership-about__item:nth-of-type(2) {
+    border: none;
+  }
+}
+.partnership-about__header {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  flex-wrap: wrap;
+}
+.partnership-about__image {
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  border-radius: 1000px;
+  background: var(--color-light);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+.partnership-about__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.partnership-about__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.partnership-about__info h3 {
+  margin: 0;
+}
+.partnership-about__info p {
+  color: var(--color-accent);
+  text-decoration: underline;
+  margin: 0;
+}
+.partnership-about__description p {
+  font-size: var(--font-size-s);
+  font-style: italic;
+  margin: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

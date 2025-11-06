@@ -15,17 +15,13 @@
         @media (max-width: 992px) {
             grid-template-columns: repeat(2, 1fr);
         }
-
-        @media (max-width: 768px) {
-            grid-template-columns: 1fr;
-        }
     }
     
     &__item {
         img {
             width: 100%;
             height: auto;
-            object-fit: none;
+            object-fit: contain;
         }
     }
 }
