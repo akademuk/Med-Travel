@@ -4105,6 +4105,7 @@ img {
   flex: 1;
   text-transform: uppercase;
   padding: 0.667em 0;
+  color: var(--color-text-primary);
   gap: 3px;
   border: none;
   border-right: var(--border);
