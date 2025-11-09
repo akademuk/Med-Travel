@@ -1592,7 +1592,7 @@ img {
   animation-name: scrolling-logo;
   animation-fill-mode: both;
   animation-timeline: scroll();
-  animation-range: 5px 20px;
+  animation-range: 1px 2px;
 }
 .header.header-transparent .header__menu-position-link, .header.header-transparent .header__search-button {
   animation-name: scrolling-link;
