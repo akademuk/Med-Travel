@@ -4051,6 +4051,7 @@ img {
   flex: 1;
   padding: 0.667em 1em;
   padding-right: 2.333em;
+  color: var(--color-text-primary);
   border: var(--border);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-light);
