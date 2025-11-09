@@ -612,6 +612,13 @@
         animation-timeline: scroll();
         animation-range: 50px 200px;
     }
+
+    .burger-button__line--black {
+        animation-name: scrolling-burger;
+        animation-fill-mode: both;
+        animation-timeline: scroll();
+        animation-range: 5px 20px;
+    }
 }
 
 @keyframes scrolling-header-transparent {
@@ -645,5 +652,11 @@
     to {
         border-color: var(--color-light);
         color: var(--color-light);
+    }
+}
+
+@keyframes scrolling-burger {
+    to {
+        background: var(--color-light);
     }
 }
