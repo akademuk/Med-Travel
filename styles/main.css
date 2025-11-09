@@ -880,6 +880,7 @@ img {
   border: none;
   border-bottom: var(--border);
   font-size: var(--font-size-xl);
+  color: var(--color-text-primary);
   text-transform: uppercase;
   background: transparent;
   transition-duration: var(--transition-duration);
