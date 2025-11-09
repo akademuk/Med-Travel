@@ -1613,7 +1613,7 @@ img {
   animation-name: scrolling-burger;
   animation-fill-mode: both;
   animation-timeline: scroll();
-  animation-range: 5px 20px;
+  animation-range: 1px 2px;
 }
 
 @keyframes scrolling-header-transparent {
@@ -6300,6 +6300,7 @@ img {
   border: none;
   padding: 0;
   color: var(--color-text-primary);
+  cursor: pointer;
   font-size: var(--font-size-s);
   white-space: nowrap;
   transition-duration: var(--transition-duration);
