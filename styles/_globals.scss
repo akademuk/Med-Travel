@@ -224,7 +224,11 @@ ol {
             flex-shrink: 0;
 
             .consultation-banner {
-                min-height: auto;
+                height: 340px;
+
+                .consultation-banner__text {
+                    margin-bottom: 2em;
+                }
 
                 @media (max-width: 992px) {
                     width: 100%;
@@ -342,6 +346,16 @@ main {
 
 .white-bg {
     background-color: var(--color-light);
+}
+
+.header-white-bg {
+    background-color: var(--color-light);
+    color: var(--color-text-primary);
+}
+
+.header-black-bg {
+    background-color: var(--color-text-primary);
+    color: var(--color-light);
 }
 
 a,

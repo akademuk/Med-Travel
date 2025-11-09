@@ -4,7 +4,7 @@
     min-height: 708px;
     padding-bottom: 0;
     overflow: hidden;
-    padding-bottom: 6.667em;
+    padding-bottom: 0;
 
     @media (max-width: 768px) {
         padding-bottom: 0;
@@ -37,14 +37,16 @@
 
     .about-us__hero-content {
         max-width: 610px;
+        padding-bottom: 0;
     }
 
     p {
-        margin-bottom: 2.667em;
+        margin-bottom: 0.667em;
     }
 
     a {
-        width: max-content;
+        width: 100%;
+        max-width: 282px;
     }
 }
 

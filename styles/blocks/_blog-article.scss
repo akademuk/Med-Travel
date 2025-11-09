@@ -110,13 +110,17 @@
             border-bottom: 1px solid var(--color-accent);
         }
 
-        .catalog__sidebar-nav-item {
-            padding: 14px 25px;
+        .catalog__content-navigation-link {
+            padding: 14px 0;
             transition-duration: var(--transition-duration);
 
             &:hover {
                 font-weight: var(--font-weight-light);
-            }
+            }  
+        }
+
+        .catalog__sidebar-nav-item {
+          padding: 0 25px;
         }
     }
 
@@ -299,6 +303,23 @@
             .blog-grid-page__content-image {
                 height: 204px;
                 margin-bottom: 0;
+            }
+
+            .review-card__date {
+                font-size: var(--font-size-s);
+            }
+
+            .blog-grid-page__content-info {
+                gap: var(--small-gap);
+                min-height: auto;
+
+                h3 {
+                    font-size: var(--font-size-lg);
+                }
+            }
+
+            .section-autor-box {
+                margin-top: 0;
             }
         }
     }

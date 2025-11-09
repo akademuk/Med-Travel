@@ -1,11 +1,14 @@
 @use '../helpers' as *;
 
 .ticker {
-    height: 55px;
+    height: auto;
+    min-height: 55px;
     padding: 1.2em 0;
     border-top: var(--border);
     border-bottom: var(--border);
     overflow: hidden;
+    display: flex;
+    align-items: center;
 
     &-wrapper {
         display: flex;
@@ -22,7 +25,7 @@
         display: flex;
         gap: 27px;
         flex-shrink: 0;
-        padding-right: 1.8em;
+        min-width: fit-content;
     }
 
     &-item {
@@ -35,10 +38,10 @@
 }
 
 @keyframes scroll {
-    from {
+    0% {
         transform: translateX(0);
     }
-    to {
-        transform: translateX(calc(-100% / 2));
+    100% {
+        transform: translateX(-25%);
     }
 }

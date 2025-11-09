@@ -761,7 +761,9 @@ function initGallery() {
     });
 }
 
- Fancybox.bind('[data-fancybox="gallerys"]', {
+// Check if Fancybox is loaded before initializing
+if (typeof Fancybox !== 'undefined') {
+    Fancybox.bind('[data-fancybox="gallerys"]', {
         Toolbar: {
             display: {
                 left: [],
@@ -794,6 +796,7 @@ function initGallery() {
         showClass: "f-fadeIn",
         hideClass: "f-fadeOut",
     });
+}
 
 // Video player control initialization
 function initVideoPlayer() {
@@ -1169,6 +1172,51 @@ document.addEventListener('DOMContentLoaded', wrapFirstLetter);
 // Для WordPress - запускаємо після повного завантаження
 window.addEventListener('load', wrapFirstLetter);
 
+// Ticker animation fix
+function initTicker() {
+    const tickers = document.querySelectorAll('.ticker');
+    
+    tickers.forEach(ticker => {
+        const wrapper = ticker.querySelector('.ticker-wrapper');
+        if (!wrapper) return;
+        
+        const firstContent = wrapper.querySelector('.ticker-content');
+        if (!firstContent) return;
+        
+        // Удаляем все существующие ticker-content кроме первого
+        const allContents = wrapper.querySelectorAll('.ticker-content');
+        allContents.forEach((content, index) => {
+            if (index > 0) content.remove();
+        });
+        
+        // Клонируем первый блок 3 раза для бесшовности
+        for (let i = 0; i < 3; i++) {
+            const clone = firstContent.cloneNode(true);
+            clone.removeAttribute('aria-hidden');
+            if (i > 0) clone.setAttribute('aria-hidden', 'true');
+            wrapper.appendChild(clone);
+        }
+        
+        // Теперь пересчитываем анимацию
+        const contentWidth = firstContent.offsetWidth;
+        const gap = 27;
+        
+        // Устанавливаем gap между всеми блоками
+        const allNewContents = wrapper.querySelectorAll('.ticker-content');
+        allNewContents.forEach((content, index) => {
+            if (index < allNewContents.length - 1) {
+                content.style.marginRight = gap + 'px';
+            }
+        });
+        
+        // Рассчитываем длительность анимации на основе ширины
+        const totalWidth = contentWidth + gap;
+        const duration = totalWidth / 50; // 50px в секунду
+        
+        wrapper.style.animation = `scroll ${duration}s linear infinite`;
+    });
+}
+
 // main.js - вызов всех функций
 document.addEventListener('DOMContentLoaded', () => {
     initHeader();
@@ -1196,4 +1244,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initEventsGallery();
     initReviewForm();
     initFileUpload();
+    initTicker();
 });
