@@ -6028,6 +6028,7 @@ img {
   display: flex;
   align-items: center;
   gap: 25px;
+  flex-wrap: wrap;
 }
 .clinics__card-rating {
   width: 108px;
