@@ -632,38 +632,6 @@ function initTabs() {
     });
 }
 
-// Tab switching functionality
-document.addEventListener('DOMContentLoaded', function () {
-    const tabButtons = document.querySelectorAll('.procedures-section-tab');
-    const tabContents = document.querySelectorAll('.procedures-section-content');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const tabName = this.getAttribute('data-tab');
-
-            // Remove active class from all buttons
-            tabButtons.forEach(btn => {
-                btn.classList.remove('procedures-section-tab--active');
-                btn.setAttribute('aria-pressed', 'false');
-            });
-
-            // Remove active class from all content blocks
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-            });
-
-            // Add active class to clicked button
-            this.classList.add('procedures-section-tab--active');
-            this.setAttribute('aria-pressed', 'true');
-
-            // Show corresponding content
-            const activeContent = document.querySelector(`[data-tab-content="${tabName}"]`);
-            if (activeContent) {
-                activeContent.classList.add('active');
-            }
-        });
-    });
-});
 
 // Gallery initialization with Swiper and Fancybox
 function initGallery() {
@@ -1212,6 +1180,34 @@ function initTicker() {
         wrapper.style.animation = `scroll ${duration}s linear infinite`;
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.procedures-section-tab');
+    const headerOffset = 100;
+            
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            tabs.forEach(t => t.classList.remove('procedures-section-tab--active'));
+            this.classList.add('procedures-section-tab--active');
+            
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+});
 
 // main.js - вызов всех функций
 document.addEventListener('DOMContentLoaded', () => {

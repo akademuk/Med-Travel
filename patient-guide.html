@@ -871,19 +871,16 @@
             </div>
         </section>
 
-        <section class="procedures-section">
-            <div class="procedures-section-tabs">
-                <div class="container">
-                    <button class="procedures-section-tab procedures-section-tab--active" type="button"
-                        data-tab="aboutProcedures" aria-pressed="true">About Rhinoplasty</button>
-                    <button class="procedures-section-tab" type="button" data-tab="inclusions"
-                        aria-pressed="false">Inclusions</button>
-                    <button class="procedures-section-tab" type="button" data-tab="beforeAfter"
-                        aria-pressed="false">Before & After</button>
-                    <button class="procedures-section-tab" type="button" data-tab="faq"
-                        aria-pressed="false">FAQ</button>
-                </div>
+        <div class="procedures-section-tabs">
+            <div class="container">
+                <a href="#About" class="procedures-section-tab procedures-section-tab--active">About Rhinoplasty</a>
+                <a href="#Inclusions" class="procedures-section-tab">Inclusions</a>
+                <a href="#Before" class="procedures-section-tab">Before & After</a>
+                <a href="#Faq" class="procedures-section-tab">FAQ</a>
             </div>
+        </div>
+
+        <section class="procedures-section sections-padding" id="About">
             <div class="procedures-section__inner container">
                 <div class="procedures-section__body">
                     <div class="procedures-section-content active" data-tab-content="aboutProcedures">
@@ -1164,7 +1161,7 @@
             </div>
         </section>
 
-        <section class="package-available sections-padding">
+        <section class="package-available sections-padding" id="Inclusions">
             <div class="package-available__inner container heading--spaced decorative-heading">
                 <h2>Package available</h2>
 
@@ -1393,8 +1390,8 @@
             </div>
         </section>
 
-        <section class="results sections-padding">
-            <div class="results__inner container heading--spaced decorative-heading">
+        <section class="results sections-padding" id="Before">
+            <div class="results__inner container heading--spaced decorative-heading" id="Before">
                 <h2>Rhinoplasty before and after results</h2>
 
                 <div class="results__slider slider">
@@ -1450,7 +1447,7 @@
             </div>
         </section>
 
-        <section class="faq sections-padding white-bg">
+        <section class="faq sections-padding white-bg" id="Faq">
             <div class="faq__inner container heading--spaced decorative-heading">
                 <h2>Faq</h2>
 
